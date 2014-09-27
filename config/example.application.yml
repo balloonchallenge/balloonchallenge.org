@@ -1,0 +1,5 @@
+# Example figaru secrets for dev
+
+DEVISE_SECRET_KEY: test123
+GMAIL_USERNAME: you@gmail.com
+GMAIL_PASSWORD: hunter2

@@ -16,6 +16,14 @@ luke@simplyluke.com | [@_simplyluke](https://twitter.com/_simplyluke)
     rake db:create
     rake db:migrate
 
+### Get environment variables set up
+
+`application.yml` is where sensitive environment variables live, it's in .gitignore to keep API Keys & Passwords out of source control
+
+    mv config/example.application.yml config/applicaton.yml
+
+If you need to send emails for any reason from the test app you'll need to update application.yml with your gmail credentials
+
 ## Running the project
 
     # start the server
