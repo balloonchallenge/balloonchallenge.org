@@ -7,8 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+    <header>
+        <div class="logo">
+            <a href="/">
+                <img src="/images/gsbc.png">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/tutorials">Tutorials</a></li>
+                <li><a href="/faq">FAQs</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <%= yield %>
+    </div>
+    <footer>
+        <p>&copy; 2014 Global Space Balloon Challenge. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
