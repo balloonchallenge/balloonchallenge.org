@@ -10,6 +10,12 @@
 <!-- Need more serious flash alerts -->
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
+<% if user_signed_in? %>
+<%= link_to 'Sign out', destroy_user_session_path, method: 'delete' %>
+<%= link_to 'My Account', edit_user_registration_path %>
+<% else %>
+<%= link_to 'Sign in', new_user_session_path %>
+<%end%>
 <%= yield %>
 
 </body>
