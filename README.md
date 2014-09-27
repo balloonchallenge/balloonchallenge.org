@@ -16,5 +16,12 @@ luke@simplyluke.com | [@_simplyluke](https://twitter.com/_simplyluke)
     rake db:create
     rake db:migrate
 
+## Running the project
+
+    # start the server
+    rails s
+    # run tests/livereload
+    guard
+
 
 Write tests if you're doing any kind of logic.
