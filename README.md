@@ -1,6 +1,7 @@
 # GSBC
 
 luke@simplyluke.com | [@_simplyluke](https://twitter.com/_simplyluke)
+
 krish@openSourceSchool.co | [@krrishd](https://twitter.com/krrishd)
 
 ## Setting up the project
