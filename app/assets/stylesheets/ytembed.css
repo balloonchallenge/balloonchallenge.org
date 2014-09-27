@@ -7,7 +7,7 @@
     height: auto;
 }
 
-.embed-container iframe {
+.embed-container iframe, .embed-container img {
     position: absolute;
     top: 0;
     left: 0;

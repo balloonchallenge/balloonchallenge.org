@@ -19,3 +19,24 @@
         min-width: 500px
     }
 }
+
+.affiliates.section {
+    background: url('/assets/light_bg.png');
+    width: 100%;
+    position: relative;
+    left: -10px;
+    padding: 10px;
+    .threeContainer {
+        width: 80%;
+        margin: 10px auto;
+    }
+    .three {
+        display: inline-block;
+        font-size: 1.6em;
+        margin: 20px;
+        width: 25%;
+        img {
+            width: 95%;
+        }
+    }
+}
