@@ -8,19 +8,21 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <a href="/">
-                <img src="/assets/gsbc.png">
-            </a>
+        <div class="content">
+            <div class="logo">
+                <a href="/">
+                    <img src="/assets/gsbc.png">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/tutorials">Tutorials</a></li>
+                    <li><a href="/faq">FAQs</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/tutorials">Tutorials</a></li>
-                <li><a href="/faq">FAQs</a></li>
-            </ul>
-        </nav>
     </header>
     <div class="container">
         <%= yield %>

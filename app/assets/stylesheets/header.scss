@@ -1,0 +1,36 @@
+header {
+    background: url("/assets/header_bg.JPG") center center;
+    background-size: cover;
+    width: 105%;
+    position: relative;
+    top: -10px;
+    left: -10px;
+    color: #fff;
+    text-shadow: 1px 1px 3px #000;
+    .content {
+        text-align: center;
+        background: rgba(0,0,0,.5);
+        width: 100%;
+        height: 100%;
+        position: relative;
+        left: -10px;
+        top: 1px;
+        padding: 5px;
+    }
+    .logo {
+        display: inline-block;
+        vertical-align: middle;
+        img {
+            width: 85px;
+        }
+    }
+    nav {
+        display: inline-block;
+        ul {
+            li {
+                display: inline-block;
+                margin: 10px
+            }
+        }
+    }
+}
