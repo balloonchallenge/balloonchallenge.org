@@ -1,19 +1,20 @@
 # GSBC
 
-luke@simplyluke.com | [@_simplyluke](https://twitter.com/_simpyluke)
+luke@simplyluke.com | [@_simplyluke](https://twitter.com/_simplyluke)
 
 ## Setting up the project
 
-  git clone https://github.com/balloonchallenge/balloonchallenge.org.git
 
-  # get rails gems
+    git clone https://github.com/balloonchallenge/balloonchallenge.org.git
 
-  bundle install
+    # get rails gems
 
-  # set up the database
+    bundle install
 
-  rake db:create
-  rake db:migrate
+    # set up the database
+
+    rake db:create
+    rake db:migrate
 
 
 Write tests if you're doing any kind of logic.
