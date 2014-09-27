@@ -36,11 +36,12 @@
         font-size: 1.6em;
         margin: 20px;
         width: 25%;
+        min-width: 200px;
         ul {
             list-style-type: none;
         }
         img {
-            width: 95%;
+            max-height: 150px;
         }
     }
     .threeVerticalContainer {
