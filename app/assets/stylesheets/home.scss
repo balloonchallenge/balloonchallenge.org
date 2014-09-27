@@ -29,14 +29,35 @@
     .threeContainer {
         width: 80%;
         margin: 10px auto;
+        text-align: center;
     }
     .three {
         display: inline-block;
         font-size: 1.6em;
         margin: 20px;
         width: 25%;
+        ul {
+            list-style-type: none;
+        }
         img {
             width: 95%;
+        }
+    }
+    .threeVerticalContainer {
+        width: 80%;
+        margin: 10px auto;
+        text-align: center;
+        font-size: 1.7em;
+        .threeVertical {
+            ul li {
+                display: inline-block;
+                width: 25%;
+                min-width: 200px;
+                margin: 10px;
+                img {
+                    width: 95%;
+                }
+            }
         }
     }
 }
