@@ -18,6 +18,7 @@ body {
             border-bottom: 3px solid rgba(0,0,0,.4);
         }
         &.btn {
+            @include transition(.1s);
             display: block;
             width: 150px;
             text-align: center;
@@ -29,6 +30,14 @@ body {
             color: rgba(0,0,0,.7);
             text-shadow: none;
             margin: 40px 0px;
+            position: relative;
+            top: 0px;
+            &:hover {
+                @include transition(.1s);
+                position: relative;
+                top: 2px;
+                border-bottom: 1px solid rgba(0,0,0,.4);
+            }
         }
     }
 }
