@@ -1,4 +1,3 @@
-class Group < ActiveRecord::Base
-  has_many :user_groups
-  has_many :users, :through => :user_groups
+class Group < ActiveRecord::Base  
+  groupify :group, members: [:users], default_members: :users
 end
