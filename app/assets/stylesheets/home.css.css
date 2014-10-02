@@ -1,6 +1,8 @@
 .hero {
+  background: url(image-path("main_bg.png"));
   color: rgba(255, 255, 255, 0.8);
   padding: 10px;
+  margin: -10px;
   text-align: center;
   text-shadow: 1px 1px 3px #000; }
   .hero .left {

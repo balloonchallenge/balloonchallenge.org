@@ -1,12 +1,11 @@
 footer {
-    background: url(image-path('header_bg.JPG')) center center;
+    background: url('header_bg.JPG') center center;
     background-size: cover;
     padding: 10px 5px;
     width: 105%;
     position: relative;
     left: -10px;
     text-align: center;
-    top: -10px;
     color: #fff;
     text-shadow: 1px 1px 3px #000;
 }
