@@ -1,5 +1,5 @@
 footer {
-    background: url('/assets/header_bg.JPG') center center;
+    background: url(image-path('header_bg.JPG')) center center;
     background-size: cover;
     padding: 10px 5px;
     width: 105%;
