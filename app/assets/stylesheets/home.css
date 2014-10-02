@@ -1,0 +1,52 @@
+.hero {
+  color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  text-align: center;
+  text-shadow: 1px 1px 3px #000; }
+  .hero .left {
+    width: 45%;
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 500px; }
+  .hero .right {
+    width: 45%;
+    display: inline-block;
+    padding: 4%;
+    font-size: 1.5em;
+    text-align: left;
+    vertical-align: middle;
+    min-width: 500px; }
+
+.affiliates.section {
+  background: url("light_bg.png");
+  width: 100%;
+  position: relative;
+  left: -10px;
+  padding: 10px;
+  box-shadow: 1px 0px 3px 1px #000; }
+  .affiliates.section .threeContainer {
+    width: 80%;
+    margin: 10px auto;
+    text-align: center; }
+  .affiliates.section .three {
+    display: inline-block;
+    font-size: 1.6em;
+    margin: 20px;
+    width: 25%;
+    min-width: 200px; }
+    .affiliates.section .three ul {
+      list-style-type: none; }
+    .affiliates.section .three img {
+      max-height: 150px; }
+  .affiliates.section .threeVerticalContainer {
+    width: 80%;
+    margin: 10px auto;
+    text-align: center;
+    font-size: 1.7em; }
+    .affiliates.section .threeVerticalContainer .threeVertical ul li {
+      display: inline-block;
+      width: 25%;
+      min-width: 200px;
+      margin: 10px; }
+      .affiliates.section .threeVerticalContainer .threeVertical ul li img {
+        width: 95%; }
