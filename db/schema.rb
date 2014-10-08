@@ -11,22 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140930044429) do
+ActiveRecord::Schema.define(version: 20141007234649) do
 
-  create_table "group_memberships", force: true do |t|
-    t.string  "member_type"
-    t.integer "member_id"
-    t.integer "group_id"
-    t.string  "group_name"
-    t.string  "membership_type"
-  end
-
-  add_index "group_memberships", ["group_id"], name: "index_group_memberships_on_group_id"
-  add_index "group_memberships", ["group_name"], name: "index_group_memberships_on_group_name"
-  add_index "group_memberships", ["member_id", "member_type"], name: "index_group_memberships_on_member_id_and_member_type"
-
-  create_table "groups", force: true do |t|
-    t.string "type"
+  create_table "teams", force: true do |t|
+    t.string "name",        default: "", null: false
+    t.string "location"
+    t.string "school"
+    t.text   "description"
   end
 
   create_table "users", force: true do |t|
@@ -44,9 +35,11 @@ ActiveRecord::Schema.define(version: 20140930044429) do
     t.datetime "updated_at"
     t.string   "username",               default: "", null: false
     t.string   "name",                   default: "", null: false
+    t.integer  "team_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["team_id"], name: "index_users_on_team_id"
 
 end

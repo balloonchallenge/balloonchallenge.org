@@ -1,0 +1,9 @@
+<% title "Teams" %>
+<h1><%=yield(:title)%></h1>
+<%= @teams.each do |team| %>
+  <%= team.name %>
+<% end %>
+<!-- This will only run if a user has no team - it currently throws an error if they don't -->
+<% if current_user.team.nil? %>
+  <%= render "newteam" %>
+<% end %>
