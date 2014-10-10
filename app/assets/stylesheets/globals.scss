@@ -59,6 +59,12 @@ body {
     border-radius: 3px;
     background: rgba(255,255,255,.9);
     box-shadow: 1px 1px 9px 0px rgba(0,0,0,.1);
+    .content {
+        margin: 10px auto;
+        max-width: 80%;
+        padding: 20px;
+        font-size: 1.2em;
+    }
 }
 
 .alternate {
