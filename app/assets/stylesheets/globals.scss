@@ -107,6 +107,30 @@ body {
     font-size: 3em;
 }
 
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="url"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,.2);
+}
+
+input[type="submit"] {
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,.1);
+    background: rgba(255,255,255,.7);
+    font-size: 1em;
+    font-family: inherit;
+    margin: 10px;
+    border-radius: 3px;
+    color: inherit;
+    cursor: pointer;
+    min-width: 150px;
+}
+
 @media(max-width: 725px) {
     .alternate {
         text-align: left !important;
