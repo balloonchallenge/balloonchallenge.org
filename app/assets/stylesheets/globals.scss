@@ -131,6 +131,23 @@ input[type="submit"] {
     min-width: 150px;
 }
 
+.faq {
+    display: inline-block;
+    width: 30%;
+    margin: 10px;
+    padding: 10px 30px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid rgba(0,0,0,.2);
+    border-radius: 3px;
+    min-height: 230px;
+    background: rgba(255, 255, 255, 0.701961);
+    max-width: 230px;
+    .question {
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(0,0,0,.1);
+    }
+}
+
 @media(max-width: 725px) {
     .alternate {
         text-align: left !important;
