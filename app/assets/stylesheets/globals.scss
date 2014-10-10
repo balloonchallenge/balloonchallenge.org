@@ -1,4 +1,8 @@
 @import "http://fonts.googleapis.com/css?family=Maven+Pro";
+html {
+    height: 100%;
+}
+
 body {
   font-family: Maven Pro, sans-serif;
   background: #fafafa;
@@ -48,6 +52,9 @@ body {
         top: 2px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.4);
     }
+    .container {
+        min-height: 80%;
+    }
 }
 
 .primary.section {
@@ -59,6 +66,7 @@ body {
     border-radius: 3px;
     background: rgba(255,255,255,.9);
     box-shadow: 1px 1px 9px 0px rgba(0,0,0,.1);
+    min-height: 80%;
     .content {
         margin: 10px auto;
         max-width: 80%;
