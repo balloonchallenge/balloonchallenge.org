@@ -3,3 +3,34 @@
 # This model initially had no columns defined.  If you add columns to the
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
+
+luke:
+  id: 1
+  email: luke@simplyluke.com
+  username: lhw
+  name: Luke Wright
+  encrypted_password: <%= Devise.bcrypt(User, 'password') %>
+  remember_created_at: nil 
+  sign_in_count: 0 
+  current_sign_in_at: nil 
+  last_sign_in_at: nil 
+  current_sign_in_ip: nil 
+  last_sign_in_ip: nil 
+  created_at: 2014-09-29 05:50:44 
+  updated_at: 2014-09-29 05:50:44
+
+<% 50.times do |n| %>
+user_<%= n %>:
+  username: <%= "user#{n}" %>
+  email: <%= "user#{n}@example.com" %>
+  name: <%= "{n}" %>
+  encrypted_password: <%= Devise.bcrypt(User, 'password') %>
+  remember_created_at: nil 
+  sign_in_count: 0 
+  current_sign_in_at: nil 
+  last_sign_in_at: nil 
+  current_sign_in_ip: nil 
+  last_sign_in_ip: nil 
+  created_at: 2014-09-29 05:50:44 
+  updated_at: 2014-09-29 05:50:44
+<% end %>
