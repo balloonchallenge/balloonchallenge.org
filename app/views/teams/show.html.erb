@@ -1,3 +1,4 @@
+<div class="primary section">
 <h1><%=@team.name%></h1>
 <h3><%=@team.description%></h3>
 <ul>
@@ -8,3 +9,4 @@
 <% if @team.users.include?(current_user) %>
   <%= link_to "Edit team", edit_team_path(@team) %>
 <% end %>
+</div>

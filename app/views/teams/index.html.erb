@@ -1,8 +1,11 @@
 <% title "Teams" %>
+<div class="primary section">
 <h1><%=yield(:title)%></h1>
+<ul>
 <% @teams.each do |team| %>
-  <%= team.name %>
+  <li><%=link_to team.name, team %></li>
 <% end %>
+</ul>
 <!-- This will only run if a user has no team - it currently throws an error if they don't -->
 <% if current_user and current_user.team.nil? %>
 <h1>Create a Team!</h1>
@@ -16,3 +19,4 @@
   <%= f.submit "Post" %>
 <% end %>
 <% end %>
+</div>
