@@ -1,4 +1,8 @@
 @import "http://fonts.googleapis.com/css?family=Maven+Pro";
+html {
+    height: 100%;
+}
+
 body {
   font-family: Maven Pro, sans-serif;
   background: #fafafa;
@@ -48,6 +52,9 @@ body {
         top: 2px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.4);
     }
+    .container {
+        min-height: 80%;
+    }
 }
 
 .primary.section {
@@ -58,7 +65,15 @@ body {
     border-bottom: 2px solid rgba(0,0,0,.3);
     border-radius: 3px;
     background: rgba(255,255,255,.9);
+    background: url(image-path('light_bg.png'));
     box-shadow: 1px 1px 9px 0px rgba(0,0,0,.1);
+    min-height: 80%;
+    .content {
+        margin: 10px auto;
+        max-width: 80%;
+        padding: 20px;
+        font-size: 1.2em;
+    }
 }
 
 .alternate {
@@ -99,6 +114,52 @@ body {
     padding: 20px 0px;
     border-bottom: 1px solid rgba(0,0,0,.1);
     font-size: 3em;
+    &.smaller {
+        font-size:1.2em;
+        text-align: left;
+        margin: 10px;
+    }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="url"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,.2);
+}
+
+input[type="submit"] {
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,.1);
+    background: rgba(255,255,255,.7);
+    font-size: 1em;
+    font-family: inherit;
+    margin: 10px;
+    border-radius: 3px;
+    color: inherit;
+    cursor: pointer;
+    min-width: 150px;
+}
+
+.faq {
+    display: inline-block;
+    width: 30%;
+    margin: 10px;
+    padding: 10px 30px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid rgba(0,0,0,.2);
+    border-radius: 3px;
+    min-height: 230px;
+    background: rgba(255, 255, 255, 0.701961);
+    max-width: 230px;
+    .question {
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(0,0,0,.1);
+    }
 }
 
 @media(max-width: 725px) {
