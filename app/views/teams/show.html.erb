@@ -1,0 +1,10 @@
+<h1><%=@team.name%></h1>
+<h3><%=@team.description%></h3>
+<ul>
+<% @team.users.each do |member| %>
+  <li><%= member.name %></li>
+<% end %>
+</ul>
+<% if @team.users.include?(current_user) %>
+  <%= link_to "Edit team", edit_team_path(@team) %>
+<% end %>

@@ -1,0 +1,9 @@
+<%= form_for(@team) do |f| %>
+  <div id="team_name">
+    <%= f.text_field :name, placeholder: "Team name"%>
+  </div>
+  <div id="team_description">
+    <%= f.text_area :description, placeholder: "Team description" %>
+  </div>
+  <%= f.submit "Post" %>
+<% end %>

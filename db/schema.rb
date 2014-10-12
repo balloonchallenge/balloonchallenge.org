@@ -13,24 +13,11 @@
 
 ActiveRecord::Schema.define(version: 20141007234649) do
 
-  create_table "groups", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "teams", force: true do |t|
     t.string "name",        default: "", null: false
     t.string "location"
     t.string "school"
     t.text   "description"
-  end
-
-  create_table "user_groups", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "group_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
