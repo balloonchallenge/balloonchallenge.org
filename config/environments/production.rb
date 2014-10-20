@@ -67,6 +67,7 @@ Rails.application.configure do
   config.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.default :charset => 'utf-8'
+  config.action_mailer.default_url_options = {host: 'gsbc.herokuapp.com'}
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
