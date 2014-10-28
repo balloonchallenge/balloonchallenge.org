@@ -1,4 +1,6 @@
+@import "mixins.scss";
 @import "http://fonts.googleapis.com/css?family=Maven+Pro";
+
 html {
     height: 100%;
 }
@@ -51,6 +53,9 @@ body {
         position: relative;
         top: 2px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    }
+    .btn.callToAction {
+        display: inline-block;
     }
     .container {
         min-height: 80%;
@@ -159,6 +164,31 @@ input[type="submit"] {
     .question {
         padding-bottom: 10px;
         border-bottom: 1px solid rgba(0,0,0,.1);
+    }
+}
+
+.tutorials {
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.tutorial {
+    @include transition(0.2s);
+    border-left: 1px solid rgba(0,0,0,.2);
+    padding: 10px;
+    margin: 10px 0px;
+    border: 1px solid rgba(0,0,0,.2);
+    border-bottom: 2px solid rgba(0,0,0,.2);
+    border-radius: 3px;
+    font-size: 1.2em;
+    a {
+        font-size: 1.8em;
+    }
+    &:hover {
+        @include transition(0.2s);
+        border-left: 4px solid rgba(0,0,0,.3);
+        padding-left: 15px;
     }
 }
 
