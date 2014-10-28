@@ -8,5 +8,9 @@
 </ul>
 <% if @team.users.include?(current_user) %>
   <%= link_to "Edit team", edit_team_path(@team) %>
+  <% form_for @team, :url => add_user_to_team_path(@team) do |f| %>
+    <%= f.text_field :users, placeholder: "User email"%>
+    <%= f.submit "Add" %>
+  <% end %>
 <% end %>
 </div>
