@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
 
-  before_action :correct_team, only: [:destroy, :update, :edit]
-  before_action :no_team, only: [:add]
+  before_action :correct_team, only: [:destroy, :update, :edit, :add_member, :remove_member]
+
   def create
     @user = current_user
     @team = Team.create(team_params)
@@ -43,16 +43,32 @@ class TeamsController < ApplicationController
 
   def show
     @team = Team.find(params[:id])
-
   end
  
-  def add
-    if @team.save
-      flash[:success] = "User added!"
-      redirect_to @team
+  def add_member
+    @team = Team.find(params[:id])
+    @user = User.where(email: params[:email]).first
+    if @user and @user.team.nil?
+      @team.users << @user
+      @team.save
+      @user.save
+      flash[:success] = "Team updated!"
+      redirect_to team_path(@team.id)
+    else
+      flash[:error] = "User has a team!"
+      redirect_to root_url
     end
   end
-  
+
+  def remove_member
+    @user = User.find(params[:id])
+    if @user and !@user.team.nil?
+      @user.team = nil
+      @user.save
+      flash[:success] = "User removed from team"
+      redirect_to team_path(Team.find(params[:id]))
+    end
+  end
 
   private
 

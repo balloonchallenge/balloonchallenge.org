@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   match '/about',     to: 'static_pages#about',     via: 'get'
   match '/tutorials', to: 'static_pages#tutorials', via: 'get' 
   match '/faq',       to: 'static_pages#faq',       via: 'get'
-  match '/teams/:id/add/', to: 'teams#add', via: 'post', as: 'add_user_to_team'
+  match '/teams/:id/add_member/', to: 'teams#add_member', via: 'post', as: 'add_member'
+  match '/teams/:id/remove_member/', to: 'teams#remove_member', via: 'delete', as: 'remove_member'
   resources :teams
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
