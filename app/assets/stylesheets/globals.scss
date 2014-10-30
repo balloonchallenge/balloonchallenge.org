@@ -13,6 +13,9 @@ body {
   overflow-x: hidden;
   height: 100%;
   color: rgba(0, 0, 0, 0.7);
+  p {
+      font-size: 1.2em;
+  }
   a {
       transition: 0.2s;
       -webkit-transition: 0.2s;
@@ -119,6 +122,11 @@ body {
     padding: 20px 0px;
     border-bottom: 1px solid rgba(0,0,0,.1);
     font-size: 3em;
+    &.medium {
+        font-size: 2em;
+        text-align: left;
+        margin: 0px;
+    }
     &.smaller {
         font-size:1.2em;
         text-align: left;
