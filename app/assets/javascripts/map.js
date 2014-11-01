@@ -23,9 +23,9 @@ function generateMap() {
         var tileURL = (function() {
                 var url;
                 if(dayOrNight() === 'night') {
-                    url = 'https://{s}.tiles.mapbox.com/v3/mapbox.control-room/{z}/{x}/{y}.png'
+                    url = 'https://{s}.tiles.mapbox.com/v3/mapbox.control-room/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoia3JyaXNoZCIsImEiOiJ4TDVxN3NNIn0.GL2JqgwojaO1XW0r5keZ3A'
                 } else {
-                    url = 'http://otile1.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.jpg'
+                    url = 'http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png'
                 }
                 return url;
         })();
@@ -34,7 +34,7 @@ function generateMap() {
             if(dayOrNight() === 'night') {
                 attr = '&copy; <a href="http://mapbox.com">Mapbox</a> &copy; <a href="http://osm.org">OpenStreetMap</a>';
             } else {
-                attr = 'Tiles Courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a>';
+                attr = 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.';
             }
             return attr;
         })();
