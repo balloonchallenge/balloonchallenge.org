@@ -1,6 +1,7 @@
 
 <div class="primary section">
-<h1>Edit your team</h1>
+<h1 class="underline">Edit your team</h1>
+<div class="content">
 <%= form_for(@team) do |f| %>
   <div id="team_name">
     <%= f.text_field :name, placeholder: "Team name"%>
@@ -16,4 +17,5 @@
 <% end %>
 
 <%= link_to "Delete", @team, method: :delete, data: {confirm: "You will delete your team. This action is not reversible. Are you sure?"} %>
+</div>
 </div>

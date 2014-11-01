@@ -1,6 +1,7 @@
 <% title "Teams" %>
 <div class="primary section">
-<h1><%=yield(:title)%></h1>
+<h1 class="underline"><%=yield(:title)%></h1>
+<div class="content">
 <ul>
 <% @teams.each do |team| %>
   <li><%=link_to team.name, team %></li>
@@ -19,4 +20,5 @@
   <%= f.submit "Post" %>
 <% end %>
 <% end %>
+</div>
 </div>
