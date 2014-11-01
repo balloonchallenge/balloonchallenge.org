@@ -1,8 +1,11 @@
-window.onload = function() {
+$(document).on('page:load', init);
+$(document).ready(init);
+
+function init() {
     if(document.querySelector('#map')) {
         generateMap();
     }
-};
+}
 
 function generateMap() {
     if(navigator.geolocation) {
