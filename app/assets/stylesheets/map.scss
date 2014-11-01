@@ -1,4 +1,9 @@
 #map {
     height:300px;
     width:100%;
+    border-radius: 3px;
+}
+
+a.leaflet-popup-close-button:hover {
+    border-bottom: none !important;
 }

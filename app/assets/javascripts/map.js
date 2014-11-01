@@ -37,8 +37,16 @@ function generateMap() {
     }
     function populateMap(map, data) {
         var map = map;
+        var teamIcon = L.icon({
+                iconUrl: 'team-marker.png',
+                iconSize: [25, 25],
+                iconAnchor: [12.5, 12.5],
+                popupAnchor: [0,0]
+        });
         data.forEach(function(team) {
-            L.marker([team.location.latitude, team.location.longitude]).addTo(map);
+            L.marker([team.location.latitude, team.location.longitude], { icon: teamIcon })
+                .addTo(map)
+                .bindPopup('<a href="' + team.url + '">' + team.name + '</a>');
         });
     }
 }
