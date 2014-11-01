@@ -220,6 +220,19 @@ input[type="submit"] {
     vertical-align: top;
 }
 
+.teams {
+    .team {
+        list-style-type: none;
+        padding: 10px;
+        border: 1px solid rgba(0,0,0,.1);
+        margin: 10px -40px;
+        max-width: 95%;
+        min-width: 200px;
+        border-radius: 3px;
+        border-bottom: 2px solid rgba(0,0,0,.1);
+    }
+}
+
 @media(max-width: 725px) {
     .alternate {
         text-align: left !important;
