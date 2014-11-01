@@ -3,6 +3,8 @@
 <head>
   <title>GSBC - <%= yield(:title) || "Home"%></title>
   <meta name="viewport" content="initial-viewport=1">
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -28,7 +30,7 @@
                     <% else %>
                     <li><%= link_to 'Sign in', new_user_session_path %></li>
                     <li><%= link_to 'Sign up', new_user_registration_path %></li>
-                    <% end  %> 
+                    <% end  %>
                 </ul>
             </nav>
                 <!-- Need more serious flash alerts -->
