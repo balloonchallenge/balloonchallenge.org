@@ -20,9 +20,27 @@ function generateMap() {
         initMap({lat:0, long:30});
     }
     function initMap(location) {
+        var tileURL = (function() {
+                var url;
+                if(dayOrNight() === 'night') {
+                    url = 'https://{s}.tiles.mapbox.com/v3/mapbox.control-room/{z}/{x}/{y}.png'
+                } else {
+                    url = 'http://otile1.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.jpg'
+                }
+                return url;
+        })();
+        var tileAttr = (function() {
+            var attr;
+            if(dayOrNight() === 'night') {
+                attr = '&copy; <a href="http://mapbox.com">Mapbox</a> &copy; <a href="http://osm.org">OpenStreetMap</a>';
+            } else {
+                attr = 'Tiles Courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a>';
+            }
+            return attr;
+        })();
         var map = L.map('map').setView([location.lat, location.long], 3);
-        L.tileLayer('http://c.tile.stamen.com/toner/{z}/{x}/{y}.png', {
-            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.'
+        L.tileLayer(tileURL, {
+            attribution: tileAttr
         }).addTo(map);
         var myIcon = L.icon({
             iconUrl: 'user-marker.png',
@@ -51,5 +69,12 @@ function generateMap() {
                 .addTo(map)
                 .bindPopup('<a href="' + team.url + '">' + team.name + '</a>');
         });
+    }
+    function dayOrNight() {
+        if((new Date).getHours() > 18) {
+            return 'night'
+        } else {
+            return 'day'
+        }
     }
 }
