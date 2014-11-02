@@ -3,6 +3,9 @@
 <h1 class="underline"><%=yield(:title)%></h1>
 <div class="content">
 <div id="map">
+    <div class="loading">
+        <img src="/loading.GIF"></img>
+    </div>
 </div>
 <ul class="teams">
 <% @teams.each do |team| %>

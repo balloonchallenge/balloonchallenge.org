@@ -7,3 +7,13 @@
 a.leaflet-popup-close-button:hover {
     border-bottom: none !important;
 }
+
+.loading {
+    margin: 10px auto;
+    text-align: center;
+    background: rgba(255,255,255,.7);
+    height: 300px;
+    img {
+        margin-top: 55px;
+    }
+}
