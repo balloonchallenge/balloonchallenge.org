@@ -9,11 +9,12 @@ a.leaflet-popup-close-button:hover {
 }
 
 .loading {
-    margin: 10px auto;
+    margin: 20px auto;
     text-align: center;
-    background: rgba(255,255,255,.7);
-    height: 300px;
+    background: #d9d9d9;
+    height: 260px;
+    padding: 20px;
     img {
-        margin-top: 55px;
+        margin-top: 35px;
     }
 }
