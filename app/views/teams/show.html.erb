@@ -9,7 +9,7 @@
     <% if @team.users.include?(current_user)%>
       <% if member != current_user %>
        <%= link_to "Remove teammate", remove_member_path(member), method: :delete, data: {confirm: "Are you sure you want to remove #{member.name} from your team?"}, class: "btn inline" %>
-      <% elsif member == current_user %>
+      <% elsif member == current_user and @team.users.length > 1 %>
         <%= link_to "Leave your team", remove_member_path(member), method: :delete, data: {confirm: "Are you sure you want to leave your team? If you're the last member please delete your team instead."}, class: "btn inline" %>
       <% end %>
     <% end %>
@@ -32,10 +32,11 @@
   var discourseUrl = "http://community.balloonchallenge.org/",
       discourseEmbedUrl = '<%= request.original_url %>';
 
-   (function() {
+     (function() {
     var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
       d.src = discourseUrl + 'javascripts/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
 </script>
 </div>
 </div>
