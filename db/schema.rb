@@ -11,24 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141024043835) do
-
-  create_table "groups", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20141102030306) do
 
   create_table "teams", force: true do |t|
-    t.string "name",        default: "", null: false
-    t.string "location"
-    t.string "school"
-    t.text   "description"
-  end
-
-  create_table "user_groups", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "group_id"
+    t.string   "name",        default: "", null: false
+    t.string   "location"
+    t.string   "school"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

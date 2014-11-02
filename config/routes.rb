@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   match '/balloon',   to: 'static_pages#balloon',   via: 'get'
   match '/teams/:id/add_member/', to: 'teams#add_member', via: 'post', as: 'add_member'
   match '/teams/:id/remove_member/', to: 'teams#remove_member', via: 'delete', as: 'remove_member'
+  match '/teams/feed' => 'teams#feed', :as => :feed, :defaults => {:format => 'atom'}, via: 'get'
   resources :teams
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
