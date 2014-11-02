@@ -20,6 +20,7 @@ Doorkeeper.configure do
     if(current_user and current_user.admin?)
     else
       redirect_to(new_user_session_url)
+    end
   end
 
   # Authorization Code expiration time (default 10 minutes).
