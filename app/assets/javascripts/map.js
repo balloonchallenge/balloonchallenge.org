@@ -10,6 +10,7 @@ function init() {
 function generateMap() {
     if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(location){
+                document.querySelector('.status').innerHTML = 'Obtained location, loading locations of other teams...';
                 var userLoc = {
                     lat: location.coords.latitude,
                     long: location.coords.longitude
@@ -22,6 +23,7 @@ function generateMap() {
     function initMap(location) {
         var tileURL = 'http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png';
         var tileAttr = 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.';
+        $('.loading').css('display', 'none');
         var map = L.map('map').setView([location.lat, location.long], 3);
         L.tileLayer(tileURL, {
             attribution: tileAttr
