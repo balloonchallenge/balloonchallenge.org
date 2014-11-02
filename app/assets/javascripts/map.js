@@ -10,6 +10,7 @@ function init() {
 function generateMap() {
     if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(location){
+                document.querySelector('.status').innerHTML = 'Obtained location, loading locations of other teams...';
                 var userLoc = {
                     lat: location.coords.latitude,
                     long: location.coords.longitude
