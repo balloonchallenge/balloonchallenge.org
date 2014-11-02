@@ -48,11 +48,15 @@ body {
       margin: 40px 0px;
       position: relative;
       top: 0px;
+      cursor: pointer;
       &.inline {
           display: inline;
           margin: 10px;
           box-shadow: none;
           font-size: 0.8em;
+      }
+      &.noShadow {
+          box-shadow: none;
       }
     }
     a.btn:hover {

@@ -1,0 +1,32 @@
+.product {
+    .image {
+        display: inline-block;
+        width: 45%;
+        vertical-align: middle;
+        .slideshow {
+            width: 80%;
+            .slick-next:before {
+                content: '>';
+                color: rgba(0,0,0,.6);
+            }
+            .slick-prev:before {
+                content: '<';
+                color: #fff;
+                color: rgba(0,0,0,.6);
+            }
+        }
+        img {
+            width: 95%;
+        }
+    }
+    .info {
+        display: inline-block;
+        width: 45%;
+        vertical-align: middle;
+        font-size: .9em;
+        .underline {
+            margin-left: 0px;
+            margin-top: 0px;
+        }
+    }
+}
