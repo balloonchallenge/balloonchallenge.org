@@ -7,9 +7,8 @@ atom_feed :language => 'en-US' do |feed|
 
     feed.entry( team ) do |entry|
       entry.url team_url(team)
-      entry.name team.name
-      entry.location team.location
-      entry.school team.school
+      entry.title team.name
+      entry.summary team.school
       entry.content team.description
 
       # the strftime is needed to work with Google Reader.
