@@ -258,3 +258,27 @@ input[type="submit"] {
         }
     }
 }
+
+@media(max-width:400px) {
+    body {
+        font-size: 0.8em;
+    }
+    .section {
+        padding-left: 0px !important;
+    }
+    .loading {
+        padding: 0px !important;
+    }
+    .tutorials {
+        width: 100% !important;
+    }
+    .faq {
+        margin: 10px -30px;
+        width:85%;
+    }
+    .affiliates.section .threeVerticalContainer .threeVertical ul li {
+        margin: 10px -20px !important;
+        display: block !important;
+        width: 100% !important;
+    }
+}
