@@ -10,6 +10,14 @@ Rails.application.routes.draw do
   match '/teams/:id/remove_member/', to: 'teams#remove_member', via: 'delete', as: 'remove_member'
   match '/teams/feed' => 'teams#feed', :as => :feed, :defaults => {:format => 'atom'}, via: 'get'
   resources :teams
+  use_doorkeeper  
+
+  namespace :api do
+
+    namespace :v1 do
+      get '/me' => 'credentials#me'
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
