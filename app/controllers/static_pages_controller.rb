@@ -10,4 +10,7 @@ class StaticPagesController < ApplicationController
 
   def faq
   end
+
+  def balloon
+  end
 end
