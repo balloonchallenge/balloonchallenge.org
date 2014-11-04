@@ -10,14 +10,18 @@
 </div>
 <ul class="teams">
 <% @teams.each do |team| %>
-  <li class="team"><%=link_to team.name, team %></li>
+  <li class="team">
+    <%=link_to team do %>
+      <%= team.name %> - <%= team.school %> - <%= team.location %>
+    <% end %>
+  </li>
 <% end %>
 </ul>
 <!-- This will only run if a user has no team - it currently throws an error if they don't -->
 <% if current_user and current_user.team.nil? %>
 <h1>Create a Team!</h1>
 <div class="team_create">
-<%= form_for @team, url: {action: "create"} do |f| %>
+<%= form_for @team do |f| %>
   
   <label for="name">Team Name</label>
   <%= f.text_field :name, placeholder: "Team name", required: "required"%>
@@ -30,13 +34,15 @@
 
   <label for="description">Team Description</label>
   <%= f.text_area :description, placeholder: "Where you're from, what your goals are, etc.", maxlength: 500, required: "required" %>
+    <div><input type="checkbox" required> I have read and agree to the <a href="">Terms and Conditions</a></div>
 
-  <div><input type="checkbox" required> I have read and agree to the <a href="">Terms and Conditions</a></div>
-  <div>
     <%= f.submit "Post" %>
-  </div>
 <% end %>
 </div>
+<% end %>
+<% if !current_user %>
+<h4>No team? <%= link_to "Sign up and create one!", controller: "devise/registrations", action: "new"%></h4>
+
 <% end %>
 </div>
 </div>

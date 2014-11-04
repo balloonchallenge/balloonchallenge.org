@@ -58,6 +58,10 @@ body {
       &.noShadow {
           box-shadow: none;
       }
+      &.small {
+        width: 100px;
+        margin: 0;
+      }
     }
     a.btn:hover {
         transition: 0.1s;
@@ -77,6 +81,10 @@ body {
 
 label {
   display: block;
+
+  &.inline {
+    display: inline
+  }
 }
 
 .primary.section {

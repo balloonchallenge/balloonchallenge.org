@@ -9,7 +9,9 @@ class TeamsController < ApplicationController
     if @team.save
       @user.save
       flash[:success] = "Team created!"
-      redirect_to root_url
+      redirect_to url_for(@team)
+    else
+      flash[:error] = "Team creation failed"
     end
     # if @team.save
     #   flash[:success] = "Team created!"
@@ -73,7 +75,7 @@ class TeamsController < ApplicationController
   private
 
     def team_params
-      params.require(:team).permit(:name, :location, :description)
+      params.require(:team).permit(:name, :location, :school, :description)
     end
 
     def user_params

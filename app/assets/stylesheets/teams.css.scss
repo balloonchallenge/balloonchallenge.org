@@ -1,3 +1,32 @@
 // Place all the styles related to the teams controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.team-description {
+  width: 90%;
+  background-color: rgba(255,255,255,0.3);
+  padding: 20px;
+  border-radius: 10px;
+  h3 {
+    margin-top: 0;
+  }
+}
+
+.email_field {
+  max-width: 400px;
+}
+
+.members_list {
+  li {
+    margin-top: 5px;
+    float: clear;
+    width:90%;
+    a.right {
+      float: right;
+      &:hover {
+        text-decoration: none;
+        border-bottom: none;
+      }
+    }
+  }
+}

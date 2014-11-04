@@ -1,29 +1,40 @@
+<% title @team.name %>
 <div class="primary section">
-<h1 class="underline"><%=@team.name%></h1>
-<div class="content">
-<h3><%=@team.description%></h3>
-<ul>
-<% @team.users.each do |member| %>
-  <li>
-    <%= member.name %>
-    <% if @team.users.include?(current_user)%>
-      <% if member != current_user %>
-       <%= link_to "Remove teammate", remove_member_path(member), method: :delete, data: {confirm: "Are you sure you want to remove #{member.name} from your team?"}, class: "btn inline" %>
-      <% elsif member == current_user and @team.users.length > 1 %>
-        <%= link_to "Leave your team", remove_member_path(member), method: :delete, data: {confirm: "Are you sure you want to leave your team? If you're the last member please delete your team instead."}, class: "btn inline" %>
+  <div class="underline">
+    <div style="font-weight: bolder"><%=@team.name%></div>
+    <div style="font-size: .7em"><%=@team.school%> - <%=@team.location%></div>
+  </div>
+  <div class="content">
+  <div class="team-description">
+    <h3>Team Description</h3>
+    <%=@team.description%>
+  </div>
+  <h3>Team Members</h3>
+  <ul class="members_list">
+  <% @team.users.each do |member| %>
+    <li>
+      <%= member.name %>
+      <% if @team.users.include?(current_user)%>
+        <% if member != current_user %>
+         <%= link_to "Remove teammate", remove_member_path(member), method: :delete, data: {confirm: "Are you sure you want to remove #{member.name} from your team?"}, class: "right" %>
+        <% elsif member == current_user and @team.users.length > 1 %>
+          <%= link_to "Leave your team", remove_member_path(member), method: :delete, data: {confirm: "Are you sure you want to leave your team?"}, class: "right" %>
+        <% end %>
       <% end %>
-    <% end %>
-  </li>
+    </li>
 
-<% end %>
-</ul>
-<% if @team.users.include?(current_user) %>
-  <%= link_to "Edit team", edit_team_path(@team) %>
-  <%= form_tag(controller: 'teams', action: 'add_member', method: 'post') do %>
-    <%= label_tag(:email, 'Team member email:') %>
-    <%= text_field_tag(:email) %>
-    <%= submit_tag('Add') %>
   <% end %>
-<% end %>
-</div>
+  </ul>
+  <% if @team.users.include?(current_user) %>
+    
+    <%= form_tag(controller: 'teams', action: 'add_member', method: 'post') do %>
+      <%= label_tag :email, 'Team member email:', class: "inline" %>
+      <%= text_field_tag :email, nil, placeholder: "member@gmail.com", class: "email_field" %>
+      <%= submit_tag('Add') %>
+    <% end %>
+    <div class="edit_btn">
+      <%= link_to "Edit team", edit_team_path(@team), class: "btn noShadow small" %>
+    </div>
+  <% end %>
+  </div>
 </div>
