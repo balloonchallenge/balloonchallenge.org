@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141102053057) do
+ActiveRecord::Schema.define(version: 20141104013155) do
 
   create_table "oauth_access_grants", force: true do |t|
     t.integer  "resource_owner_id", null: false
@@ -52,12 +52,6 @@ ActiveRecord::Schema.define(version: 20141102053057) do
 
   add_index "oauth_applications", ["uid"], name: "index_oauth_applications_on_uid", unique: true
 
-  create_table "groups", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "teams", force: true do |t|
     t.string   "name",        default: "", null: false
     t.string   "location"
@@ -65,14 +59,12 @@ ActiveRecord::Schema.define(version: 20141102053057) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "latitude"
+    t.string   "longitude"
   end
 
-  create_table "user_groups", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "group_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  add_index "teams", ["name"], name: "index_teams_on_name", unique: true
+  add_index "teams", ["school"], name: "index_teams_on_school", unique: true
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

@@ -16,15 +16,27 @@
 <!-- This will only run if a user has no team - it currently throws an error if they don't -->
 <% if current_user and current_user.team.nil? %>
 <h1>Create a Team!</h1>
-<%= form_for(@team) do |f| %>
-  <div id="team_name">
-    <%= f.text_field :name, placeholder: "Team name"%>
+<div class="team_create">
+<%= form_for @team, url: {action: "create"} do |f| %>
+  
+  <label for="name">Team Name</label>
+  <%= f.text_field :name, placeholder: "Team name", required: "required"%>
+
+  <label for="school">School</label>
+  <%= f.text_field :school, placeholder: "Example: University of California, Berkeley or Stanford University", required: "required" %>
+  
+  <label for="location">Location</label>
+  <%= f.text_field :location, placeholder: "Example: Paris, France or Austin, TX", maxlength: 50, required: "required" %>
+
+  <label for="description">Team Description</label>
+  <%= f.text_area :description, placeholder: "Where you're from, what your goals are, etc.", maxlength: 500, required: "required" %>
+
+  <div><input type="checkbox" required> I have read and agree to the <a href="">Terms and Conditions</a></div>
+  <div>
+    <%= f.submit "Post" %>
   </div>
-  <div id="team_description">
-    <%= f.text_area :description, placeholder: "Team description" %>
-  </div>
-  <%= f.submit "Post" %>
 <% end %>
+</div>
 <% end %>
 </div>
 </div>

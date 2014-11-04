@@ -9,7 +9,7 @@ class TeamsController < ApplicationController
     if @team.save
       @user.save
       flash[:success] = "Team created!"
-      redirect_to teams_url
+      redirect_to root_url
     end
     # if @team.save
     #   flash[:success] = "Team created!"
