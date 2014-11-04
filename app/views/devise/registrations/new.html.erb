@@ -9,11 +9,15 @@
 
             <div><%= f.label :name %><br/>
             <%= f.text_field :name %></div>
+            
+            <div><%= f.check_box :pastlaunch%> I have launched a High Altitude Balloon before (<em>not</em> required)</div>
             <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
             <%= f.password_field :password, autocomplete: "off" %></div>
 
             <div><%= f.label :password_confirmation %><br />
             <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+            
+            <div><input type="checkbox" required> I have read and agree to the <a href="">Terms and Conditions</a></div>
 
             <div><%= f.submit "Sign up" %></div>
         <% end %>
