@@ -70,18 +70,6 @@ class TeamsController < ApplicationController
     end
   end
 
-  def feed
-    @title = "GSBC Teams"
-
-    @teams = Team.order("updated_at desc")
-    @updated = @teams.first.updated_at unless @teams.empty?
-    
-    respond_to do |format| 
-      format.atom {render :layout => false }
-      format.rss { redirect_to feed_path(:format => :atom), :status => :moved_permanently}
-    end
-  end
-
   private
 
     def team_params
