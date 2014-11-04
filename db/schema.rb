@@ -13,6 +13,12 @@
 
 ActiveRecord::Schema.define(version: 20141102053057) do
 
+  create_table "groups", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "oauth_access_grants", force: true do |t|
     t.integer  "resource_owner_id", null: false
     t.integer  "application_id",    null: false
@@ -51,12 +57,6 @@ ActiveRecord::Schema.define(version: 20141102053057) do
   end
 
   add_index "oauth_applications", ["uid"], name: "index_oauth_applications_on_uid", unique: true
-
-  create_table "groups", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "teams", force: true do |t|
     t.string   "name",        default: "", null: false
