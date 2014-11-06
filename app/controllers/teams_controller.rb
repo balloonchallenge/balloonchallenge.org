@@ -54,6 +54,7 @@ class TeamsController < ApplicationController
       @team.users << @user
       @team.save
       @user.save
+      TeamMailer.added_user(@user, @team).deliver
       flash[:success] = "Team updated!"
       redirect_to team_path(@team.id)
     else

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to the <%=@team.name%> team, <%= @user.name %></h1>
+    <p>
+      You have successfully been added to the team. To view the team please visit <%= @url %>
+    </p>
+    <p>
+      If you were added to this team by mistake, you can remove yourself here: <%= @url %>.
+    </p>
+    <p>Thanks for joining and have a great launch!</p>
+  </body>
+</html>
