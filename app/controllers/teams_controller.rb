@@ -9,9 +9,10 @@ class TeamsController < ApplicationController
     if @team.save
       @user.save
       flash[:success] = "Team created!"
-      redirect_to url_for(@team)
+      redirect_to :action => 'thanks'
     else
       flash[:error] = "Team creation failed"
+      redirect_to teams_url
     end
     # if @team.save
     #   flash[:success] = "Team created!"
@@ -72,6 +73,12 @@ class TeamsController < ApplicationController
       @user.save
       flash[:success] = "User removed from team"
       redirect_to team_path(Team.find(params[:id]))
+    end
+  end
+
+  def thanks
+    if current_user
+      @team = current_user.team
     end
   end
 

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   match '/teams/:id/add_member/', to: 'teams#add_member', via: 'post', as: 'add_member'
   match '/teams/:id/remove_member/', to: 'teams#remove_member', via: 'delete', as: 'remove_member'
   match '/teams/feed' => 'teams#feed', :as => :feed, :defaults => {:format => 'atom'}, via: 'get'
+  match '/teams/thanks', to: 'teams#thanks', via: 'get'
   resources :teams
   use_doorkeeper  
 

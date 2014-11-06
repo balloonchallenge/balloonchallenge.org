@@ -8,8 +8,16 @@
     <div class="right">
         <h1>Global Space Balloon Challenge</h1>
         <h3>An international education outreach project to encourage people from around the world to build and launch their own high-altitude balloon science experiments.</h3>
-        <a class="btn callToAction" href="/about">I've flown an HAB.</a>
-        <a class="btn callToAction" href="/sign_up">What is an HAB?</a>
+        <% if !current_user %>
+            <%= link_to "I've flown a high-altitude balloon", new_user_session_path, class: 'btn callToAction' %>
+            <%= link_to "What is a high-altitude balloon?", about_path, class: 'btn callToAction' %>
+        <% elsif current_user and current_user.team.nil? %>
+            <%= link_to "View teams", teams_path, class: 'btn callToAction' %>
+            <%= link_to "Create a team", new_team_path, class: 'btn callToAction' %>
+        <% elsif current_user and !current_user.team.nil? %>
+            <a href="http://community.balloonchallenge.org" class="btn callToAction">Community</a>
+            <%= link_to "Tutorials", tutorials_path, class: 'btn callToAction'%>
+        <% end %>
     </div>
 </div>
 <div class="affiliates section">

@@ -1,0 +1,15 @@
+<div class="primary section">
+  <% if current_user and current_user.team? %>
+  <h1 class="underline">Thanks for making a team!</h1>
+
+  <div class="content">
+    <h3>Find out what you can do!</h3>
+    <p><strong>You'll soon be able to post updates to your team page informing the world of your progress.</strong></p>
+    <%= link_to "Add members to your team!", @team, class: 'btn inline'%>
+    <%= link_to "Learn more about High Altitude Balloons", {controller: 'static_pages', action: 'tutorials'}, class: 'btn inline' %>
+    <a href="http://community.balloonchallenge.org" class="btn inline">Join the community!</a>
+  </div>
+  <% else %>
+  <h1><%= link_to "Make a team!", action: 'new' %></h1>
+  <% end %>
+</div>
