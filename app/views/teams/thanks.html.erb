@@ -7,7 +7,7 @@
     <p><strong>You'll soon be able to post updates to your team page informing the world of your progress.</strong></p>
     <%= link_to "Add members to your team!", @team, class: 'btn inline'%>
     <%= link_to "Learn more about High Altitude Balloons", {controller: 'static_pages', action: 'tutorials'}, class: 'btn inline' %>
-    <a href="http://community.balloonchallenge.org" class="btn inline">Join the community!</a>
+    <a href="http://community.balloonchallenge.org/c/teams" class="btn inline">Join the community and start a thread for your team!</a>
   </div>
   <% else %>
   <h1><%= link_to "Make a team!", action: 'new' %></h1>
