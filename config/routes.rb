@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
+  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}, :controllers => {:registrations => "registrations"}
   root 'static_pages#home'
 
   match '/about',     to: 'static_pages#about',     via: 'get'
   match '/tutorials', to: 'static_pages#tutorials', via: 'get'
   match '/faq',       to: 'static_pages#faq',       via: 'get'
   match '/balloon',   to: 'static_pages#balloon',   via: 'get'
+  match '/registration/thanks', to: 'static_pages#thanks_register', via: 'get'
   match '/teams/:id/add_member/', to: 'teams#add_member', via: 'post', as: 'add_member'
   match '/teams/:id/remove_member/', to: 'teams#remove_member', via: 'delete', as: 'remove_member'
   match '/teams/feed' => 'teams#feed', :as => :feed, :defaults => {:format => 'atom'}, via: 'get'

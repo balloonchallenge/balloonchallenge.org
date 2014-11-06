@@ -13,4 +13,7 @@ class StaticPagesController < ApplicationController
 
   def balloon
   end
+
+  def thanks_register
+  end
 end
