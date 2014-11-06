@@ -8,6 +8,12 @@
         <p class="status">Getting the locations of you and the teams around the world...</p>
     </div>
 </div>
+<% if current_user and current_user.team.nil? %>
+<h3><%= link_to 'Create a Team!', action: "new"%></h3>
+<% end %>
+<% if !current_user %>
+<h4>No team? <%= link_to "Sign up and create one!", controller: "devise/sessions", action: "new"%></h4>
+<% end %>
 <ul class="teams">
 <% @teams.each do |team| %>
   <li class="team">
@@ -17,32 +23,5 @@
   </li>
 <% end %>
 </ul>
-<!-- This will only run if a user has no team - it currently throws an error if they don't -->
-<% if current_user and current_user.team.nil? %>
-<h1>Create a Team!</h1>
-<div class="team_create">
-<%= form_for @team do |f| %>
-  
-  <label for="name">Team Name</label>
-  <%= f.text_field :name, placeholder: "Team name", required: "required"%>
-
-  <label for="school">School</label>
-  <%= f.text_field :school, placeholder: "Example: University of California, Berkeley or Stanford University", required: "required" %>
-  
-  <label for="location">Location</label>
-  <%= f.text_field :location, placeholder: "Example: Paris, France or Austin, TX", maxlength: 50, required: "required" %>
-
-  <label for="description">Team Description</label>
-  <%= f.text_area :description, placeholder: "Where you're from, what your goals are, etc.", maxlength: 500, required: "required" %>
-    <div><input type="checkbox" required> I have read and agree to the <a href="">Terms and Conditions</a></div>
-
-    <%= f.submit "Post" %>
-<% end %>
-</div>
-<% end %>
-<% if !current_user %>
-<h4>No team? <%= link_to "Sign up and create one!", controller: "devise/registrations", action: "new"%></h4>
-
-<% end %>
 </div>
 </div>

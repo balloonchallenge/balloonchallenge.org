@@ -34,7 +34,6 @@ class TeamsController < ApplicationController
   end
 
   def index
-    @team = Team.new
     @teams = Team.all
   end
 
@@ -60,6 +59,10 @@ class TeamsController < ApplicationController
       flash[:error] = "User has a team!"
       redirect_to root_url
     end
+  end
+
+  def new
+    @team = Team.new
   end
 
   def remove_member
