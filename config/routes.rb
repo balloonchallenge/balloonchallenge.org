@@ -6,13 +6,14 @@ Rails.application.routes.draw do
   match '/tutorials', to: 'static_pages#tutorials', via: 'get'
   match '/faq',       to: 'static_pages#faq',       via: 'get'
   match '/balloon',   to: 'static_pages#balloon',   via: 'get'
+  match '/learn-more',to: 'static_pages#learn-more',via: 'get'
   match '/registration/thanks', to: 'static_pages#thanks_register', via: 'get'
   match '/teams/:id/add_member/', to: 'teams#add_member', via: 'post', as: 'add_member'
   match '/teams/:id/remove_member/', to: 'teams#remove_member', via: 'delete', as: 'remove_member'
   match '/teams/feed' => 'teams#feed', :as => :feed, :defaults => {:format => 'atom'}, via: 'get'
   match '/teams/thanks', to: 'teams#thanks', via: 'get'
   resources :teams
-  use_doorkeeper  
+  use_doorkeeper
 
   namespace :api do
 
