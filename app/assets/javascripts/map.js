@@ -15,7 +15,7 @@ function generateMap() {
                 lat: location.coords.latitude,
                 long: location.coords.longitude
             };
-            initMap(userLoc);
+            initMap(userLoc, true);
         }, function(err) {
             initMap({lat:30, long:0}, false);
         });
