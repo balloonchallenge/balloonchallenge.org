@@ -17,28 +17,37 @@ function generateMap() {
             };
             initMap(userLoc);
         }, function(err) {
-            initMap({lat:0, long:30});
+            initMap({lat:30, long:0}, false);
         });
     } else {
-        initMap({lat:0, long:30});
+        initMap({lat:30, long:0}, false);
     }
-    function initMap(location) {
+    function initMap(location, permission) {
         var tileURL = 'http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png';
         var tileAttr = 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.';
         $('.loading').css('display', 'none');
-        var map = L.map('map').setView([location.lat, location.long], 3);
+        var zoomLevel = (function() {
+            if(permission) {
+                return 3;
+            } else {
+                return 2;
+            }
+        })();
+        var map = L.map('map').setView([location.lat, location.long], zoomLevel);
         L.tileLayer(tileURL, {
             attribution: tileAttr
         }).addTo(map);
-        var myIcon = L.icon({
-            iconUrl: 'user-marker.png',
-            iconSize: [25, 25],
-            iconAnchor: [12.5, 12.5],
-            popupAnchor: [0, 0]
-        });
-        L.marker([location.lat, location.long], { icon: myIcon }).addTo(map)
-            .bindPopup('You are here')
-            .openPopup();
+        if(permission) {
+            var myIcon = L.icon({
+                iconUrl: 'user-marker.png',
+                iconSize: [25, 25],
+                iconAnchor: [12.5, 12.5],
+                popupAnchor: [0, 0]
+            });
+            L.marker([location.lat, location.long], { icon: myIcon }).addTo(map)
+                .bindPopup('You are here')
+                .openPopup();
+        }
         var apiURL = 'http://www.json-generator.com/api/json/get/clyzZtFLKG?indent=2'
         http.GET(apiURL, function(data) {
                 populateMap(map, JSON.parse(data));
