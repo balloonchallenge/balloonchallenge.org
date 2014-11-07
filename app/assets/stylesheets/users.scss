@@ -4,4 +4,12 @@
   vertical-align: top;
   margin-left: -5px;
   margin-right: -5px;
+  min-width: 250px;
+}
+
+@media(max-width:650px) {
+    .fifty {
+        margin: 10px auto;
+        width: 85%;
+    }
 }
