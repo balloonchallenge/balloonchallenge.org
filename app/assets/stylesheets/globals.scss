@@ -20,11 +20,11 @@ body {
       transition: 0.2s;
       -webkit-transition: 0.2s;
       -moz-transition: 0.2s;
-      color: inherit;
+      color: #2980b9;
       text-decoration: none;
       padding-bottom: 5px;
       border-bottom: 0px solid rgba(0, 0, 0, 0.4);
-   }
+  }
    a:hover {
       transition: 0.2s;
       -webkit-transition: 0.2s;
@@ -50,7 +50,7 @@ body {
       top: 0px;
       cursor: pointer;
       &.inline {
-          display: inline;
+          display: inline-block;
           margin: 10px;
           box-shadow: none;
           font-size: 0.8em;
@@ -129,7 +129,7 @@ label {
             margin: 5px auto;
         }
     }
-    &:nth-child(3n+3) {
+    &:nth-child(2n+2) {
         text-align: right;
         .text {
             margin-right: auto;
@@ -231,13 +231,14 @@ textarea {
 
 .tutorialBox {
     min-width: 200px;
-    max-width: 300px;
+    max-width: 29%;
     padding: 10px;
     border: 1px solid rgba(0,0,0,.1);
-    margin: 10px;
+    margin: 5px;
     border-radius: 3px;
     display: inline-block;
     vertical-align: top;
+    min-height: 435px;
 }
 
 .teams {
@@ -266,6 +267,11 @@ textarea {
 .contact {
     list-style-type: none;
     margin-left: -30px;
+}
+
+strong {
+    font-weight: lighter;
+    color: black;
 }
 
 @media(max-width: 725px) {

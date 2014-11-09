@@ -2,7 +2,8 @@
     .image {
         display: inline-block;
         width: 45%;
-        vertical-align: middle;
+        vertical-align: top;
+        margin: 40px;
         .slideshow {
             width: 80%;
             .slick-next:before {

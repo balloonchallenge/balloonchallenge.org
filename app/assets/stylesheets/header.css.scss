@@ -30,7 +30,10 @@ header {
         ul {
             li {
                 display: inline-block;
-                margin: 10px
+                margin: 10px;
+                a {
+                    color: #fff;
+                }
             }
         }
     }
