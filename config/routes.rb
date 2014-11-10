@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   match '/learn-more',to: 'static_pages#learn-more',via: 'get'
   match '/contact',   to: 'static_pages#contact',   via: 'get'
   match '/regulations',to: 'static_pages#regulations',via: 'get'
+  match '/education', to: 'static_pages#education', via: 'get'
+  match '/prizes',    to: 'static_pages#prizes',    via: 'get'
   match '/registration/thanks', to: 'static_pages#thanks_register', via: 'get'
   match '/teams/:id/add_member/', to: 'teams#add_member', via: 'post', as: 'add_member'
   match '/teams/:id/remove_member/', to: 'teams#remove_member', via: 'delete', as: 'remove_member'
