@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   match '/radar-reflector', to: 'static_pages#radar',via: 'get'
   match '/helium',    to: 'static_pages#helium',    via: 'get'
   match '/camera',    to: 'static_pages#camera',    via: 'get'
+  match '/gallery',   to: 'static_pages#gallery',   via: 'get'
   match '/learn-more',to: 'static_pages#learn-more',via: 'get'
   match '/contact',   to: 'static_pages#contact',   via: 'get'
   match '/regulations',to: 'static_pages#regulations',via: 'get'
