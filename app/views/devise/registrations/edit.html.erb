@@ -1,6 +1,23 @@
 <div class="primary section">
-    <h1 class="underline">Edit <%= resource_name.to_s.humanize %></h1>
+    
     <div class="content">
+    <div class="underline smaller">
+        <h1>Your Account</h1>
+        <div class="team_buttons">
+            <% if current_user.team.nil? %>
+                <h3>You are not part of a team!</h3>
+                <%= link_to 'Create a team', {controller: 'teams', action: 'new'}, class: 'btn inline' %>
+                <%= link_to 'See teams', {controller: 'teams', action: 'index'}, class: 'btn inline'%>
+            <%else%>
+                Your Team: <%= link_to current_user.team do %><%= current_user.team.name %><% if current_user.team.school %> - <%=current_user.team.school %><% end %> - <%= current_user.team.location %><% end %>
+            <%end%>
+        </div>
+        <div class="info_buttons">
+            <%= link_to 'Rules', get_involved_path, class: 'btn inline' %>
+            <%= link_to 'Tutorials', tutorials_path, class: 'btn inline' %>
+            <%= link_to 'See who else is invovled', teams_path, class: 'btn inline'  %>
+        </div>
+    </div>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= devise_error_messages! %>
 

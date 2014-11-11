@@ -18,7 +18,7 @@
 <% @teams.each do |team| %>
   <li class="team">
     <%=link_to team do %>
-      <%= team.name %> - <%= team.school %> - <%= team.location %>
+      <%= team.name %><% if team.school %> - <%= team.school %><% end %> - <%= team.location %>
     <% end %>
   </li>
 <% end %>

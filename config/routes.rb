@@ -10,17 +10,18 @@ Rails.application.routes.draw do
   match '/radar-reflector', to: 'static_pages#radar',via: 'get'
   match '/helium',    to: 'static_pages#helium',    via: 'get'
   match '/camera',    to: 'static_pages#camera',    via: 'get'
+  match '/get-involved', to: 'static_pages#get-involved', via: 'get'
   match '/gallery',   to: 'static_pages#gallery',   via: 'get'
   match '/learn-more',to: 'static_pages#learn-more',via: 'get'
   match '/contact',   to: 'static_pages#contact',   via: 'get'
   match '/regulations',to: 'static_pages#regulations',via: 'get'
   match '/education', to: 'static_pages#education', via: 'get'
   match '/prizes',    to: 'static_pages#prizes',    via: 'get'
-  match '/registration/thanks', to: 'static_pages#thanks_register', via: 'get'
+  # match '/registration/thanks', to: 'static_pages#thanks_register', via: 'get'
   match '/teams/:id/add_member/', to: 'teams#add_member', via: 'post', as: 'add_member'
   match '/teams/:id/remove_member/', to: 'teams#remove_member', via: 'delete', as: 'remove_member'
   match '/teams/feed' => 'teams#feed', :as => :feed, :defaults => {:format => 'atom'}, via: 'get'
-  # match '/teams/thanks', to: 'teams#thanks', via: 'get'
+  match '/teams/thanks', to: 'teams#thanks', via: 'get'
   resources :teams
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
