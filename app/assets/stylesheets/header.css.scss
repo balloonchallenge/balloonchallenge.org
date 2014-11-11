@@ -36,5 +36,10 @@ header {
                 }
             }
         }
+
+        &.right_headers {
+            text-align: right;
+            font-size: .8em;
+        }
     }
 }

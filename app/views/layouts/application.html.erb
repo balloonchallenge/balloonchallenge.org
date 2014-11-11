@@ -27,14 +27,20 @@
                     <li><a href="/tutorials">Tutorials</a></li>
                     <li><a href="/learn-more">Get Involved</a></li>
                     <li><a href="/contact">Contact Us</a></li>
+                  
+                    <li><a href="/gallery">Gallery</a></li>
+                    <li><%= link_to 'Teams', teams_path %></li>
+                </ul>
+            </nav>
+            <nav class="right_headers">
+                <ul>
                     <% if user_signed_in? %>
                     <li><%= link_to 'Sign out', destroy_user_session_path, method: "delete" %></li>
                     <li><%= link_to 'My account', edit_user_registration_path %></li>
                     <% else %>
                     <li><%= link_to 'Sign in', new_user_session_path %></li>
+                    <li><%= link_to 'Sign up', new_user_registration_path %></li>
                     <% end  %>
-                    <li><a href="/gallery">Gallery</a></li>
-                    <li><%= link_to 'Teams', teams_path %></li>
                 </ul>
             </nav>
                 <!-- Need more serious flash alerts -->
