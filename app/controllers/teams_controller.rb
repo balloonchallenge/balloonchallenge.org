@@ -9,7 +9,7 @@ class TeamsController < ApplicationController
     if @team.save
       @user.save
       flash[:success] = "Team created!"
-      redirect_to :action => 'thanks'
+      redirect_to @team
     else
       flash[:error] = "Team creation failed"
       redirect_to teams_url
@@ -25,7 +25,7 @@ class TeamsController < ApplicationController
   def update
     if @team.update(team_params)
       flash[:success] = "Team updated!"
-      redirect_to teams_url
+      redirect_to @team
     else
       flash[:error] = "Team not updated"
     end

@@ -3,6 +3,9 @@
   <div class="underline">
     <div style="font-weight: bolder"><%=@team.name%></div>
     <div style="font-size: .7em"><%=@team.school%> - <%=@team.location%></div>
+    <a href="http://community.balloonchallenge.org" class="btn inline" style="font-size: .33em;">Join the forum</a>
+    <%=link_to 'Rules', get_involved_path, class: 'btn inline', style: 'font-size: .33em;'%>
+    <%= link_to 'Tutorials', tutorials_path, class: 'btn inline', style: 'font-size: .33em;' %>
   </div>
   <div class="content">
   <div class="team-description">
@@ -28,7 +31,9 @@
   <% if @team.users.include?(current_user) %>
     
     <%= form_tag(controller: 'teams', action: 'add_member', method: 'post') do %>
-      <%= label_tag :email, 'Team member email:', class: "inline" %>
+      <%= label_tag :email, class: "team_email" do%>
+        Add team member: <br/> <small>They must have an account</small>
+      <% end %>
       <%= text_field_tag :email, nil, placeholder: "member@gmail.com", class: "email_field" %>
       <%= submit_tag('Add') %>
     <% end %>
