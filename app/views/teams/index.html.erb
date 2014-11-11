@@ -2,18 +2,20 @@
 <div class="primary section">
 <h1 class="underline"><%=yield(:title)%></h1>
 <div class="content">
+<% if !current_user %>
+<h4><%= link_to "Make an account and create a team", controller: "devise/sessions", action: "new"%></h4>
+<% elsif current_user and current_user.team.nil? %>
+<h3>You are not yet part of a team: <%= link_to 'Create a Team!', action: "new"%> or join one.</h3>
+<% elsif current_user and current_user.team %>
+<h3>Your team: <%= link_to current_user.team.name, current_user.team %></h3>
+
+<% end %>
 <div id="map">
     <div class="loading">
         <img src="/loading.GIF"></img>
         <p class="status">Getting the locations of you and the teams around the world...</p>
     </div>
 </div>
-<% if current_user and current_user.team.nil? %>
-<h3><%= link_to 'Create a Team!', action: "new"%></h3>
-<% end %>
-<% if !current_user %>
-<h4>No team? <%= link_to "Sign up and create one!", controller: "devise/sessions", action: "new"%></h4>
-<% end %>
 <ul class="teams">
 <% @teams.each do |team| %>
   <li class="team">
