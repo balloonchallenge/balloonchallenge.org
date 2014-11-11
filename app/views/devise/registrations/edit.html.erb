@@ -8,6 +8,7 @@
                 <h3>You are not part of a team!</h3>
                 <%= link_to 'Create a team', {controller: 'teams', action: 'new'}, class: 'btn inline' %>
                 <%= link_to 'See teams', {controller: 'teams', action: 'index'}, class: 'btn inline'%>
+                <hr>
             <%else%>
                 Your Team: <%= link_to current_user.team do %><%= current_user.team.name %><% if current_user.team.school %> - <%=current_user.team.school %><% end %> - <%= current_user.team.location %><% end %>
             <%end%>
