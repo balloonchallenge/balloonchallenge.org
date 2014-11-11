@@ -11,7 +11,7 @@ class TeamsController < ApplicationController
       flash[:success] = "Team created!"
       redirect_to @team
     else
-      flash[:error] = "Team creation failed"
+      flash[:alert] = "Team creation failed"
       redirect_to teams_url
     end
     # if @team.save
@@ -27,7 +27,7 @@ class TeamsController < ApplicationController
       flash[:success] = "Team updated!"
       redirect_to @team
     else
-      flash[:error] = "Team not updated"
+      flash[:alert] = "Team not updated"
     end
   end
 
@@ -58,8 +58,8 @@ class TeamsController < ApplicationController
       flash[:success] = "Team updated!"
       redirect_to team_path(@team.id)
     else
-      flash[:error] = "User has a team!"
-      redirect_to root_url
+      flash[:alert] = "Could not add user to team!"
+      redirect_to :back
     end
   end
 
