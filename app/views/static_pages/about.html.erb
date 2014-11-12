@@ -1,6 +1,11 @@
 <% title "About" %>
 <div class="primary section">
-    <h1 class="underline"><%= yield(:title) %></h1>
+    <h1 class="underline">
+        <span><%= yield(:title) %></span>
+        <div class="links">
+            <a class="small" href="/contact">Contact Us</a>
+        </div>
+    </h1>
     <div class="content">
         <p>The Global Space Balloon Challenge (GSBC) is the coming together of people around the world to simultaneously fly high altitude balloons [link to hab overview page] from every corner of the globe, celebrating an age where anyone can reach the edge of space for a few hundred dollars and a few weekends of work. By providing a specified launch window and central online platform, the GSBC enables teams to showcase their unique cultures while working together to educate the next generation and push the boundaries of what is technologically feasible.</p>
         <p>During the inaugural GSBC, 60 teams from 18 countries on 6 continents flew together, helping each other and sharing their stories every step of the way. People of all backgrounds, ages, and walks of life participated, many of whom had never touched a high altitude balloon or studied engineering before the GSBC. Now it’s your turn - <a href="/login">join the fun</a> and show the world what you can do!</p>
