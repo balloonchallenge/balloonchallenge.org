@@ -224,7 +224,7 @@ textarea {
     border-radius: 3px;
     font-size: 1.2em;
     a {
-        font-size: 1.5em;
+        font-size: 1em;
         &:hover {
             border-bottom: none;
         }
@@ -237,8 +237,8 @@ textarea {
 }
 
 .tutorialBox {
-    min-width: 200px;
-    max-width: 29%;
+    min-width: 100px;
+    max-width: 25%;
     padding: 10px;
     border: 1px solid rgba(0,0,0,.1);
     margin: 5px;
@@ -246,6 +246,21 @@ textarea {
     display: inline-block;
     vertical-align: top;
     min-height: 435px;
+    font-size:.8em;
+}
+
+.tutorialLinks {
+    display: inline-block;
+    width:60%;
+}
+
+.graphic {
+    display: inline-block;
+    width:35%;
+    vertical-align: top;
+    img {
+        width: 80%;
+    }
 }
 
 .teams {
