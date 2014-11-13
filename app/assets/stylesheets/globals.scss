@@ -113,16 +113,17 @@ label {
 
 .alternate {
     margin: 5px auto;
-    width: 80%;
+    width: 100%;
     border-bottom: 1px solid rgba(0,0,0,.1);
     padding: 20px;
     font-size: 1.2em;
     .text {
         max-width: 50%;
         display: inline-block;
-        margin-right: 10%;
+        //margin-right: 10%;
         vertical-align: middle;
         min-width: 300px;
+        text-align:right;
     }
     .img {
         text-align: center;
@@ -130,15 +131,8 @@ label {
         width: 30%;
         vertical-align: middle;
         img {
-            max-height: 200px;
+            max-height: 500px;
             margin: 5px auto;
-        }
-    }
-    &:nth-child(2n+2) {
-        text-align: right;
-        .text {
-            margin-right: auto;
-            margin-left: 10%;
         }
     }
 }
@@ -149,6 +143,7 @@ label {
     padding: 20px 0px;
     border-bottom: 1px solid rgba(0,0,0,.1);
     font-size: 3em;
+    text-align:center;
     &.medium {
         font-size: 2em;
         text-align: left;
@@ -229,7 +224,7 @@ textarea {
     border-radius: 3px;
     font-size: 1.2em;
     a {
-        font-size: 1.5em;
+        font-size: 1em;
         &:hover {
             border-bottom: none;
         }
@@ -242,8 +237,8 @@ textarea {
 }
 
 .tutorialBox {
-    min-width: 200px;
-    max-width: 29%;
+    min-width: 100px;
+    max-width: 25%;
     padding: 10px;
     border: 1px solid rgba(0,0,0,.1);
     margin: 5px;
@@ -251,6 +246,22 @@ textarea {
     display: inline-block;
     vertical-align: top;
     min-height: 435px;
+    font-size:.8em;
+}
+
+.tutorialLinks {
+    display: inline-block;
+    width:70%;
+}
+
+.graphic {
+    display: inline-block;
+    width:25%;
+    vertical-align: top;
+    text-align: right;
+    img {
+        width: 80%;
+    }
 }
 
 .teams {
