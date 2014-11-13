@@ -1,6 +1,7 @@
+require 'single_sign_on'
+
 class SessionsController < Devise::SessionsController
   def sso
-    before_action :authenticate_member!
     user = current_user
     secret = ENV["SSO_SECRET"]
     sso = SingleSignOn.parse(request.query_string, secret)

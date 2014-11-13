@@ -23,7 +23,10 @@ Rails.application.routes.draw do
   match '/teams/:id/remove_member/', to: 'teams#remove_member', via: 'delete', as: 'remove_member'
   match '/teams/feed' => 'teams#feed', :as => :feed, :defaults => {:format => 'atom'}, via: 'get'
   match '/teams/thanks', to: 'teams#thanks', via: 'get'
-  match '/users/sso/:params', to: 'sessions#sso', via: 'get'
+  devise_scope :user do
+
+    get '/users/sso' => 'sessions#sso'
+  end
   resources :teams
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
