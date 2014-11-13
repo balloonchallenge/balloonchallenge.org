@@ -113,16 +113,17 @@ label {
 
 .alternate {
     margin: 5px auto;
-    width: 80%;
+    width: 100%;
     border-bottom: 1px solid rgba(0,0,0,.1);
     padding: 20px;
     font-size: 1.2em;
     .text {
         max-width: 50%;
         display: inline-block;
-        margin-right: 10%;
+        //margin-right: 10%;
         vertical-align: middle;
         min-width: 300px;
+        text-align:right;
     }
     .img {
         text-align: center;
@@ -130,15 +131,8 @@ label {
         width: 30%;
         vertical-align: middle;
         img {
-            max-height: 200px;
+            max-height: 500px;
             margin: 5px auto;
-        }
-    }
-    &:nth-child(2n+2) {
-        text-align: right;
-        .text {
-            margin-right: auto;
-            margin-left: 10%;
         }
     }
 }
