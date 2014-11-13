@@ -1,13 +1,13 @@
 class SessionsController < Devise::SessionsController
   def sso
+    user = current_user
     secret = ENV["SSO_SECRET"]
     sso = SingleSignOn.parse(request.query_string, secret)
-    sso.email = "user@email.com"
-    sso.name = "Bill Hicks"
-    sso.username = "bill@hicks.com"
-    sso.external_id = "123" # unique to your application
+    sso.email = user.email
+    sso.name = user.name
+    sso.external_id = user.id # unique to your application
     sso.sso_secret = secret
 
-    redirect_to sso.to_url("http://l.discourse/session/sso_login")
+    redirect_to sso.to_url("http://community.balloonchallenge.org/session/sso_login")
   end
 end
