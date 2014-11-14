@@ -10,8 +10,15 @@
       <label for="school">School</label>
       <%= f.text_field :school, placeholder: "Example: University of California, Berkeley or Stanford University", required: "required" %>
       
-      <label for="location">Location</label>
-      <%= f.text_field :location, placeholder: "Example: Paris, France or Austin, TX", maxlength: 50, required: "required" %>
+      <label for="city">City</label>
+      <%= f.text_field :city, placeholder: "Example: Paris or Austin", maxlength: 60, required: "required" %>
+
+      <label for="country_code">Country</label>
+      <%= f.country_select :country_code, priority: %w(US CA), prompt: 'Please select a country', required: "required" %>
+
+      <label for="state_code">State (Optional, USA only)</label>
+      <%= subregion_select :state_code, Carmen::Country.named('United States') %>
+
 
       <label for="description">Team Description</label>
       <%= f.text_area :description, placeholder: "Where you're from, what your goals are, etc.", maxlength: 500, required: "required" %>

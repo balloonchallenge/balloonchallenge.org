@@ -82,11 +82,10 @@ class TeamsController < ApplicationController
       @team = current_user.team
     end
   end
-
   private
 
     def team_params
-      params.require(:team).permit(:name, :location, :school, :description)
+      params.require(:team).permit(:name, :city, :state_code, :country_code, :school, :description)
     end
 
     def user_params

@@ -22,6 +22,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'devise'
 gem 'figaro'
+gem 'carmen'
+gem 'carmen-rails', '~> 1.0.0'
+gem 'geocoder'
 
 group :development, :test do
   gem 'spring'
