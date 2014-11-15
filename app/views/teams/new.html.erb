@@ -19,10 +19,27 @@
       <label for="state_code">State or Region</label>
       <%= render partial: 'subregion_select', locals: {parent_region: f.object.country_code} %>
 
+      <label for="description">Description: Tell us a bit about yourselves</label>
+      <%= f.text_field :description, placeholder: "Where you're from, what your goals are, etc.", maxlength: 500, required: "required" %>
 
-      <label for="description">Team Description</label>
-      <%= f.text_area :description, placeholder: "Where you're from, what your goals are, etc.", maxlength: 500, required: "required" %>
+      <label for="why_join">Why did you join the GSBC? (Optional)</label>
+      <%= f.text_field :why_join, placeholder: "We joined because..." %>
 
+      <label for="plan">What do you have planned for your launch?</label>
+      <%= f.text_field :plan, placeholder: "We plan to...", required: "required" %>
+
+      <label for="find_out">How did you find out about the GSBC? (Optional)</label>
+      <%= f.text_field :find_out, placeholder: "We found out through..." %>
+
+      <br/>Do you want to participate in the <%= link_to "hosted payloads or balloon buddies program?", get_involved_path %>?
+      <div><%= f.check_box :host_payload %>We would like to host a payload</div>
+      <div><%= f.check_box :have_payload %>We would like to have a payload hosted</div>
+      <div><%= f.check_box :buddies_mentor %>We would like to be a Balloon Buddies mentor</div>
+      <div><%= f.check_box :buddies_mentee %>We would like to be a Balloon Buddies mentee</div>
+
+
+
+      <p>By clicking this button I give permission to post the information above on the website.</p>
         <%= f.submit "Post" %>
     <% end %>
     </div>

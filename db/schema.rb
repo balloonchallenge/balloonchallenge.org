@@ -11,19 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141115015003) do
+ActiveRecord::Schema.define(version: 20141115080419) do
 
   create_table "teams", force: true do |t|
-    t.string   "name",         default: "", null: false
+    t.string   "name",           default: "", null: false
     t.string   "school"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "latitude"
     t.string   "longitude"
-    t.string   "city",         default: "", null: false
+    t.string   "city",           default: "", null: false
     t.string   "state_code"
-    t.string   "country_code", default: "", null: false
+    t.string   "country_code",   default: "", null: false
+    t.string   "why_join"
+    t.string   "plan"
+    t.string   "find_out"
+    t.text     "ages"
+    t.boolean  "host_payload"
+    t.boolean  "have_payload"
+    t.boolean  "buddies_mentor"
+    t.boolean  "buddies_mentee"
   end
 
   add_index "teams", ["name"], name: "index_teams_on_name", unique: true
