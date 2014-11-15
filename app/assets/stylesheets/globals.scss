@@ -297,6 +297,12 @@ strong {
     color: black;
 }
 
+#map-canvas {
+  height: 100%;
+  margin:0;
+  padding: 0;
+}
+
 @media(max-width: 725px) {
     .alternate {
         text-align: left !important;

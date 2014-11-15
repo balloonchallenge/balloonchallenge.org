@@ -10,16 +10,17 @@
 <h3>Your team: <%= link_to current_user.team.name, current_user.team %></h3>
 
 <% end %>
-<div id="map">
+</div>
+<div class="map_container" style="max-width:100%;">
+  <%= render "shared/map" %> 
 </div>
 <ul class="teams">
 <% @teams.each do |team| %>
   <li class="team">
     <%=link_to team do %>
-      <%= team.name %><% if team.school %> - <%= team.school %><% end %> - <%= team.city %><% if team.state_code %>, <%=team.state_code%><% end %>, <%= Carmen::Country.coded(team.country_code).name %>
+      <%= team.name %><% if team.school != "" %> - <%= team.school %><% end %> - <%= team.city %>, <%= Carmen::Country.coded(team.country_code).name %>
     <% end %>
   </li>
 <% end %>
 </ul>
-</div>
 </div>

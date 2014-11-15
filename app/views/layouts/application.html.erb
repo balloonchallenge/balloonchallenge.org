@@ -3,8 +3,8 @@
 <head>
   <title>GSBC - <%= yield(:title) || "Home"%></title>
   <meta name="viewport" content="initial-scale=1">
-  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+ <script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsfSA-UUVDpqMaL_7smo1ppUuFv1UNDOY"></script>
   <%= favicon_link_tag 'favicon.ico'%>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -53,5 +53,6 @@
     <footer>
         <p>&copy; 2014 Global Space Balloon Challenge. All Rights Reserved. <a href="/contact">Contact Us</a></p>
     </footer>
+    <%= yield :script %>
 </body>
 </html>

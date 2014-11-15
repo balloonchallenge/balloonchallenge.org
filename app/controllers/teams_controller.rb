@@ -32,6 +32,7 @@ class TeamsController < ApplicationController
   end
 
   def edit 
+    @team = Team.find(params[:id])
   end
 
   def index
@@ -81,6 +82,15 @@ class TeamsController < ApplicationController
     if current_user
       @team = current_user.team
     end
+  end
+
+  def subregion_options
+    render partial: 'subregion_select'
+  end
+
+  def all_teams
+    @teams = Team.all
+    render json: @teams
   end
   private
 

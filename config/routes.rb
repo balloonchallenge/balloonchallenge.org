@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   match '/teams/:id/remove_member/', to: 'teams#remove_member', via: 'delete', as: 'remove_member'
   match '/teams/feed' => 'teams#feed', :as => :feed, :defaults => {:format => 'atom'}, via: 'get'
   match '/teams/thanks', to: 'teams#thanks', via: 'get'
+  get '/teams/subregion_options' => 'teams#subregion_options'
+  get '/teams/all' => 'teams#all_teams'
   devise_scope :user do
 
     get '/users/sso' => 'sessions#sso'
