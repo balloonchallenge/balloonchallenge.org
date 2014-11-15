@@ -67,6 +67,10 @@ body {
         width: 100px;
         margin: 0;
       }
+      &.full {
+          width: 87.5%;
+          margin-bottom: -15px;
+      }
     }
     a.btn:hover {
         transition: 0.1s;
@@ -121,18 +125,22 @@ label {
         max-width: 50%;
         display: inline-block;
         //margin-right: 10%;
-        vertical-align: middle;
+        vertical-align: top;
         min-width: 300px;
-        text-align:right;
+        //text-align:right;
     }
     .img {
         text-align: center;
         display: inline-block;
-        width: 30%;
-        vertical-align: middle;
+        width: 40%;
+        vertical-align: top;
+        margin-top: 25px;
         img {
             max-height: 500px;
             margin: 5px auto;
+            width: 90%;
+            border-radius: 3px;
+            box-shadow: 1px 1px 3px 1px rgba(0,0,0,.2);
         }
     }
 }
@@ -160,6 +168,8 @@ label {
     .links {
         display: inline-block;
         margin: 0px 30px;
+        position: absolute;
+        right: 15%;
     }
 }
 
