@@ -10,7 +10,7 @@
                 <%= link_to 'See teams', {controller: 'teams', action: 'index'}, class: 'btn inline'%>
                 <hr>
             <%else%>
-                Your Team: <%= link_to current_user.team do %><%= current_user.team.name %><% if current_user.team.school %> - <%=current_user.team.school %><% end %> - <%= current_user.team.location %><% end %>
+                Your Team: <%= link_to current_user.team do %><%= curent_user.team.name %><% if current_user.team.school %> - <%= current_user.team.school %><% end %> - <%= current_user.team.city %><% if current_user.team.state_code %>, <%=current_user.team.state_code%><% end %>, <%= Carmen::Country.coded(current_user.team.country_code).name %><% end %>
             <%end%>
         </div>
         <div class="info_buttons">
@@ -28,7 +28,7 @@
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
-        <div><%= f.label :name %><i>(leave blank if you don't want to change it)</i><br/>
+        <div><%= f.label :name %><i>(leave blank if you don't want to change it, 8 character minimum)</i><br/>
         <%= f.text_field :name %></div>
         <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
         <%= f.password_field :password, autocomplete: "off" %></div>

@@ -7,8 +7,8 @@
       <label for="name">Team Name</label>
       <%= f.text_field :name, placeholder: "Team name", required: "required"%>
 
-      <label for="school">School</label>
-      <%= f.text_field :school, placeholder: "Example: University of California, Berkeley or Stanford University", required: "required" %>
+      <label for="school">School or Organization (Optional)</label>
+      <%= f.text_field :school, placeholder: "Example: Stanford University or Austin High School" %>
       
       <label for="city">City</label>
       <%= f.text_field :city, placeholder: "Example: Paris or Austin", maxlength: 60, required: "required" %>
@@ -17,7 +17,7 @@
       <%= f.country_select :country_code, priority: %w(US CA), prompt: 'Please select a country', required: "required" %>
 
       <label for="state_code">State (Optional, USA only)</label>
-      <%= subregion_select :state_code, Carmen::Country.named('United States') %>
+      <%= subregion_select :team, :state_code, Carmen::Country.named('United States') %>
 
 
       <label for="description">Team Description</label>

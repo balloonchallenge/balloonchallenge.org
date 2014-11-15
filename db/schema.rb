@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141114060032) do
+ActiveRecord::Schema.define(version: 20141115015003) do
 
   create_table "teams", force: true do |t|
     t.string   "name",         default: "", null: false
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20141114060032) do
   end
 
   add_index "teams", ["name"], name: "index_teams_on_name", unique: true
-  add_index "teams", ["school"], name: "index_teams_on_school", unique: true
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
