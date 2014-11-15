@@ -10,7 +10,8 @@
         <div><%= f.label :name %>
         <%= f.text_field :name %></div>
         
-        <div><%= f.check_box :pastlaunch%> I have launched a High Altitude Balloon before (<em>not</em> required)</div><br />
+        <div><%= f.check_box :pastlaunch%> I have launched a High Altitude Balloon before (<em>not</em> required)</div>
+        <div><%= f.check_box :gsbc_last_year %> I was a part of the Global Space Balloon Challenge last year</div><br />
         <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><br/><% end %>
         <%= f.password_field :password, autocomplete: "off" %></div>
 

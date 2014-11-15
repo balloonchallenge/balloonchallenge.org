@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}, :controllers => {:registrations => "registrations"}
-  devise_for :controllers => { :sessions => "my_sessions" }
+  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}, :controllers => {:registrations => "registrations", :sessions => "sessions"}
   root 'static_pages#home'
 
   match '/about',     to: 'static_pages#about',     via: 'get'
