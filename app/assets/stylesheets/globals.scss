@@ -67,6 +67,10 @@ body {
         width: 100px;
         margin: 0;
       }
+      &.full {
+          width: 87.5%;
+          margin-bottom: -15px;
+      }
     }
     a.btn:hover {
         transition: 0.1s;
