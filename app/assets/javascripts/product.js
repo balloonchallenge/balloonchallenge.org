@@ -1,5 +1,5 @@
-$(document).on('page:load', init);
-$(document).on('page:change', init);
+$(document).on('page:load', function() { init() });
+$(document).on('page:change', function() { init() });
 $(document).ready(init);
 
 function init(){
