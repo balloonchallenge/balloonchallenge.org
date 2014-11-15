@@ -125,15 +125,16 @@ label {
         max-width: 50%;
         display: inline-block;
         //margin-right: 10%;
-        vertical-align: middle;
+        vertical-align: top;
         min-width: 300px;
-        text-align:right;
+        //text-align:right;
     }
     .img {
         text-align: center;
         display: inline-block;
         width: 40%;
-        vertical-align: middle;
+        vertical-align: top;
+        margin-top: 25px;
         img {
             max-height: 500px;
             margin: 5px auto;
@@ -167,6 +168,8 @@ label {
     .links {
         display: inline-block;
         margin: 0px 30px;
+        position: absolute;
+        right: 15%;
     }
 }
 
