@@ -132,11 +132,14 @@ label {
     .img {
         text-align: center;
         display: inline-block;
-        width: 30%;
+        width: 40%;
         vertical-align: middle;
         img {
             max-height: 500px;
             margin: 5px auto;
+            width: 90%;
+            border-radius: 3px;
+            box-shadow: 1px 1px 3px 1px rgba(0,0,0,.2);
         }
     }
 }
