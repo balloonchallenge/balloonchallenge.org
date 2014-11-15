@@ -112,6 +112,25 @@ label {
         max-width: 80%;
         padding: 20px;
         font-size: 1.2em;
+        .blockImg {
+            margin: 10px auto;
+            text-align: center;
+            height: 350px;
+            img {
+                max-height: 100%;
+            }
+        }
+        .inlineImg {
+            margin: 10px auto;
+            text-align: center;
+            height: 350px;
+            img {
+                display: inline-block;
+                max-width: 45%;
+                margin: 10px auto;
+                max-height: 100%;
+            }
+        }
     }
 }
 
