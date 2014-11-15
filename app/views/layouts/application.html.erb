@@ -10,14 +10,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<% content_for :body do %>
-    <% if controller.controller_name == 'teams' && controller.action_name == 'index' %>
-        <body data-no-turbolink="true">
-    <% end %>
-    <% else %>
-        <body>
-    <% end %>
-<% end %>
+<body>
     <header>
         <div class="content">
             <div class="logo">
