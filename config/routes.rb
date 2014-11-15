@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   match '/flight-predictors',to:'static_pages#flight-predictors',via:'get'
   match '/safety',    to: 'static_pages#safety',    via: 'get'
   match '/what-is-a-hab',to:'static_pages#what',    via: 'get'
+  match '/supplies',  to: 'static_pages#supplies',  via: 'get'
   # match '/registration/thanks', to: 'static_pages#thanks_register', via: 'get'
   match '/teams/:id/add_member/', to: 'teams#add_member', via: 'post', as: 'add_member'
   match '/teams/:id/remove_member/', to: 'teams#remove_member', via: 'delete', as: 'remove_member'

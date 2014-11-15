@@ -408,6 +408,13 @@ strong {
     height: 100%;
 }
 
+figure {
+    max-width: 90%;
+    img {
+        max-width: 100%;
+    }
+}
+
 @media(max-width: 725px) {
     .alternate {
         text-align: left !important;
