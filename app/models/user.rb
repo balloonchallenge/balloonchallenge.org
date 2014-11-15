@@ -5,4 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   belongs_to :team
+
+  after_create :new_user_email
+
+  def new_user_email
+    UserMailer.new_user(self).deliver
+  end
 end

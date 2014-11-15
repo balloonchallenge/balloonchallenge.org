@@ -4,13 +4,15 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Welcome to the <%=@team.name%> team, <%= @user.name %></h1>
-    <p>
-      You have successfully been added to the team. To view the team please visit <%= @url %>
-    </p>
-    <p>
-      If you were added to this team by mistake, you can remove yourself here: <%= @url %>.
-    </p>
-    <p>Thanks for joining and have a great launch!</p>
+    <p>Dear <%= @user.name %>,</p>
+
+    <p>You’ve just been added to team <a href="<%= @url %>"><%= @team.name %></a> in the <a href="http://balloonchallenge.org">Global Space Balloon Challenge 2015</a>. Welcome to the team! You can view more information about your locations, teammates, and goals on this page <%= @url %>. </p>
+
+    <p>If this is an error, you can use <a href="<%= @url %>">this link</a> to leave the team you are currently part of. Please <a href="mailto:spaceballoonchallenge@gmail.com">let us know</a> if you feel that someone is bothering you with invites. </p>
+
+    <p>Be sure to check out all the resources on the website, like the <a href="http://balloonchallenge.org/tutorials">tutorials</a>, <a href="http://balloonchallenge.org/teams">team map</a>, and <a href="http://community.balloonchallenge.org/">forum</a>, and get starting working with the other members! We’re really excited to see what you build.</p>
+
+    Fly High,
+    GSBC Team
   </body>
 </html>

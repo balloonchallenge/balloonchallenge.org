@@ -8,6 +8,7 @@ class TeamsController < ApplicationController
     @user.team = @team
     if @team.save
       @user.save
+      TeamMailer.new_team(@user, @team).deliver
       flash[:success] = "Team created!"
       redirect_to @team
     else
