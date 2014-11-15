@@ -9,8 +9,8 @@
     <div class="right">
         <h3>The largest international high altitude balloon event with a focus on education and innovation.</h3>
         <% if !current_user %>
-            <p class="center">Learn More:</p>
             <a href="/sign_up" class="btn full">Sign Up</a>
+            <p class="center">Learn More:</p>
             <%= link_to "I've flown a High-Altitude Balloon", new_user_session_path, class: 'btn callToAction' %>
             <%= link_to "What is a High-Altitude Balloon?", about_path, class: 'btn callToAction' %>
         <% elsif current_user and current_user.team.nil? %>
@@ -24,6 +24,6 @@
 </div>
 <div class="affiliates section">
     <div class="map_container" style="max-width:100%;">
-      <%= render "shared/map" %> 
+      <%= render "shared/map" %>
     </div>
 </div>
