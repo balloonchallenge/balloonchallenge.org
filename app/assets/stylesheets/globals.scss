@@ -322,8 +322,13 @@ textarea {
 }
 
 .gallery {
-    max-width: 80%;
     margin: 10px auto;
+    text-align: center;
+    background: url('main_bg.png');
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: inset 1px 1px 3px 1px #000;
+    background-attachment: fixed;
     a {
         &:hover {
             border-bottom: none;
@@ -335,6 +340,8 @@ textarea {
             border-radius:3px;
             cursor: pointer;
             vertical-align: top;
+            border: 3px solid #fff;
+            box-shadow: 1px 1px 3px 1px rgba(0,0,0,.2);
         }
     }
 }
