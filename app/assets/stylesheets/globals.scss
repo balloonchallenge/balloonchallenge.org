@@ -112,6 +112,25 @@ label {
         max-width: 80%;
         padding: 20px;
         font-size: 1.2em;
+        .blockImg {
+            margin: 10px auto;
+            text-align: center;
+            height: 350px;
+            img {
+                max-height: 100%;
+            }
+        }
+        .inlineImg {
+            margin: 10px auto;
+            text-align: center;
+            height: 350px;
+            img {
+                display: inline-block;
+                max-width: 45%;
+                margin: 10px auto;
+                max-height: 100%;
+            }
+        }
     }
 }
 
@@ -248,7 +267,7 @@ textarea {
 
 .tutorialBox {
     min-width: 100px;
-    max-width: 25%;
+    max-width: 28%;
     padding: 10px;
     border: 1px solid rgba(0,0,0,.1);
     margin: 5px;
@@ -257,6 +276,16 @@ textarea {
     vertical-align: top;
     min-height: 435px;
     font-size:.8em;
+    &.full {
+        max-width: 100% !important;
+        min-height: 10px;
+        .tutorial {
+            display: inline-block;
+        }
+    }
+    &.wider {
+        max-width: 60%;
+    }
 }
 
 .tutorialLinks {
@@ -284,6 +313,12 @@ textarea {
         min-width: 200px;
         border-radius: 3px;
         border-bottom: 2px solid rgba(0,0,0,.1);
+        a {
+            color: inherit;
+            &:hover {
+                border-bottom: none;
+            }
+        }
     }
 }
 
