@@ -5,6 +5,9 @@
     margin: -10px;
     text-align: center;
     text-shadow: 1px 1px 3px #000;
+    h1 {
+        font-size: 3em;
+    }
     .left {
         width: 45%;
         display: inline-block;
@@ -15,7 +18,7 @@
         width: 45%;
         display: inline-block;
         padding: 4%;
-        font-size: 1.5em;
+        font-size: 1.7em;
         text-align: left;
         vertical-align: middle;
         min-width: 500px
