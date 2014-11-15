@@ -9,8 +9,9 @@
     <div class="right">
         <h3>The largest international high altitude balloon event with a focus on education and innovation.</h3>
         <% if !current_user %>
-            <%= link_to "Learn More: I've flown a High-Altitude Balloon", new_user_session_path, class: 'btn callToAction' %>
-            <%= link_to "Learn More: What is a High-Altitude Balloon?", about_path, class: 'btn callToAction' %>
+            <p class="center">Learn More:</p>
+            <%= link_to "I've flown a High-Altitude Balloon", new_user_session_path, class: 'btn callToAction' %>
+            <%= link_to "What is a High-Altitude Balloon?", about_path, class: 'btn callToAction' %>
         <% elsif current_user and current_user.team.nil? %>
             <%= link_to "View teams", teams_path, class: 'btn callToAction' %>
             <%= link_to "Create a team", new_team_path, class: 'btn callToAction' %>
