@@ -1,29 +1,7 @@
 <% title "Edit #{@team.name}"%> 
 <div class="primary section">
-<h1 class="underline">Edit your team</h1>
-<div class="content">
-<%= form_for(@team) do |f| %>
- <label for="name">Team Name</label>
-  <%= f.text_field :name, placeholder: "Team name", required: "required"%>
-
-  <label for="school">School or Organization (Optional)</label>
-  <%= f.text_field :school, placeholder: "Example: Stanford University or Austin High School" %>
-  
-  <label for="city">City</label>
-  <%= f.text_field :city, placeholder: "Example: Paris or Austin", maxlength: 60, required: "required" %>
-
-  <label for="country_code">Country</label>
-  <%= f.country_select :country_code, priority: %w(US CA), prompt: 'Please select a country', required: "required" %>
-
-  <label for="state_code">State or Region</label>
-  <%= render partial: 'subregion_select', locals: {parent_region: f.object.country_code} %>
-
-
-  <label for="description">Team Description</label>
-  <%= f.text_field :description, placeholder: "Where you're from, what your goals are, etc.", maxlength: 500, required: "required" %>
-  
-    <%= f.submit "Post" %>
-<% end %>
-
-</div>
+  <h1 class="underline">Edit your team</h1>
+  <div class="content">
+    <%= render partial: 'team_form' %>
+  </div>
 </div>

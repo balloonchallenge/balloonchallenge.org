@@ -2,46 +2,7 @@
   <h1 class="underline">Create a team!</h1>
   <div class="content">
     <div class="team_create">
-    <%= form_for @team do |f| %>
-      
-      <label for="name">Team Name</label>
-      <%= f.text_field :name, placeholder: "Team name", required: "required"%>
-
-      <label for="school">School or Organization (Optional)</label>
-      <%= f.text_field :school, placeholder: "Example: Stanford University or Austin High School" %>
-      
-      <label for="city">City</label>
-      <%= f.text_field :city, placeholder: "Example: Paris or Austin", maxlength: 60, required: "required" %>
-
-      <label for="country_code">Country</label>
-      <%= f.country_select :country_code, priority: %w(US CA), prompt: 'Please select a country', required: "required" %>
-
-      <label for="state_code">State or Region</label>
-      <%= render partial: 'subregion_select', locals: {parent_region: f.object.country_code} %>
-
-      <label for="description">Description: Tell us a bit about yourselves</label>
-      <%= f.text_field :description, placeholder: "Where you're from, what your goals are, etc.", maxlength: 500, required: "required" %>
-
-      <label for="why_join">Why did you join the GSBC? (Optional)</label>
-      <%= f.text_field :why_join, placeholder: "We joined because..." %>
-
-      <label for="plan">What do you have planned for your launch?</label>
-      <%= f.text_field :plan, placeholder: "We plan to...", required: "required" %>
-
-      <label for="find_out">How did you find out about the GSBC? (Optional)</label>
-      <%= f.text_field :find_out, placeholder: "We found out through..." %>
-
-      <br/>Do you want to participate in the <%= link_to "hosted payloads or balloon buddies program?", get_involved_path %>?
-      <div><%= f.check_box :host_payload %>We would like to host a payload</div>
-      <div><%= f.check_box :have_payload %>We would like to have a payload hosted</div>
-      <div><%= f.check_box :buddies_mentor %>We would like to be a Balloon Buddies mentor</div>
-      <div><%= f.check_box :buddies_mentee %>We would like to be a Balloon Buddies mentee</div>
-
-
-
-      <p>By clicking this button I give permission to post the information above on the website.</p>
-        <%= f.submit "Post" %>
-    <% end %>
+      <%= render partial: 'team_form' %>
     </div>
   </div>
 </div>

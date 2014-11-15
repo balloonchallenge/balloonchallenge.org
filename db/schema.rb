@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141115084813) do
+ActiveRecord::Schema.define(version: 20141115224243) do
 
   create_table "teams", force: true do |t|
     t.string   "name",           default: "", null: false
@@ -27,11 +27,15 @@ ActiveRecord::Schema.define(version: 20141115084813) do
     t.string   "why_join"
     t.string   "plan"
     t.string   "find_out"
-    t.text     "ages"
     t.boolean  "host_payload"
     t.boolean  "have_payload"
     t.boolean  "buddies_mentor"
     t.boolean  "buddies_mentee"
+    t.boolean  "ages_0_10"
+    t.boolean  "ages_11_17"
+    t.boolean  "ages_18_26"
+    t.boolean  "ages_27_50"
+    t.boolean  "ages_50_up"
   end
 
   add_index "teams", ["name"], name: "index_teams_on_name", unique: true

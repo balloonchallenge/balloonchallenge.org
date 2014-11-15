@@ -12,6 +12,7 @@
   }
 }
 
+
 .email_field {
   max-width: 400px;
 }
@@ -38,4 +39,29 @@
 .email_field {
   display: inline-block;
   vertical-align: top;
+}
+
+// Sign up
+
+.half {
+  width: 45%;
+  max-width: 50%;
+  display: inline-block;
+
+  @media (max-width: 900px) {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.ages {
+  .age_range {
+    margin-right: 7px;
+    padding-left: 2px;
+  }
+}
+
+.permission {
+  display: inline-block;
+  max-width: 80%;
 }

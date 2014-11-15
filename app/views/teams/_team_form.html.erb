@@ -1,0 +1,56 @@
+<%= form_for @team do |f| %>
+  
+  <label for="name">Team Name</label>
+  <%= f.text_field :name, placeholder: "Team name", required: "required", maxlength: 100%>
+
+  <label for="school">School or Organization (Optional)</label>
+  <%= f.text_field :school, placeholder: "Example: Stanford University or Austin High School", maxlength: 80 %>
+  
+  <label for="city">City</label>
+  <%= f.text_field :city, placeholder: "Example: Paris or Austin", maxlength: 60, required: "required" %>
+  <div class="half country">
+    <label for="country_code">Country</label>
+    <%= f.country_select :country_code, priority: %w(US CA), prompt: 'Please select a country', required: "required" %>
+  </div>
+  <div class="half state">
+    <label for="state_code">State or Region</label>
+    <%= render partial: 'subregion_select', locals: {parent_region: f.object.country_code} %>
+  </div>
+
+  <label for="description">Description: Tell us a bit about yourselves</label>
+  <%= f.text_field :description, placeholder: "Where you're from, what your goals are, etc.", maxlength: 500, required: "required" %>
+
+   <label for="plan">What do you have planned for your launch?</label>
+  <%= f.text_field :plan, placeholder: "We plan to...", required: "required", maxlength: 1000 %>
+
+  <div class="ages">
+    What ages does your group have? Check all that apply:
+    <div class="age_selects">
+      <%= f.check_box :ages_0_10 %><span class="age_range">0-10</span>
+      <%= f.check_box :ages_11_17 %><span class="age_range">11-17</span>
+      <%= f.check_box :ages_18_26 %><span class="age_range">18-26</span>
+      <%= f.check_box :ages_27_50 %><span class="age_range">27-50</span>
+      <%= f.check_box :ages_50_up %><span class="age_range">50+</span>
+    </div>
+  </div><br>
+
+  <label for="why_join">Why did you join the GSBC? (Optional)</label>
+  <%= f.text_field :why_join, placeholder: "We joined because...", maxlength: 1000 %>
+
+ 
+
+  <label for="find_out">How did you find out about the GSBC? (Optional)</label>
+  <%= f.text_field :find_out, placeholder: "We found out through...", maxlength: 500 %>
+
+  <br/>Do you want to participate in the <%= link_to "hosted payloads or balloon buddies program?", get_involved_path %> (Optional)
+  <div><%= f.check_box :host_payload %>We would like to host a payload</div>
+  <div><%= f.check_box :have_payload %>We would like to have a payload hosted</div>
+  <div><%= f.check_box :buddies_mentor %>We would like to be a Balloon Buddies mentor</div>
+  <div><%= f.check_box :buddies_mentee %>We would like to be a Balloon Buddies mentee</div>
+
+
+
+  <%= f.submit "Post" %>
+  <div class="permission">By clicking this button I give permission to post the information above on the website.</div>
+  
+<% end %>

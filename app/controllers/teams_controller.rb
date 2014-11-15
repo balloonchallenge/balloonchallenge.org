@@ -96,7 +96,18 @@ class TeamsController < ApplicationController
   private
 
     def team_params
-      params.require(:team).permit(:name, :city, :state_code, :country_code, :school, :description)
+      params.require(:team).permit(
+        :name, 
+        :school, 
+        :description, 
+        :city, :state_code, :country_code, 
+        :why_join, 
+        :plan, 
+        :find_out, 
+        :host_payload, :have_payload, :buddies_mentor, :buddies_mentee, 
+        :ages_0_10, :ages_11_17, :ages_18_26, :ages_27_50, 
+        :ages_50_up
+      )
     end
 
     def user_params
