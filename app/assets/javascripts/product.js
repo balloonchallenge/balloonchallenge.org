@@ -13,4 +13,13 @@ function init(){
                         alert('Looks like this isn\'t ready yet, but it\'ll be up soon. Stay tuned!');
                 });
         });
+    (function lazyLoad() {
+        $(".gallery img").unveil();
+        document.querySelectorAll(".gallery img")
+            .forEach(function(img) {
+                    img.addEventListener('click', function(e) {
+                            window.location = this.src;
+                    });
+            });
+    })();
 }
