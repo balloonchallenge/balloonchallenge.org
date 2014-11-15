@@ -358,6 +358,13 @@ strong {
   padding: 0;
 }
 
+.sweet-alert {
+    font-family: inherit !important;
+    h2 {
+        line-height: 40px !important;
+    }
+}
+
 @media(max-width: 725px) {
     .alternate {
         text-align: left !important;
