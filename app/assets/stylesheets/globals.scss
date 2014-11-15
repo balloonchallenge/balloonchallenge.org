@@ -324,10 +324,18 @@ textarea {
 .gallery {
     max-width: 80%;
     margin: 10px auto;
-    img {
-        width: 100%;
-        max-width: 250px;
-        cursor: pointer;
+    a {
+        &:hover {
+            border-bottom: none;
+        }
+        img {
+            max-height: 180px;
+            display: inline-block;
+            margin: 5px;
+            border-radius:3px;
+            cursor: pointer;
+            vertical-align: top;
+        }
     }
 }
 
