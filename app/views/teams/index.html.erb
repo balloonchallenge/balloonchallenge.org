@@ -3,7 +3,7 @@
 <h1 class="underline"><%=yield(:title)%></h1>
 <div class="content">
 <% if !current_user %>
-<h4><%= link_to "Make an account and create a team", controller: "devise/sessions", action: "new"%></h4>
+<h4><%= link_to "Make an account and create a team", new_user_session_path %></h4>
 <% elsif current_user and current_user.team.nil? %>
 <h3>You are not yet part of a team: <%= link_to 'Create a team', action: "new"%> or join one.</h3>
 <% elsif current_user and current_user.team %>
