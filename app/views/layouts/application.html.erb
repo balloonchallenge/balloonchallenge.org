@@ -4,11 +4,17 @@
   <title>GSBC - <%= yield(:title) || "Home"%></title>
   <meta name="viewport" content="initial-scale=1">
  <script type="text/javascript"
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsfSA-UUVDpqMaL_7smo1ppUuFv1UNDOY"></script>
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2RXBYz4nCZeXrg7FXTYSazeyWuCPfeVc"></script>
   <%= favicon_link_tag 'favicon.ico'%>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
+  <meta property="og:title" content="Global Space Balloon Challenge"/>
+  <meta property="og:description" content="The high altitude balloon event for everyone, everywhere, together."/>
+  <meta property="og:image" content="http://balloonchallenge.org<%= image_path("gsbc.png") %>">
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="http://balloonchallenge.org<%= request.fullpath %>">
+  <meta property="og:site_name" content="GSBC"/>
 </head>
 <body>
     <header>

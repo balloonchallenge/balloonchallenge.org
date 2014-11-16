@@ -89,11 +89,11 @@ body {
         display: inline-block;
         max-width: 35%;
 
-        // @media (max-width: 500px) {
-        //     display: block;
-        //     max-width: 80%;
-        //     margin-left: 5%;
-        // }
+        @media (max-width: 500px) {
+            display: block;
+            max-width: 80%;
+            margin-left: 5%;
+        }
     }
     .container {
         min-height: 85%;
