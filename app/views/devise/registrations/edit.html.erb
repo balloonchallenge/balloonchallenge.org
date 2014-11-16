@@ -1,5 +1,5 @@
 <div class="primary section">
-    
+
     <div class="content">
     <div class="underline smaller">
         <h1>Your Account</h1>
@@ -10,7 +10,7 @@
                 <%= link_to 'See teams', {controller: 'teams', action: 'index'}, class: 'btn inline'%>
                 <hr>
             <%else%>
-                Your Team: <%= link_to current_user.team do %><%= curent_user.team.name %><% if current_user.team.school %> - <%= current_user.team.school %><% end %> - <%= current_user.team.city %><% if current_user.team.state_code %>, <%=current_user.team.state_code%><% end %>, <%= Carmen::Country.coded(current_user.team.country_code).name %><% end %>
+                Your Team: <%= link_to current_user.team do %><%= current_user.team.name %><% if current_user.team.school %> - <%= current_user.team.school %><% end %> - <%= current_user.team.city %><% if current_user.team.state_code %>, <%=current_user.team.state_code%><% end %>, <%= Carmen::Country.coded(current_user.team.country_code).name %><% end %>
             <%end%>
         </div>
         <div class="info_buttons">
