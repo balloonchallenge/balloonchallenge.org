@@ -74,7 +74,8 @@ body {
         margin: 0;
       }
       &.full {
-          width: 87.5%;
+          width: 500px;
+          max-width: 83%;
       }
     }
     a.btn:hover {
