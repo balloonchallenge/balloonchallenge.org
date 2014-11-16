@@ -2,7 +2,13 @@
   <h1 class="underline">Create a team!</h1>
   <div class="content">
     <div class="team_create">
-      <%= render partial: 'team_form' %>
+      <% if current_user and !current_user.team %>
+        <%= render partial: 'team_form' %>
+      <% elsif current_user and current_user.team %>
+        <h3>You already have a team. See it <%= link_to "here", current_user.team %></h3>
+      <% else %>
+        <%= link_to "Sign up to create a team", new_user_registration_path %>
+      <% end %>
     </div>
   </div>
 </div>

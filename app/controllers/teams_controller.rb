@@ -59,6 +59,9 @@ class TeamsController < ApplicationController
       TeamMailer.added_user(@user, @team).deliver
       flash[:success] = "Team updated!"
       redirect_to team_path(@team.id)
+    elsif !@user.team.nil?
+      flash[:alert] = "#{@user.name} is already in a team!"
+      redirect_to :back
     else
       flash[:alert] = "Could not add user to team!"
       redirect_to :back
