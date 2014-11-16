@@ -1,0 +1,80 @@
+<div class="primary section">
+    <h1 class="underline">How to Build Your Own Tracker</h1>
+    <div class="content">
+        <p>It is possible to build your own GPS tracker using parts like <a href=" http://ava.upuaut.net/store/index.php?route=product/category&path=59_64">these</a> and guides like <a href="http://www.ukhas.org.uk/guides:linkingarduinotontx2">these</a>.</p>
+        <p>But building your own tracker from scratch can be quite difficult. Here are some reasons why and hence topics you need to thoroughly understand:</p>
+        <ol>
+            <li>Radio Wave Propagation</li>
+            <li>Modulation</li>
+            <li>[Mitigating] Antenna Orientation</li>
+            <li>Amplification</li>
+            <li>Embedded Systems</li>
+            <li>Circuits</li>
+            <li>-60C temperature effects on your electronics</li>
+            <li>Forces up to 8 G’s at burst</li>
+            <li>Surviving burst and landing conditions</li>
+            <li>And more (I actually just wanted to end on 10)</li>
+        </ol>
+        <p>Then comes the part of building your own ground station if you already do not have one readily available. Furthermore, if your tracker fails what is your backup? As you can see, HAB launches are harsh on your components and it takes trial and error to make them durable. </p>
+        <p>But at the same time, making your own tracker will allow you to create a lighter payload and have a more versatile system (for example, sending back live images).</p>
+        <p>So KISS (Keep-It-Simple-Stupid) - if you are a beginner, buy a readily available product first. But if you want a big challenge, understand the list above and engineer the future!</p>
+        <h2 class="underline medium">Antenna Theory</h2>
+        <p>What you should really unnderstand is the very basics of antennas and the theory behind them.This includes (and certainly not limited to) antenna type, antenna orientation, and the antenna’s radiation pattern.No matter if you are making your own tracker or buying one commercially, aiming the antenna in the wrong direction can result in a weak or lost signal. So here is the question I propose: What is the optimal antenna to use to nominally get your GPS?</p>
+        <h3>What is an antenna?</h3>
+        <p>Antennas help transmit and receive electromagnetic radiation. A great example is actually your eyes! Your eyes are receiving antennas that are capable of picking up different frequencies of visible light. Whether you want to  transmit, receive, or both - your antenna must be capable of listening and/or talking on the same frequency. This is given in the antenna specifications of the manufacturer.</p>
+        <figure>
+            <img src="http://placehold.it/500">
+            <figcaption>Fig 8: Your eye is a receiving antenna!</figcaption>
+        </figure>
+        <p>An isotropic antenna is an ideal antenna that radiates in all directions uniformly. This antenna does not physically exist in the real world because it would disobey the <a href="http://en.wikipedia.org/wiki/Helmholtz_equation">Helmholtz Equation</a>! That’s it. We won’t touch on this further because you first should understand first principles.</p>
+        <figure>
+            <img src="http://placehold.it/500">
+            <figcaption>Fig 9: An isotropic antenna looks like a perfect sphere</figcaption>
+        </figure>
+        <p>However, the relationship between an antenna’s direction and electrical efficiency is called gain. The gain relates the antenna to an isotropic antenna. Gain is measured in decibels-isotropic (dBi) through the equation below. The larger your gain, the stronger your link will be between your transmit and receiving station.</p>
+        <figure>
+            <img src="http://puu.sh/cSuQk/8764c71580.png">
+        </figure>
+        <p>Finally, the beamwidth is the beam diameter along a line perpendicular to the beam axis it intersects. So if you have a large beamwidth and a high gain then the better your chances will be of completing the link. Is it that easy? No. Let’s take a look at some popular radiation patterns of antennas commonly used on HABs to see why.</p>
+        <h3>Omnidirectional Antennas</h3>
+        <p>An omnidirectional antenna radiates its energy in the same direction of one plane. In layman's terms - it looks like a donut! So in the x-plane the beam is the strongest and the further away from the x-plane the weaker the pattern as denoted by red to green.</p>
+        <figure>
+            <img src="http://placehold.it/500">
+            <figcaption>Fig 10: An example of an omnidirectional radiation pattern</figcaption>
+        </figure>
+        <p>Some of the most popular HAB antennas that are omni-directional include the dipole and monopole antenna. You all have seen monopole antennas. They are on your wifi routers and [older] automobiles!</p>
+        <figure>
+            <img src="http://placehold.it/500">
+            <figcaption>Fig 11: Example monopole antenna</figcaption>
+        </figure>
+        <p>Dipoles consists of two monopole antennas, usually referred to as two elements. You’ve also seen dipole antennas. Who can forget the old school television with the bunny ear antennas?! </p>
+        <figure>
+            <img src="http://placehold.it/500">
+            <figcaption>Fig 11: Example dipole antenna</figcaption>
+        </figure>
+        <h3>Directional Antennas</h3>
+        <p>A directional antenna concentrates its radiation in one direction. This makes for a higher gain but a smaller beamwidth. Arguably the most popular kind of directional antenna is the Yagi-Uda antenna. You have probably seen these antennas on old houses.</p>
+        <figure>
+            <div class="inlineImg">
+                <img src="http://placehold.it/500">
+                <img src="http://placehold.it/500">
+            </div>
+            <figcaption>Fig 13: A yagi-uda radiation pattern and an example antenna</figcaption>
+        </figure>
+        <h3>Patch Antenna</h3>
+        <p>A patch antenna is a flat, rectangular, sheet (hence patch) on top of a ground plane. This helps the radiation to form a dome esq shape.</p>
+        <figure>
+            <div class="inlineImg">
+                <img src="http://placehold.it/500">
+                <img src="http://placehold.it/500">
+            </div>
+            <figcaption>Fig 14: A patch antennas radiation pattern and an example patch antenna</figcaption>
+        </figure>
+        <p>Now that we have gone over some popular antennas and their associated radiation patterns, which antenna will give you the best GPS lock?</p>
+        <p>If you guessed a patch antenna you are right! Spoiler alert, the picture above in Figure 14 is a GPS. A lot of GPS modules will look similar to this. Remember, for a nominal GPS lock we wanted to see as many satellites in the sky as possible. A patch antenna will do wonders.</p>
+        <p>Why not a directional antenna? Well a directional antenna has a very narrow beamwidth so we would miss some satellites we could have gotten with a patch antenna.</p>
+        <p>Well what about an omnidirectional antenna? An omnidirectional antenna has no radiation on the axis of the antenna (donut hole) and a weak radiation pattern surrounding it (top of the donut). Therefore we would have to place this antenna on it’s side to get a wheel pattern and the antennas best gain. </p>
+        <p>The dome pattern of a patch antenna is still better than the directional and omnidirectional due to its large beamwidth and nominal gain. I hope you noticed one other thing...beamwidth and gain is a trade! You can’t have the best of both worlds but you can compromise!</p>
+        <p>More coming...</p>
+    </div>
+</div>
