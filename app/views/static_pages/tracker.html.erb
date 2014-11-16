@@ -74,5 +74,15 @@
         <h3>UKHAS Network</h3>
         <p>The UKHAS network is used heavily in Europe due to the usage restrictions on airborne use of amateur radio transmissions. Generally you don’t need a license to use it, it’s dedicated for balloon flights, and is more flexible than APRS  for accommodating live images and custom telemetry.</p>
         <p>There are two elements to the UKHAS network. There is your balloon transmitting on the license exempt ISM band of 434Mhz (Not exempt in US/Canada) and there is the ground based distributed receiving network. Distributed is the key word here: your balloon transmits a packet containing a telemetry or part of an image, someone receives this on the ground and uploads this data to the Habhub (<a href="http://habhub.org">http://habhub.org</a>) servers, and then telemetry data is displayed on the map here (<a href="http://habhub.org/mt">http://habhub.org/mt</a>) and image data is reconstituted into a full image here : <a href="http://ssdv.habhub.org">http://ssdv.habhub.org</a>.</p>
+        <p>This system has a number of benefits as it’s dedicated for balloon tracking. The map can do live predictions of landing locations and it’s very customisable with regards to the data it can store. Telemetry graphs can be produced and your chase car can also be on the map. With the excellent coverage of receivers in Northern Europe, even if you aren’t actively tracking your balloon many others will be.</p>
+        <p>The downsides? There aren’t many “off the shelf” transmitters that support it meaning you may have to make your own transmitter [for example Pi in the Sky on the <a href="/tracker-products">Current Trackers Page</a>). Upsides are you will get the pleasure of <a href="/make-a-tracker">making your own tracker</a> and it’s invariably going to be lighter than a commercial one.</p>
+        <p>Even though the limit of power on the ISM band is 10mW when using RTTY at 50 baud or error corrected modes reception range regularly exceeds 400 miles reception ranges exceeding APRS. Also when the balloon is on the ground direction finding will be easier as transmission is continuous unlike the short 2 min bursts of APRS.</p>
+        <p>There are currently three boards that support UKHAS telemetry that are on sale, <a href="http://www.habduino.org">habduino.org</a> (also can do APRS), <a href="http://www.pi-in-the-sky.com">pi-in-the-sky.com</a> (can do live images) and the pico tracker kit at <a href="http://hamshop.cz/hab-a-aprs-c34/picotracker-v-3-1-stavebnice-i258/">hamshop.cz/hab-a-aprs-c34/picotracker-v-3-1-stavebnice-i258/.</p>
+        <p>There is a guide on how to track balloon flights using the UKHAS protocol here: <a href="http://www.ukhas.org.uk/guides:tracking_guide">ukhas.org.uk/guides:tracking_guide</a></p>
+        <p>A description of the UKHAS protocol is here: <a href="http://www.ukhas.org.uk/communication:protocol">ukhas.org.uk/communication:protocol</a></p>
+        <p>A good diagram of this system is:</p>
+        <figure>
+            <img src="http://placehold.it/500">
+        </figure>
     </div>
 </div>
