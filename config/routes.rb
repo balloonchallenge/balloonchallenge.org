@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   match '/payload',   to: 'static_pages#payload',   via: 'get'
   match '/flight-termination',to:'static_pages#termination',via:'get'
   match '/rope',      to: 'static_pages#rope',      via: 'get'
+  match '/sensor',    to: 'static_pages#sensor',    via: 'get'
   # match '/registration/thanks', to: 'static_pages#thanks_register', via: 'get'
   match '/teams/:id/add_member/', to: 'teams#add_member', via: 'post', as: 'add_member'
   match '/teams/:id/remove_member/', to: 'teams#remove_member', via: 'delete', as: 'remove_member'
