@@ -11,24 +11,29 @@
     }
     .left {
         width: 55%;
+        margin-top: 20px;
         display: inline-block;
         vertical-align: middle;
         min-width: 500px;
-        margin-top: 40px;
         @media (max-width: 540px) {
-            min-width: 100%;
-            max-width: 100%;
-            overflow-x: hidden;
+            min-width: 90%;
         }
     }
     .right {
         width: 35%;
         display: inline-block;
         padding: 4%;
+        padding-top: 0;
+        top: 0;
+        margin-top: 20px;
         font-size: 1.7em;
         text-align: left;
-        vertical-align: middle;
+        vertical-align: top;
         min-width: 500px;
+        min-height: 100%;
+        h3 {
+            margin-top: 0;
+        }
         @media (max-width: 540px) {
             min-width: 0;
             width: 90%;
