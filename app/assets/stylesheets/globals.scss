@@ -59,6 +59,8 @@ body {
           margin: 10px;
           box-shadow: none;
           font-size: 0.8em;
+          border: 1px solid rgba(0,0,0,.1);
+          border-bottom: 2px solid rgba(0,0,0,.4);
       }
       &.noShadow {
           box-shadow: none;
