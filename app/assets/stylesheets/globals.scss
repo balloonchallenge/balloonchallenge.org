@@ -102,7 +102,7 @@ label {
     border: 1px solid rgba(0,0,0,.3);
     border-bottom: 2px solid rgba(0,0,0,.3);
     border-radius: 3px;
-    background: rgba(255,255,255,.9);
+    background: #fff;
     //background: url(image-path('light_bg.png'));
     box-shadow: 1px 1px 9px 0px rgba(0,0,0,.1);
     min-height: 80%;
@@ -334,7 +334,6 @@ textarea {
             border-bottom: none;
         }
         img {
-            @include transition(0.2s);
             max-height: 180px;
             display: inline-block;
             margin: 5px;
@@ -343,10 +342,6 @@ textarea {
             vertical-align: top;
             border: 3px solid #fff;
             box-shadow: 1px 1px 3px 1px rgba(0,0,0,.2);
-            &:hover {
-                @include transition(0.1s);
-                max-height: 190px;
-            }
         }
     }
 }

@@ -1,0 +1,78 @@
+<div class="primary section">
+    <h1 class="underline">Current Balloon Tracking Methods</h1>
+    <div class="content">
+        <p><strong>A GPS tracker is mandatory</strong> for eligibility within the GSBC and is required under most country’s <a href="/regulations">regulations</a>. The tracker allows a balloongineer to safely track their HAB throughout the flight and to recover your payload!</p>
+        <p>There are many different options for tracking systems. This tutorial will detail what tracking is and the different types of tracking methods - you can see the <a href="/tracker-products">products page</a> for recommended systems to buy.</p>
+        <h2 class="underline medium">Why track my balloon?</h2>
+        <p>There are several reasons to track a balloon beyond the fact that it is required due to regulations. The first is that you want to know where your balloon is so that after the balloon pops and it lands, you know where it is. The better you can track it during the flight, the easier it will be to find and recover your payload when it lands!</p>
+        <figure>
+            <img src="http://placehold.it/500">
+            <figcaption>Fig 1: Two balloon flights are pictured here; red = latex and green = zero pressure</figcaption>
+        </figure>
+        <p>It can also allow you to communicate with your balloon - receiving telemetry back from it and sending commands to it. Desired telemetry may include temperature, humidity, voltage, pressure, or any other data you are measuring.</p>
+        <figure>
+            <img src="http://placehold.it/500">
+            <figcaption>Fig 2: Here voltage and temperature are sent to the ground every few minutes</figcaption>
+        </figure>
+        <p>Commanding your balloon can be necessary for cool experiments or operations - ballast release, remote termination of the flight, turning components on/off, turning on a siren, or release of a paper airplane during flight like Rocket City Balloonatics in GSBC 2014, these are all examples of cool things you can do once you can command your balloon.</p>
+        <p>Different tracking products offer different things (some offer telemetry, some offer two way communication, some offer neither), so it is important to figure out what you want to do and then find the product that best fits your need!</p>
+        <h2 class="underline medium">Global Positioning System (GPS)</h2>
+        <p>Before we even begin to talk about the different types of communication methods, you should have a firm grasp on what a navigation [satellite] system actually is. The <a href="http://en.wikipedia.org/wiki/Global_Positioning_System">Global Positioning System (GPS)</a> is a United States maintained constellation of satellites that can provide you with your “exact” position to within 3 meters. It is one of two <a href="http://en.wikipedia.org/wiki/Satellite_navigation">Global Navigation Satellite Systems (GNSS)</a> in the world! The name says it all. In order to be considered a GNSS your constellation must cover the entire globe. As of 2014, there is only one other constellation currently in operation - the <a href="http://en.wikipedia.org/wiki/GLONASS">Russian Global Navigation Satellite System (GLONASS)</a>. Europe is also joining the GNSS club by building the state-of-the-art <a href="http://en.wikipedia.org/wiki/Galileo_(satellite_navigation)">Galileo</a> constellation.</p>
+        <figure>
+            <img src="http://placehold.it/500">
+            <figcaption>Figure 1: GNSS</figcaption>
+        </figure>
+        <p>Figure 1 shows what these GNSS constellations look like (this is a .gif so I hope it is moving). The blue circles represent orbits and the dots represent satellites. A satellite just goes round and round in a circle! The earth is the sphere in the center (obviously) and a person is represented from a blue dot at the 60 N latitude. As the earth rotates and the satellites move around in their orbits, the number of satellites that are in your <a href="http://en.wikipedia.org/wiki/Line-of-sight_propagation">line-of-site (LOS)</a> changes! The green dashed lines represent the different LOS paths that lead to their respective satellite in red. The number of satellites you see changes over time. The more you see, the more accurate your signal is. Viewing 8 satellites is considered a nominal lock. This is why your antenna should always face the sky!</p>
+        <p>To keep things simple, a GPS receiver is configured to only talk to certain constellations. So let the chip do the work!</p>
+        <p>Although there are only two GNSS constellations currently operating, other regions of the world just care about their area. India has the <a href="http://en.wikipedia.org/wiki/Indian_Regional_Navigation_Satellite_System">Indian Regional Navigation Satellite System (IRNSS)</a>. China has <a href="http://en.wikipedia.org/wiki/BeiDou_Navigation_Satellite_System">BeiDou-2</a> and Japan has the <a href="http://en.wikipedia.org/wiki/Quasi-Zenith_Satellite_System">Quasi Zenith Satellite System</a>.</p>
+        <p>Wanna see how they can narrow down the coverage of their satellites? Download the free software <a href="http://www.agi.com">Satellite Tool Kit</a> and play with orbits and coverage!</p>
+        <h2 class="underline medium">Tracking Methods</h2>
+        <p>Now that you understand how GPS works, let’s talk about some popular ways to incorporate a GPS sensor on a High Altitude Balloon (HAB). The first method we will call “Satellite Balloon Tracking.”</p>
+        <h3>Satellite Balloon Tracking</h3>
+        <figure>
+            <img src="http://placehold.it/500">
+            <figcaption>Fig 2: Satellite Balloon Tracking</figcaption>
+        </figure>
+        <p>So this method uses a popular tracking device called the <a href="http://www.findmespot.com/en/index.php?cid=100">Spot Gen 3</a>. If you are an explorer or like to hike then I am sure you are familiar with these life saving devices. But how does it really work? Well it uses GPS as described above but it also adds another satellite into the mix which is where it becomes expensive. After grabbing the correct GPS coordinates, it beams the packets to a communication satellite to relay your position to various ground stations below so that you can see everything all hunky dory online. You just turn it and and go! Now that’s all fine and dandy until you learn that you also need to pay for a $15 monthly service fee AND it has an altitude ceiling of only 21,320 feet (6500 meters). That’s not nearly enough for a balloon that will probably hit 100,000 feet. But that’s how these systems work!</p>
+        <h3>Amateur Balloon Tracking</h3>
+        <p>In the United States, the <a href="http://www.fcc.gov">Federal Communications Commission</a> has reserved a portion of the <a href="http://en.wikipedia.org/wiki/ISM_band">ISM radio spectrum</a> for <a href="http://en.wikipedia.org/wiki/Amateur_radio">amateurs</a>. Other countries have similar restrictions so please check your local provider especially since you may need a <a href="http://www.arrl.org/ham-radio-licenses">license</a>. But don’t worry, they are easy to obtain and only cost $15!</p>
+        <figure>
+            <img src="http://placehold.it/500">
+            <figcaption>Fig 3: Amaetur Balloon Tracking</figcaption>
+        </figure>
+        <p>Figure 3 shows how this network scheme works. Notice that we no longer need the COM satellite as depicted in figure 2 (Satellite Balloon Tracking). Instead, we rely on personal ground stations below to process our GPS packets. How do you make or use these ground stations? The “easy” method is to use APRS and the “hard” way is to make your own. Both of these have their pros and cons so lets start with the 2 meter band and the lovely Automatic Packet Reporting System (APRS) running on 144 - 148 MHz.</p>
+        <h3>2-meter Amateur Tracking (APRS)</h3>
+        <p>APRS is a great community driven communication method. I would give you the frequency but it depends on your region of the world.</p>
+        <figure>
+            <img src="http://placehold.it/500">
+            <figcaption>Fig 4: APRS regional frequencies</figcaption>
+        </figure>
+        <p>This method is awesome because there are literally thousands of stations that are always listening to your balloon (a la your frequency). In the United States alone there are over 11,000 stations. This means that the odds of you being heard is great, especially because you are so high up! APRS is capable of transmitting your position and up to 5 channels of telemetry.</p>
+        <figure>
+            <img src="http://placehold.it/500">
+            <figcaption>Fig 5: A map of APRS ground stations in the US</figcaption>
+        </figure>
+        <p>Why is this cool? Well there’s a little something called an Internet Gateway (iGate) that most of these stations have the capability to do. Basically once they hear your packet, they will automatically push it to the internet for display on mapping websites such as <a href="http://aprs.fi">aprs.fi</a>. This is great for teams with multiple vehicles and for friends and families to monitor your progress live! Up to 5 channels of telemetry can also be sent as seen below.</p>
+        <figure>
+            <img src="http://placehold.it/500">
+            <figcaption>Fig 6: A balloon path posted via APRS on aprs.fi (yes that’s an actual website)</figcaption>
+        </figure>
+        <p>Like I said earlier, APRS is community driven and there are numerous online maps for views where everyone can see you based on your callsign. The documentation on APRS is an open vault with tons of good, simple, explanations. Also, your iPhone and Android have apps that use APRS. This is really cool because once you activate the app, you can now see both the balloon AND your car. This is great for chasing and navigating <strong>(sidenote: never ever ever ever ever ever ever drive and use these applications)</strong>! Like ever.</p>
+        <p>There’s always a negative side and APRS is no exception. APRS is half-duplex meaning you cannot transmit and receive at the same time especially since you are on the same frequency. An example of a <a href="http://en.wikipedia.org/wiki/Duplex_(telecommunications)">half-duplex</a> application is a walkie-talkie. Furthermore, everyone is on the same frequency so you have to wait your turn. There are also a number of countries where airborne use of APRS isn’t permitted so please check your local legislation.</p>
+        <p>What we are trying to say here is only transmit every 2 minutes. First of all there is no reason to transmit faster (your balloon won’t be really far away in the next two minutes) and second of all if you transmit frequently you will block other users from the network. There are weather stations, hospitals, drivers, and emergency personnel who use this network so it shouldn’t be messed around with! A good rule of thumb is that for each transmission you will take up 3 seconds of airspace where nobody else can use APRS. We will get into “paths” in another tutorial but if you know what these are only use WIDE2-1.</p>
+        <p>Some great products you can buy (once you have an amatuer radio license) are the <a href="http://www.titanaerosolutions.com/the-packages/the-phoenix">Titan AeroSolutions - Phoenix Tracker</a> and the <a href="http://www.byonics.com/mt-aio">Byonics - HA AIO Microtrak</a>. We highly suggest buying from one of these companies because they work and they work properly. If you are thinking of building your own tracker we still recommend one of these purchases because you never want to lose communication with your HAB and then lose all of your equipment. Redundant and separate methods should always be used especially in these very violent environments.</p>
+        <figure>
+            <div class="inlineImg">
+                <img src="http://placehold.it/500">
+                <img src="http://placehold.it/500">
+            </div>
+            <figcaption>Fig 7: The Titan AeroSolutions Phoenix (left) and the Byonics HI AIO Microtrak (right)</figcaption>
+        </figure>
+        <h3>70-centimeter Amateur Tracking</h3>
+        <p>A more powerful and customizable way to track your balloon could also be on the <a href="http://en.wikipedia.org/wiki/70-centimeter_band">70-centimeter band</a> (420 - 450 MHz). Again, the portion of the band that you may actually [legally] use depends on your country so do some  research!</p>
+        <p>As APRS is community driven passive network where as a balloon launcher you are sharing the network, other radio bands are individually driven by dedicated receiving stations. I say this because you need to have a ground station operating on the same frequency and modulation to interpret your data properly.. A possible network of community ground stations is highly dependent on where you live and the only other network of ground stations I know that work together is <a href="http://www.ukhas.org.uk/">UKHAS</a> (If there are more please let me know and I will add them in the appropriate section!).</p>
+        <h3>UKHAS Network</h3>
+        <p>The UKHAS network is used heavily in Europe due to the usage restrictions on airborne use of amateur radio transmissions. Generally you don’t need a license to use it, it’s dedicated for balloon flights, and is more flexible than APRS  for accommodating live images and custom telemetry.</p>
+        <p>There are two elements to the UKHAS network. There is your balloon transmitting on the license exempt ISM band of 434Mhz (Not exempt in US/Canada) and there is the ground based distributed receiving network. Distributed is the key word here: your balloon transmits a packet containing a telemetry or part of an image, someone receives this on the ground and uploads this data to the Habhub (<a href="http://habhub.org">http://habhub.org</a>) servers, and then telemetry data is displayed on the map here (<a href="http://habhub.org/mt">http://habhub.org/mt</a>) and image data is reconstituted into a full image here : <a href="http://ssdv.habhub.org">http://ssdv.habhub.org</a>.</p>
+    </div>
+</div>
