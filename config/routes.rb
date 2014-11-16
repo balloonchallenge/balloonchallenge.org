@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   match '/get-involved', to: 'static_pages#get-involved', via: 'get'
   match '/gallery',   to: 'static_pages#gallery',   via: 'get'
   match '/learn-more',to: 'static_pages#learn-more',via: 'get'
+  match '/learn-more-beginner',to:'static_pages#learn-more-beginner',via:'get'
   match '/contact',   to: 'static_pages#contact',   via: 'get'
   match '/regulations',to: 'static_pages#regulations',via: 'get'
   match '/education', to: 'static_pages#education', via: 'get'
