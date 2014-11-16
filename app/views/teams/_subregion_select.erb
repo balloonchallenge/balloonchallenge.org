@@ -10,3 +10,20 @@
     <%= text_field(:team, :state_code) %>
   <% end %>
 </div>
+<% content_for :script do %>
+<script>
+$(document).ready(function() {
+  $(function() {
+  return $('select#team_country_code').change(function(event) {
+    var country_code, select_wrapper, url;
+    select_wrapper = $('#team_state_code_wrapper');
+    $('select', select_wrapper).attr('disabled', true);
+    country_code = $(this).val();
+    url = "/teams/subregion_options?parent_region=" + country_code;
+    return select_wrapper.load(url);
+  });
+});
+});
+</script>
+
+<% end %>
