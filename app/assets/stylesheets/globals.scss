@@ -136,12 +136,11 @@ label {
         .inlineImg {
             margin: 10px auto;
             text-align: center;
-            max-height: 350px;
             img {
                 display: inline-block;
                 max-width: 45%;
                 margin: 10px auto;
-                max-height: 100%;
+                max-height: 350px;
             }
         }
     }
