@@ -10,7 +10,7 @@
         <h3>The high altitude balloon event for everyone, everywhere, together.</h3>
         <% if !current_user %>
             <a href="/sign_up" class="btn full">Sign Up</a>
-            <p class="center">Learn More:</p>
+            <br><div class="">Learn More:</div>
             <%= link_to "I've flown a High-Altitude Balloon", learn_more_path, class: 'btn callToAction' %>
             <%= link_to "What is a High-Altitude Balloon?", learn_more_beginner_path, class: 'btn callToAction' %>
         <% elsif current_user and current_user.team.nil? %>
