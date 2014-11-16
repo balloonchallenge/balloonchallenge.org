@@ -417,6 +417,14 @@ figure {
     }
 }
 
+.slideshow {
+    img {
+        width: 100%;
+        vertical-align: middle;
+        display: inline-block;
+    }
+}
+
 @media(max-width: 725px) {
     .alternate {
         text-align: left !important;
