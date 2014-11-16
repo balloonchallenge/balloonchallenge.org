@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   match '/supplies',  to: 'static_pages#supplies',  via: 'get'
   match '/mission-ops',to:'static_pages#ops',       via: 'get'
   match '/tracker',   to: 'static_pages#tracker',   via: 'get'
+  match '/tracker-products',to:'static_pages#tracker-products',via:'get'
   # match '/registration/thanks', to: 'static_pages#thanks_register', via: 'get'
   match '/teams/:id/add_member/', to: 'teams#add_member', via: 'post', as: 'add_member'
   match '/teams/:id/remove_member/', to: 'teams#remove_member', via: 'delete', as: 'remove_member'
