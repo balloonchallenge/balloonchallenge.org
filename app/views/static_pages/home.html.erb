@@ -11,8 +11,8 @@
         <% if !current_user %>
             <a href="/sign_up" class="btn full">Sign Up</a>
             <p class="center">Learn More:</p>
-            <%= link_to "I've flown a High-Altitude Balloon", new_user_session_path, class: 'btn callToAction' %>
-            <%= link_to "What is a High-Altitude Balloon?", about_path, class: 'btn callToAction' %>
+            <%= link_to "I've flown a High-Altitude Balloon", learn_more_path, class: 'btn callToAction' %>
+            <%= link_to "What is a High-Altitude Balloon?", learn_more_beginner_path, class: 'btn callToAction' %>
         <% elsif current_user and current_user.team.nil? %>
             <%= link_to "View teams", teams_path, class: 'btn callToAction' %>
             <%= link_to "Create a team", new_team_path, class: 'btn callToAction' %>
