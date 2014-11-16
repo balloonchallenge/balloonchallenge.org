@@ -1,26 +1,26 @@
 <% title "Teams" %>
 <div class="primary section">
-<h1 class="underline"><%=yield(:title)%></h1>
-<div class="content">
-<% if !current_user %>
-<h4><%= link_to "Make an account and create a team", new_user_session_path %></h4>
-<% elsif current_user and current_user.team.nil? %>
-<h3>You are not yet part of a team: <%= link_to 'Create a team', action: "new"%> or join one.</h3>
-<% elsif current_user and current_user.team %>
-<h3>Your team: <%= link_to current_user.team.name, current_user.team %></h3>
+  <h1 class="underline"><%=yield(:title)%></h1>
+  <div class="content">
+    <% if !current_user %>
+    <h4><%= link_to "Make an account and create a team", new_user_session_path %></h4>
+    <% elsif current_user and current_user.team.nil? %>
+    <h3>You are not yet part of a team: <%= link_to 'Create a team', action: "new"%> or join one.</h3>
+    <% elsif current_user and current_user.team %>
+    <h3>Your team: <%= link_to current_user.team.name, current_user.team %></h3>
 
-<% end %>
-</div>
-<div class="map_container" style="max-width:100%;">
-  <%= render "shared/map" %> 
-</div>
-<ul class="teams">
-<% @teams.each do |team| %>
-  <li class="team">
-    <%=link_to team do %>
-      <%= team.name %><% if team.school != "" %> - <%= team.school %><% end %> - <%= team.city %>, <%= Carmen::Country.coded(team.country_code).name %>
     <% end %>
-  </li>
-<% end %>
-</ul>
+    <div class="map_container" style="max-width:100%;">
+      <%= render "shared/map" %> 
+    </div>
+    <ul class="teams">
+      <% @teams.each do |team| %>
+        <li class="team">
+          <%=link_to team do %>
+            <%= team.name %><% if team.school != "" %> - <%= team.school %><% end %> - <%= team.city %>, <%= Carmen::Country.coded(team.country_code).name %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
