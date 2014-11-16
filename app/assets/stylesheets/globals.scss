@@ -425,6 +425,12 @@ figure {
     }
 }
 
+.fifty {
+    input[type="text"], input[type="password"], input[type="email"], textarea {
+        width:80%;
+    }
+}
+
 @media(max-width: 725px) {
     .alternate {
         text-align: left !important;
