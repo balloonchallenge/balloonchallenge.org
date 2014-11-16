@@ -405,6 +405,18 @@ figure {
     }
 }
 
+.big {
+    font-size: 1.5em;
+}
+
+.tripleImg {
+    img {
+        width: 30%;
+        max-width: 100%;
+        min-width: 100px;
+    }
+}
+
 @media(max-width: 725px) {
     .alternate {
         text-align: left !important;
