@@ -1,0 +1,42 @@
+<% title "Sensors" %>
+<div class="primary section">
+    <h1 class="underline">Sensors</h1>
+    <div class="content">
+        <div class="blockImg">
+            <img src="http://acmg.seas.harvard.edu/people/faculty/djj/book/bookchap2-8.gif">
+        </div>
+        <p>There are a variety of atmospheric sensors that you can consider including as a payload. Although they are not a requirement for the most basic balloon, they can tell you a lot about the atmosphere right above your head. Here are a couple standard examples though this is far from an exhaustive list.</p>
+        <h2 class="underline medium">Pressure Sensors</h2>
+        <div class="inlineImg">
+            <img src="/sensor/1.jpg">
+            <img src="https://cdn.sparkfun.com//assets/parts/8/1/8/0/11824-01.jpg">
+        </div>
+        <p>Pressure varies with altitude so you can actually use a pressure sensor as an altimeter to estimate your height above the ground. You can use this compare to GPS or radio altitude measurements. Make sure that your selected communication protocol is compatible with your flight computer / data logger. Also make sure that their dynamic range can support pressures as low as 1 kpa (at 100,000 ft altitude). Here are just a few examples (there are many, many others available):</p>
+        <ul>
+            <li><a href="http://www.parallax.com/product/29124">Altimeter Module MS5607</a></li>
+            <li><a href="https://www.sparkfun.com/products/11824">SparkFun Barometric Pressure Sensor Breakout - BMP180 (only good for up to 30,000 ft)</a></li>
+            <li>
+                <a href="http://datasheet.octopart.com/ASDX015A24R-Honeywell-datasheet-29814.pdf">Honeywell Microstructure sensor</a>
+                <ul>
+                    <li>Can support near vacuum pressures</li>
+                    <li><a href="http://www.thefintels.com/aer/atom_altimeter.htm">http://www.thefintels.com/aer/atom_altimeter.htm</a></li>
+                </ul>
+            </li>
+            <li><a href="https://sensing.honeywell.com/honeywell%20trustability%C2%AE%20board%20mount%20pressure%20sensors:%20liquid%20media%20option">Honeywell TruStability</a></li>
+            <li>Freescale Pressure Sensors, which can be purchased on <a href="http://cache.freescale.com/files/sensors/doc/data_sheet/MPX5100.pdf?pspll=1">Mouser</a></li>
+        </ul>
+        <h2 class="underline medium">Inertial Measurement Units</h2>
+        <div class="blockImg">
+            <img src="https://cdn.sparkfun.com//assets/parts/5/6/4/1/10736-01.jpg">
+        </div>
+        <p>Inertial Measurement Units (IMUs) can also be included in your sensor suite. These combine accelerometers and gyroscopes to measure the acceleration and rotation rates of your payload. Traditionally, IMUs on balloons can be used to measure the relative turbulence in the atmospherere that your payload experiences. You can also use it to determine the forces sustained during liftoff, burst, and touchdown. Advanced users may consider using an IMU in a feedback loop for active pointing of their payload and camera. Try to make sure to align it with the body axes of your payload to simplify analysis. Here are just a few examples (there are many, many others available)</p>
+        <ul>
+            <li>Sparkfun has an excellent resource in navigating commercially available products: <a href="https://www.sparkfun.com/pages/accel_gyro_guide">https://www.sparkfun.com/pages/accel_gyro_guide</a></li>
+        </ul>
+        <h2 class="underline medium">Magnetometers</h2>
+        <p>Magnetometers can be used to measure your heading (like a compass) during the duration of flight. Try to make sure to align it with the body axes of your payload to simplify analysis. Here is one example:</p>
+        <ul>
+            <li><a href="https://www.sparkfun.com/products/10530">SparkFun Triple Axis Magnetometer Breakout - HMC5883L</a></li>
+        </ul>
+    </div>
+</div>

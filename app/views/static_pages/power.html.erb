@@ -1,0 +1,34 @@
+<% title "Power" %>
+<div class="primary section">
+    <h1 class="underline">Power</h1>
+    <div class="content">
+        <p>Whether you’re making your own electronics, or you’re using off the shelf components, some knowledge about electrical power is vital to developing any successful HAB system. This tutorial will guide you through some electrical concepts, describe just a few basic components for power systems, and finally provide information about the types of batteries that you might be using on your HAB flight.</p>
+        <h2 class="underline medium">Power Concepts</h2>
+        <p><span class="big">Current:</span> Simply put, current is the flow of electrons. It is measured by the amount of charge (number of electrons) that passes through a wire for a given unit of time. The unit for current is the Ampere (A), and equivalent to one Coulomb of charge per second.</p>
+        <p><span class="big">Voltage:</span>Voltage is the measure of electrical potential between any two points in space. Potential can be thought of as the “force” that pushes electrons through a conductor, creating current. The unit for voltage is (you guessed it) the Volt (V).</p>
+        <p><span class="big">Resistance:</span>Resistance is a material’s opposition to current. It is measured in Ohms (Ω). The relationship between current, voltage, and resistance in a conductor is given by Ohm’s Law:</p>
+        <div class="blockImg">
+            <img src="http://puu.sh/cTnXJ/3cbb429d8f.png">
+        </div>
+        <p>Where V is voltage, I is current, and R is resistance.</p>
+        <p><span class="big">Power</span> Power is the amount of energy that is used or generated in an electrical system, per unit of time. It is given in Watts (W). Power can be calculated by multiplying current and voltage together:</p>
+        <div class="blockImg">
+            <img src="http://puu.sh/cTocp/e2fa825cee.png">
+        </div>
+        <p><span class="big">Capacitance:</span> Capacitance is a measure of a battery’s total storage energy. It is given in Amp-hours (A-h), which is analogous to the amount of time it would take to drain the battery at the rated current. For example, a 2 A-h battery will completely drain in two hours with one amp of output.</p>
+        <p><span class="big">Internal Resistance:</span> The internal resistance of a battery is the resistance that is inherent to the battery itself. The internal resistance of the battery depends on many factors such as temperature and the type of battery. Generally, the internal resistance of the battery limits the maximum amount of current that can be drawn from the battery.</p>
+        <p><span class="big">Energy Density:</span> The energy density of a battery is the maximum amount of energy it can store per unit weight. This is an especially useful measure for HABing, because batteries are bulky and choosing a battery with a high energy density can help reduce the overall weight of your system.</p>
+        <p><span class="big">Temperature Effects on Batteries:</span> As the temperature of a battery goes down, its internal resistance increases and its overall capacity goes down. This can become severe enough such that the battery drains completely and your system shuts off during a flight! Different batteries stand up differently in low temperature, so it’s good to know the effects that temperature has on your batteries before flight. Batteries tend to fail completely around -20C. Your flight can fly through temperatures as low as -60C so do some housekeeping to keep em warm!</p>
+        <h2 class="underline medium">Power Components</h2>
+        <p>There are many, many types of electrical components that are used in power systems, but for the most basic you’ll need to know about voltage regulators:</p>
+        <p><span class="big">Linear Regulator:</span> The linear regulator is an essential device that outputs a specific voltage regardless of input voltage. They are very cheap and easy to use, which makes them popular for most hobbyists. Downsides of using linear regulators are that they are often inefficient and require an input voltage that is higher than the output voltage.</p>
+        <p><span class="big">Switching Regulator:</span> Just like the linear regulator, the switching regulator maintains a steady output voltage. The difference is that the switching regulator has the ability to either increase or decrease voltage, which makes the switching regulator an ideal choice for use with low voltage batteries. They can also be very very efficient. However, switching regulators can inject electrical noise into the power supply, which is undesirable for use with radios without RF knowledge.</p>
+        <h2 class="underline medium">Batteries</h2>
+        <p>Picking the right kind of battery for your HAB payload is an essential part of the payload development process. The best battery for your system will depend on how much weight you can spare, what your power requirements are, what temperatures you expect your battery to have to withstand, and how much you are willing to pay for batteries.</p>
+        <p>Below is a table with some of the most popular battery chemistries and characteristics that are important to HABing.</p>
+        <figure class="blockImg">
+            <img src="http://puu.sh/cTpxH/a43b2bf64c.png">
+            <figcaption>*Lithium-ion batteries can suffer from over- and under-charging effects. Over-charged batteries can have reduced capacity, and under-charged (discharged past the minimum rated voltage) batteries may not work at all.</figcaption>
+        </figure>
+    </div>
+</div>
