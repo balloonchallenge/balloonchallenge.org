@@ -1,3 +1,4 @@
+/*
 $(document).on('page:load', init);
 $(document).ready(init);
 
@@ -61,4 +62,4 @@ function init() {
              return 'day'
          }
      }
- }
+ }*/
