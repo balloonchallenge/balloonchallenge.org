@@ -3,8 +3,9 @@
   <div class="underline">
     <div style="font-weight: bolder"><%=@team.name%></div>
     <div style="font-size: .7em"><% if @team.school != "" %><%=@team.school%> - <% end %><%=@team.city %>, <%= Carmen::Country.coded(@team.country_code).name %></div>
-    <a href="http://community.balloonchallenge.org" class="btn inline" style="font-size: .33em;">Join the forum</a>
     <% if @team.users.include?(current_user) %>
+    <a href="http://community.balloonchallenge.org" class="btn inline" style="font-size: .33em;">Join the forum</a>
+
     <%=link_to 'Rules', get_involved_path, class: 'btn inline', style: 'font-size: .33em;'%>
     <%= link_to 'Tutorials', tutorials_path, class: 'btn inline', style: 'font-size: .33em;' %>
     <% end %>
