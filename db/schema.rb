@@ -11,22 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141115224243) do
+ActiveRecord::Schema.define(version: 20141117025700) do
 
   create_table "teams", force: true do |t|
-    t.string   "name",           default: "", null: false
-    t.string   "school"
+    t.text     "name",           limit: 255, default: "", null: false
+    t.text     "school",         limit: 255
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "latitude"
     t.string   "longitude"
-    t.string   "city",           default: "", null: false
+    t.string   "city",                       default: "", null: false
     t.string   "state_code"
-    t.string   "country_code",   default: "", null: false
-    t.string   "why_join"
-    t.string   "plan"
-    t.string   "find_out"
+    t.string   "country_code",               default: "", null: false
+    t.text     "why_join",       limit: 255
+    t.text     "plan",           limit: 255
+    t.text     "find_out",       limit: 255
     t.boolean  "host_payload"
     t.boolean  "have_payload"
     t.boolean  "buddies_mentor"
