@@ -11,9 +11,19 @@
     <% end %>
   </div>
   <div class="content">
-  <div class="team-description">
-    <h3>Team Description</h3>
-    <%=@team.description%>
+  <div class="team_data">
+    <div class="team-description">
+      <h3>Team Description</h3>
+      <p><%=@team.description%></p>
+    </div>
+    <div class="plan">
+      <h3>Plan for launch</h3>
+      <p><%=@team.plan %></p>
+    </div>
+    <div class="why_join">
+      <h3>Why did you join?</h3>
+      <p><%=@team.why_join %></p>
+    </div>
   </div>
   <h3>Team Members</h3>
   <ul class="members_list">
