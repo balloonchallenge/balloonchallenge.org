@@ -45,10 +45,10 @@
     
     <%= form_tag(controller: 'teams', action: 'add_member', method: 'post') do %>
       <%= label_tag :email, class: "team_email" do%>
-        Add team member: <br/> <small>They must have an account</small>
+        Add team member: <br/> <small class="account_warn">They must have an account on the GSBC website</small>
       <% end %>
       <%= text_field_tag :email, nil, placeholder: "member@gmail.com", class: "email_field" %>
-      <%= submit_tag('Add') %>
+      <%= submit_tag 'Add', class: "email_field" %>
     <% end %>
     <div class="edit_btn">
       <%= link_to "Edit team", edit_team_path(@team), class: "btn noShadow small" %>
