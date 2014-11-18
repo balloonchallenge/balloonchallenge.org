@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   belongs_to :team
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 
   after_create :new_user_email
 
