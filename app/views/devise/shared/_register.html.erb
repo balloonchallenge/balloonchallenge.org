@@ -7,8 +7,13 @@
         <div><%= f.label :email %>
         <%= f.email_field :email, autofocus: true %></div>
 
-        <div><%= f.label :name %>
-        <%= f.text_field :name %></div>
+        <div><%= f.label :first_name %>
+        <%= f.text_field :first_name %></div>
+
+        <div>
+            <%= f.label :last_name %>
+            <%= f.text_field :last_name %>
+        </div>
         
         <div><%= f.check_box :pastlaunch%> I have launched a High Altitude Balloon before (<em>not</em> required)</div>
         <div><%= f.check_box :gsbc_last_year %> I was a part of the Global Space Balloon Challenge last year</div><br />

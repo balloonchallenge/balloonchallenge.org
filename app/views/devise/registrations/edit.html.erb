@@ -29,8 +29,10 @@
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
-        <div><%= f.label :name %><i>(leave blank if you don't want to change it, 8 character minimum)</i><br/>
-        <%= f.text_field :name %></div>
+        <div><%= f.label :first_name %><i>(leave blank if you don't want to change it, 8 character minimum)</i><br/>
+        <%= f.text_field :first_name %></div>
+        <div><%= f.label :last_name %><i>(leave blank if you don't want to change it, 8 character minimum)</i><br/>
+        <%= f.text_field :last_name %></div>
         <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
         <%= f.password_field :password, autocomplete: "off" %></div>
 
