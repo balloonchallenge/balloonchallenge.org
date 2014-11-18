@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118033936) do
+ActiveRecord::Schema.define(version: 20141118040759) do
 
   create_table "teams", force: true do |t|
     t.text     "name",           limit: 255, default: "", null: false
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20141118033936) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name",                   default: "", null: false
+    t.string   "name",                   default: ""
     t.integer  "team_id"
     t.boolean  "admin"
     t.boolean  "pastlaunch"
