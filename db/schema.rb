@@ -58,8 +58,8 @@ ActiveRecord::Schema.define(version: 20141118040759) do
     t.boolean  "admin"
     t.boolean  "pastlaunch"
     t.boolean  "gsbc_last_year"
-    t.string   "first_name",             default: ""
-    t.string   "last_name",              default: ""
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

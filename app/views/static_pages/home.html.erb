@@ -15,7 +15,7 @@
             <%= link_to "What is a High-Altitude Balloon?", learn_more_beginner_path, class: 'btn callToAction' %>
         <% elsif current_user and current_user.team.nil? %>
             <%= link_to "View teams", teams_path, class: 'btn callToAction' %>
-            <%= link_to "Create a team", new_team_path, class: 'btn callToAction' %>
+            <%= link_to "Create a team", new_team_path, class: 'btn callToAction dontSquish' %>
         <% elsif current_user and !current_user.team.nil? %>
             <a href="http://community.balloonchallenge.org" class="btn callToAction">Community</a>
             <%= link_to "Tutorials", tutorials_path, class: 'btn callToAction'%>

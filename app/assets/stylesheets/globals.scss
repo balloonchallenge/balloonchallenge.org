@@ -90,7 +90,11 @@ body {
     .btn.callToAction {
         display: inline-block;
         max-width: 35%;
-
+        vertical-align: top;
+        margin-top: auto;
+        &.dontSquish {
+            min-width: 200px;
+        }
         @media (max-width: 500px) {
             display: block;
             max-width: 80%;
