@@ -459,6 +459,39 @@ figure {
     }
 }
 
+.people {
+    width:100%;
+    margin: 10px auto;
+    text-align: center;
+    .person {
+        list-style-type: none;
+        display: inline-block;
+        max-width: 400px;
+        vertical-align: top;
+        margin: 15px 10px;
+        padding: 25px 10px;
+        text-align: center;
+        border-radius: 3px;
+        border-top: 5px solid rgba(0,0,0,.1);
+        img {
+            width: 30%;
+            border-radius: 100%;
+            border: 3px solid rgba(255,255,255,1);
+            box-shadow: 0px 0px 3px 1px rgba(0,0,0,.2);
+        }
+        .more {
+            font-size: 0.7em;
+            a {
+                &:hover {
+                    color: inherit;
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}
+
+
 @media(max-width: 725px) {
     .alternate {
         text-align: left !important;
