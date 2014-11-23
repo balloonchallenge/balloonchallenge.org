@@ -17,7 +17,7 @@
         <ul>
           <% team.users.each do |member| %>
           <li>
-            <%= member.name %> - <a href="mailto: <%=member.email %>"><%=member.email%></a>
+            <%= member.first_name %> <%=member.last_name %>- <a href="mailto: <%=member.email %>"><%=member.email%></a>
           </li>
           <%end%>
         </ul>
