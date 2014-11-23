@@ -1,6 +1,7 @@
 class TeamsController < ApplicationController
 
   before_action :correct_team, only: [:destroy, :update, :edit, :add_member, :remove_member]
+  before_action :is_admin, only: [:admin]
 
   def create
     @user = current_user
@@ -47,6 +48,11 @@ class TeamsController < ApplicationController
 
   def show
     @team = Team.find(params[:id])
+  end
+
+  def admin
+    @teams = Team.all
+    @extra_users = User.where(team: nil)
   end
  
   def add_member
@@ -119,5 +125,9 @@ class TeamsController < ApplicationController
     def correct_team
       @team = current_user.team
       redirect_to root_url if @team.nil?
+    end
+
+    def is_admin
+      redirect_to teams_path if !current_user.admin
     end
 end

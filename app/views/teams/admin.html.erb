@@ -1,0 +1,47 @@
+<% title "Teams Admin" %>
+<div class="primary section">
+  <h1>Teams Admin</h1>
+  <table>
+    <tr>
+      <th>Team Name</th>
+      <th>Team Location</th>
+      <th>Team Members</th>
+      <th>Team Organization</th>
+      <th>Team Created At</th>
+    </tr>
+    <% @teams.each do |team| %>
+    <tr>
+      <td><%=link_to team.name, team %></td>
+      <td><%=team.city %>, <%= Carmen::Country.coded(team.country_code).name %>, <%= team.state_code %></td>
+      <td>
+        <ul>
+          <% team.users.each do |member| %>
+          <li>
+            <%= member.name %> - <a href="mailto: <%=member.email %>"><%=member.email%></a>
+          </li>
+          <%end%>
+        </ul>
+      </td>
+      <td><%= team.school %></td>
+      <td><%= team.created_at %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+<style>
+  table {
+    width: 95%;
+    border-spacing: 0;
+
+  }
+
+  td {
+    border: 1px solid black;
+    text-align: center;
+  }
+
+  td ul {
+    text-align: left;
+  }
+
+</style>
