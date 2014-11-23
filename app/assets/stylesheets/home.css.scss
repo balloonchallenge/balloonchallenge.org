@@ -46,13 +46,7 @@
 
 
 
-.affiliates.section {
-    background: url(image-path('light_bg.png'));
-    width: 100%;
-    position: relative;
-    left: -10px;
-    padding: 10px;
-    box-shadow: 1px 0px 3px 1px #000;
+.affiliates {
     .threeContainer {
         width: 80%;
         margin: 10px auto;
@@ -61,14 +55,21 @@
     .three {
         display: inline-block;
         font-size: 1.6em;
-        margin: 20px;
+        margin: 20px 30px;
         width: 25%;
         min-width: 200px;
+        vertical-align: top;
         ul {
             list-style-type: none;
         }
         img {
-            max-height: 150px;
+            height: 100px;
+        }
+        &.smaller {
+            img {
+                height: auto;
+                width: 200px;
+            }
         }
     }
     .threeVerticalContainer {
