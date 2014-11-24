@@ -505,6 +505,14 @@ figure {
     }
 }
 
+.team-description, .plan, .why_join {
+    margin: 10px 0px;
+    border: 1px solid rgba(0,0,0,.1);
+    padding: 10px;
+    border-radius: 3px;
+    border-bottom: 2px solid rgba(0,0,0,.2);
+}
+
 @media(max-width: 725px) {
     .alternate {
         text-align: left !important;
