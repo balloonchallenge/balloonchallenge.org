@@ -513,6 +513,10 @@ figure {
     border-bottom: 2px solid rgba(0,0,0,.2);
 }
 
+.fb_edge_widget_with_comment span.fb_edge_comment_widget iframe.fb_ltr {
+    display: none !important;
+}
+
 @media(max-width: 725px) {
     .alternate {
         text-align: left !important;
