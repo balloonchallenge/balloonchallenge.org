@@ -4,7 +4,6 @@ class Team < ActiveRecord::Base
   validates :school, length: {maximum: 80}
   validates :city, presence: true, length: {maximum: 60}
   validates :country_code, presence: true
-  validates :state_code, presence: true
   validates :description, presence: true, length: {maximum: 500}
   validates :plan, presence: true, length: {maximum: 1000}
   validates :why_join, length: {maximum: 1000}
