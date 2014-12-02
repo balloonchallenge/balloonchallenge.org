@@ -1,8 +1,0 @@
-# Example figaru secrets for dev
-
-DEVISE_SECRET_KEY: test123
-GMAIL_USERNAME: you@gmail.com
-GMAIL_PASSWORD: hunter2
-MANDRILL_USERNAME:
-MANDRILL_KEY:
-SSO_SECRET: yolo

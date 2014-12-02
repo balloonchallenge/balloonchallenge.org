@@ -466,9 +466,9 @@ figure {
     .person {
         list-style-type: none;
         display: inline-block;
-        max-width: 400px;
+        max-width: 300px;
         vertical-align: top;
-        margin: 15px 10px;
+        //margin: 15px 10px;
         padding: 25px 10px;
         text-align: center;
         border-radius: 3px;
@@ -503,6 +503,18 @@ figure {
         color: inherit;
         margin: 10px -2px;
     }
+}
+
+.team-description, .plan, .why_join {
+    margin: 10px 0px;
+    border: 1px solid rgba(0,0,0,.1);
+    padding: 10px;
+    border-radius: 3px;
+    border-bottom: 2px solid rgba(0,0,0,.2);
+}
+
+.fb_edge_widget_with_comment span.fb_edge_comment_widget iframe.fb_ltr {
+    display: none !important;
 }
 
 @media(max-width: 725px) {
