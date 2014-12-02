@@ -10,10 +10,8 @@
     <h3>Your team: <%= link_to current_user.team.name, current_user.team %></h3>
 
     <% end %>
-    <!-- <div class="map_container" style="max-width:100%;">
+  <div class="map_container" style="max-width:100%;">
       <%= render "shared/map" %>
-  </div> -->
-  <div id="map">
   </div>
     <ul class="teams">
       <% @teams.each do |team| %>
