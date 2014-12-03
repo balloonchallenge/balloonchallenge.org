@@ -517,6 +517,20 @@ figure {
     display: none !important;
 }
 
+.extraSpace {
+    margin-bottom: 55px !important;
+}
+
+.inlineContainer {
+    margin: 10px auto;
+    text-align: center;
+    img {
+        vertical-align: top;
+        margin: 20px;
+        max-height: 100px;
+    }
+}
+
 @media(max-width: 725px) {
     .alternate {
         text-align: left !important;
