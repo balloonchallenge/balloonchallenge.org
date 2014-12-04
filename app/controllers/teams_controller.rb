@@ -38,7 +38,7 @@ class TeamsController < ApplicationController
   end
 
   def index
-    @teams = Team.all
+    @teams = Team.order('name ASC')
   end
 
   def destroy
