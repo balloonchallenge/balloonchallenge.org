@@ -13,6 +13,7 @@
   <div class="map_container" style="max-width:100%;">
       <%= render "shared/map" %>
   </div>
+  <h2>There are <strong><%=@teams.length%></strong> teams in <strong><%=@teams.uniq.pluck(:country_code).length%></strong> countries.</h2>
     <ul class="teams">
       <% @teams.each do |team| %>
         <li class="team">
