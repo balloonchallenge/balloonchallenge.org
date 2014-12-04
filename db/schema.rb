@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118040759) do
+ActiveRecord::Schema.define(version: 20141204055902) do
 
   create_table "teams", force: true do |t|
     t.text     "name",           limit: 255, default: "", null: false
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20141118040759) do
     t.boolean  "ages_18_26"
     t.boolean  "ages_27_50"
     t.boolean  "ages_50_up"
+    t.text     "url"
   end
 
   add_index "teams", ["name"], name: "index_teams_on_name", unique: true

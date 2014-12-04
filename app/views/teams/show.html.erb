@@ -24,6 +24,11 @@
       <h3>Why did you join?</h3>
       <p><%=@team.why_join %></p>
     </div>
+    <% if @team.url %>
+    <div class="url">
+      <p><strong>Team Website:</strong><a href="<%=@team.url %>" target="_blank"><%=@team.url %></a></p>
+    </div>
+    <% end %>
   </div>
   <h3>Team Members</h3>
   <ul class="members_list">

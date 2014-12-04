@@ -47,7 +47,8 @@
   <div><%= f.check_box :buddies_mentor %>We would like to be a Balloon Buddies mentor</div>
   <div><%= f.check_box :buddies_mentee %>We would like to be a Balloon Buddies mentee</div>
 
-
+  <label for="url">Team Website URL (Optional)</label>
+  <%= f.text_field :url, placeholder: "http://example.com/", maxlength: 300 %>
 
   <%= f.submit "Post" %>
   <div class="permission">By clicking this button I give permission to post the information above on the website.</div>

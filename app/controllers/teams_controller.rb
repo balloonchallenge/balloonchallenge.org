@@ -115,7 +115,8 @@ class TeamsController < ApplicationController
         :find_out, 
         :host_payload, :have_payload, :buddies_mentor, :buddies_mentee, 
         :ages_0_10, :ages_11_17, :ages_18_26, :ages_27_50, 
-        :ages_50_up
+        :ages_50_up,
+        :url
       )
     end
 

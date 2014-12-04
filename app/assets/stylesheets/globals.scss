@@ -505,12 +505,15 @@ figure {
     }
 }
 
-.team-description, .plan, .why_join {
+.team-description, .plan, .why_join, .url {
     margin: 10px 0px;
     border: 1px solid rgba(0,0,0,.1);
     padding: 10px;
     border-radius: 3px;
     border-bottom: 2px solid rgba(0,0,0,.2);
+    strong {
+        color: rgba(0,0,0,0.7); 
+    }
 }
 
 .fb_edge_widget_with_comment span.fb_edge_comment_widget iframe.fb_ltr {
