@@ -39,6 +39,7 @@ class TeamsController < ApplicationController
 
   def index
     @teams = Team.order('name ASC')
+    @country_count = Team.distinct.count('country_code')
   end
 
   def destroy

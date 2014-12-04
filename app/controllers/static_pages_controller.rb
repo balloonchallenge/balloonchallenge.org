@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
     @teams = Team.all
+     @country_count = Team.distinct.count('country_code')
   end
 
   def about
