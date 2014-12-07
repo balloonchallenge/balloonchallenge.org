@@ -512,7 +512,7 @@ figure {
     border-radius: 3px;
     border-bottom: 2px solid rgba(0,0,0,.2);
     strong {
-        color: rgba(0,0,0,0.7); 
+        color: rgba(0,0,0,0.7);
     }
 }
 
@@ -522,6 +522,7 @@ figure {
 
 .extraSpace {
     margin-bottom: 55px !important;
+    background: image-url('light_bg.png') !important;
 }
 
 .inlineContainer {
@@ -532,6 +533,17 @@ figure {
         margin: 20px;
         max-height: 100px;
     }
+}
+
+.counter {
+    font-size: 2em;
+    text-align: center;
+    padding: 20px 10px;
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: 3px;
+    box-shadow: inset 1px 1px 3px 1px rgba(0,0,0,.1);
+    width: 80%;
+    margin: 10px auto;
 }
 
 @media(max-width: 725px) {
