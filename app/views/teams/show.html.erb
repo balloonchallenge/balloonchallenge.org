@@ -71,13 +71,13 @@
       <%= link_to "Edit team", edit_team_path(@team), class: "btn noShadow small" %>
     </div>
   <% end %>
-  <% if current_user.team.nil? and !@request_ids.include?(current_user.id.to_s) %>
+  <% if current_user.team.nil? and !@request_ids.include?(current_user.id) %>
     <%= form_for @request, :url => {:action => 'create', :controller => 'requests' }, :html => {:class=>'request_to_join_form', :method=>'POST'} do |f| %>
       <%= f.hidden_field :team_id, :value => @team.id %>
       <%= f.submit 'Request to join this team', class: "btn" %>
     <% end %>
   <% end %>
-  <% if @request_ids.include?(current_user.id.to_s) %>
+  <% if @request_ids.include?(current_user.id) %>
     <h4>You have requested to join this team, but they haven't responded yet.</h4>
   <% end %>
   </div>
