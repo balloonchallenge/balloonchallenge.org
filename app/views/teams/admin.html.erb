@@ -8,6 +8,8 @@
       <th>Team Members</th>
       <th>Team Organization</th>
       <th>Team Created At</th>
+      <th>Team Ages</th>
+      <th>Buddies</th>
     </tr>
     <% @teams.each do |team| %>
     <tr>
@@ -24,6 +26,20 @@
       </td>
       <td><%= team.school %></td>
       <td><%= team.created_at %></td>
+      <td>
+        0-10: <%= team.ages_0_10 %> <br/>
+        11-17: <%= team.ages_11_17 %> <br/>
+        18-26: <%= team.ages_18_26 %> <br>
+        27-50: <%= team.ages_27_50 %> <br>
+        50 +: <%= team.ages_50_up %> 
+      </td>
+      <td>
+        Host Payload: <%= team.host_payload %> <br>
+        Have Payload: <%= team.have_payload %> <br>
+        Mentor: <%= team.buddies_mentor %> <br>
+        Mentee: <%= team.buddies_mentee %> 
+      </td>
+
     </tr>
     <% end %>
   </table>
