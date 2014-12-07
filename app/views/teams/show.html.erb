@@ -24,7 +24,7 @@
       <h3>Why did you join?</h3>
       <p><%=@team.why_join %></p>
     </div>
-    <% if @team.url and @team.url != "nil"%>
+    <% if @team.url and @team.url != ""%>
     <div class="url">
       <p><strong>Team Website:</strong><a href="<%=@team.url %>" target="_blank"><%=@team.url %></a></p>
     </div>
