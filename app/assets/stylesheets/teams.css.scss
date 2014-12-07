@@ -51,6 +51,9 @@
 .requests  {
   max-width: 60%;
   margin-bottom: 70px;
+  .request {
+    margin-bottom: 25px;
+  }
  .request_buttons {
     float: right;
     @media screen and (max-width: 1200px) {
