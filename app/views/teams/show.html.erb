@@ -55,9 +55,30 @@
       <%= text_field_tag :email, nil, placeholder: "member@gmail.com", class: "email_field" %>
       <%= submit_tag 'Add', class: "email_field" %>
     <% end %>
+    <% if @team.requests.length > 0 %>
+      <h3>Users who have requested to join your team</h3>
+      <ul class="requests">
+      <% @team.requests.each do |request| %>
+        <li><%= request.user_email %> 
+        <span class="request_buttons">
+        <%= link_to "Add user to team", {action: "add_member", email: request.user_email, method: :post}, class: "btn inline small" %>
+        <%= link_to "Delete request", request, {action: "destroy", controller: "requests", method: :delete, class: "btn inline small"} %> </li>
+        </span>
+      <% end %>
+      </ul>
+    <% end %>
     <div class="edit_btn">
       <%= link_to "Edit team", edit_team_path(@team), class: "btn noShadow small" %>
     </div>
   <% end %>
   </div>
+  <% if current_user.team.nil? and !@request_ids.include?(current_user.id.to_s) %>
+    <%= form_for @request, :url => {:action => 'create', :controller => 'requests' }, :html => {:class=>'request_to_join_form', :method=>'POST'} do |f| %>
+      <%= f.hidden_field :team_id, :value => @team.id %>
+      <%= f.submit 'Request to join this team' %>
+    <% end %>
+  <% end %>
+  <% if @request_ids.include?(current_user.id.to_s) %>
+    <h4>You have requested to join this team, but they haven't responded yet.</h4>
+  <% end %>
 </div>

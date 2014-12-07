@@ -16,12 +16,6 @@ class TeamsController < ApplicationController
       flash[:alert] = "Team creation failed"
       redirect_to teams_url
     end
-    # if @team.save
-    #   flash[:success] = "Team created!"
-    #   current_user.team_id = @team.id
-    #   current_user.save
-    #   redirect_to root_url
-    # end
   end
 
   def update
@@ -49,6 +43,14 @@ class TeamsController < ApplicationController
 
   def show
     @team = Team.find(params[:id])
+    @request = Request.new
+    @request_ids = []
+    # this is a total hack because I'm meh at rails
+    # We'll check if the current_user's ID is in this array in the view
+    # to not present the button if the user has already requested to join
+    @team.requests.each do |request|
+      @request_ids << request.user_id
+    end
   end
 
   def admin
@@ -58,14 +60,24 @@ class TeamsController < ApplicationController
  
   def add_member
     @team = Team.find(params[:id])
+    @request_ids = []
+    @team.requests.each do |request|
+      @request_ids << request.user_id
+    end
     @user = User.where(email: params[:email]).first
     if @user and @user.team.nil?
       @team.users << @user
       @team.save
       @user.save
+      if @request_ids.include?(@user.id.to_s)
+        Request.where(user_id: @user.id).destroy_all
+      end
       TeamMailer.added_user(@user, @team).deliver
       flash[:success] = "Team updated!"
       redirect_to team_path(@team.id)
+    elsif !@user
+      flash[:alert] = "User does not exist!"
+      redirect_to :back
     elsif !@user.team.nil?
       flash[:alert] = "#{@user.first_name} is already in a team!"
       redirect_to :back
@@ -85,7 +97,7 @@ class TeamsController < ApplicationController
       @user.team = nil
       @user.save
       flash[:success] = "User removed from team"
-      redirect_to team_path(Team.find(params[:id]))
+      redirect_to :back
     end
   end
 

@@ -48,6 +48,19 @@
   vertical-align: top;
 }
 
+.requests  {
+  max-width: 60%;
+  margin-bottom: 70px;
+ .request_buttons {
+    float: right;
+    @media screen and (max-width: 1200px) {
+      float: left;
+      display: block;
+    }
+  } 
+}
+
+
 // Sign up
 
 .half {

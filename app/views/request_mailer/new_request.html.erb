@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Dear <%= @team.name %>,</p>
+
+    <p>A user, <%=@user.first_name%> <%=@user.last_name%>, has requested to join your team. You can add them from your <a href="<%=@url %>">team page</a></p>
+    
+    <p>If you have any issues or questions please don't hesitate to contact us at <a href="mailto:spaceballoonchallenge@gmail.com">spaceballoonchallenge@gmail.com</a></p>
+
+    Fly High,
+    GSBC Team
+  </body>
+</html>

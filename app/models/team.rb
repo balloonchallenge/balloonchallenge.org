@@ -1,5 +1,6 @@
 class Team < ActiveRecord::Base
   has_many :users
+  has_many :requests, dependent: :destroy
   validates :name, presence: true, uniqueness: true, length: {maximum: 100}
   validates :school, length: {maximum: 80}
   validates :city, presence: true, length: {maximum: 60}

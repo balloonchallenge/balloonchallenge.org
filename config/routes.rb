@@ -44,6 +44,8 @@ Rails.application.routes.draw do
     get '/users/sso' => 'sessions#sso'
   end
   resources :teams
+  post 'requests/create' => 'requests#create'
+  resources :requests
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

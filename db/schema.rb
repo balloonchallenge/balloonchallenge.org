@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141204055902) do
+ActiveRecord::Schema.define(version: 20141207180913) do
+
+  create_table "requests", force: true do |t|
+    t.string   "user_id"
+    t.integer  "team_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "teams", force: true do |t|
     t.text     "name",           limit: 255, default: "", null: false
@@ -59,8 +66,8 @@ ActiveRecord::Schema.define(version: 20141204055902) do
     t.boolean  "admin"
     t.boolean  "pastlaunch"
     t.boolean  "gsbc_last_year"
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "first_name",             default: ""
+    t.string   "last_name",              default: ""
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
