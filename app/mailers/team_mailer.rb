@@ -13,6 +13,5 @@ class TeamMailer < ActionMailer::Base
     @team = team
     @url = url_for(@team)
     mail(to: @user.email, subject: "You've been added to the team \"#{@team.name}\" on the Global Space Balloon Challenge")
-
   end
 end

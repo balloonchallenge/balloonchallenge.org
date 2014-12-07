@@ -3,9 +3,13 @@ class RequestMailer < ActionMailer::Base
   def new_request(user, team)
     @team = team
     @user = user
-    @users = team.users
     @url = url_for(@team)
-    emails = @users.collect(&:email).join(",")
-    mail(to: emails, subject: "A user has requested to join your team")
+    mail(to: user.email, subject: "A user has requested to join your team")
+  end
+
+  def self.send_new_request(team)
+    team.users.each do |user|
+      new_request(user, team).deliver
+    end
   end
 end

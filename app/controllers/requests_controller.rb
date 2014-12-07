@@ -1,11 +1,10 @@
 class RequestsController < ApplicationController
   def create
-    @user = current_user
     @request = Request.create(req_params)
     if @request.save
       @request.user_id = current_user.id
       @request.save
-      RequestMailer.new_request(@user, @request.team)
+      RequestMailer.send_new_request(@request.team)
       flash[:success] = "You have requested to join the team!"
       redirect_to :back
     else
