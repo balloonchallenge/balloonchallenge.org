@@ -69,7 +69,7 @@ class TeamsController < ApplicationController
       @team.users << @user
       @team.save
       @user.save
-      if @request_ids.include?(@user.id.to_s)
+      if @request_ids.include?(@user.id)
         Request.where(user_id: @user.id).destroy_all
       end
       TeamMailer.added_user(@user, @team).deliver
