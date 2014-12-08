@@ -349,6 +349,7 @@ textarea {
         }
         img {
             max-height: 180px;
+            max-width: 100%;
             display: inline-block;
             margin: 5px;
             border-radius:3px;
@@ -559,6 +560,13 @@ figure {
     }
 }
 
+@media(max-width: 600px) {
+    .links {
+        position: relative !important;
+        right: 0 !important;
+    }
+}
+
 @media(max-width:400px) {
     body {
         font-size: 0.8em;
@@ -580,5 +588,12 @@ figure {
         margin: 10px -20px !important;
         display: block !important;
         width: 100% !important;
+    }
+    .team_buttons a,
+    .info_buttons a {
+        width: 100px !important;
+    }
+    .btn {
+        width: 200px !important;
     }
 }
