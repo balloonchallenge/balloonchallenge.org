@@ -77,7 +77,7 @@
       <%= f.submit 'Request to join this team', class: "btn" %>
     <% end %>
   <% end %>
-  <% if @request_ids.include?(current_user.id) %>
+  <% if @request_ids and @request_ids.include?(current_user.id) %>
     <h4>You have requested to join this team, but they haven't responded yet.</h4>
   <% end %>
   </div>
