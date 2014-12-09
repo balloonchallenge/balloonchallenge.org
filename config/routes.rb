@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   match '/rope',      to: 'static_pages#rope',      via: 'get'
   match '/sensor',    to: 'static_pages#sensor',    via: 'get'
   match '/power',     to: 'static_pages#power',     via: 'get'
+  match '/cost',      to: 'static_pages#cost',      via: 'get'
   # match '/registration/thanks', to: 'static_pages#thanks_register', via: 'get'
   match '/teams/:id/add_member/', to: 'teams#add_member', via: 'post', as: 'add_member'
   match '/teams/:id/remove_member/', to: 'teams#remove_member', via: 'delete', as: 'remove_member'

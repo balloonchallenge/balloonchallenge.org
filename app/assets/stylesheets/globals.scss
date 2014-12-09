@@ -547,6 +547,22 @@ figure {
     margin: 10px auto;
 }
 
+img {
+    max-width: 100% !important;
+}
+
+@media(max-width: 1000px) {
+    .fifty.image {
+        margin-left: 0px !important;
+    }
+    .graphic {
+        display: none;
+    }
+    .tutorialLinks {
+        width: 100%;
+    }
+}
+
 @media(max-width: 725px) {
     .alternate {
         text-align: left !important;
