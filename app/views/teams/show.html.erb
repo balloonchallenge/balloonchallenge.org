@@ -47,7 +47,7 @@
   <% end %>
   </ul>
   <% if @team.users.include?(current_user) %>
-    
+
     <%= form_tag(controller: 'teams', action: 'add_member', method: 'post') do %>
       <%= label_tag :email, class: "team_email" do%>
         Add team member: <br/> <small class="account_warn">They must have an account on the GSBC website</small>
@@ -59,7 +59,7 @@
       <h3>Users who have requested to join your team</h3>
       <ul class="requests">
       <% @team.requests.each do |request| %>
-        <li class="request"><%= request.user_email %> 
+        <li class="request"><%= request.user_email %>
         <span class="request_buttons">
         <%= link_to "Add user to team", {action: "add_member", email: request.user_email}, {class: "btn inline small", method: :post} %>
         <%= link_to "Delete request", request, {action: "destroy", controller: "requests", method: :delete, class: "btn inline small"} %> </li>
@@ -68,7 +68,7 @@
       </ul>
     <% end %>
     <div class="edit_btn">
-      <%= link_to "Edit team", edit_team_path(@team), class: "btn noShadow small" %>
+      <%= link_to "Edit team", edit_team_path(@team), class: "btn noShadow" %>
     </div>
   <% end %>
   <% if current_user and current_user.team.nil? and !@request_ids.include?(current_user.id) %>
