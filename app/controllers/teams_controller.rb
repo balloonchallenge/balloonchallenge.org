@@ -54,7 +54,7 @@ class TeamsController < ApplicationController
   end
 
   def admin
-    @teams = Team.all
+    @teams = Team.order('created_at ASC')
     @extra_users = User.where(team: nil)
   end
  
