@@ -1,0 +1,15 @@
+<% title "Search Results" %>
+<div class="primary section">
+  <div class="underline">
+    <div style="font-weight: bolder;">Search Results</div>
+  </div>
+  <ul>
+    <% @teams.each do |team| %>
+      <li>
+        <%=link_to team do %>
+          <%= team.name %><% if team.school != "" %> - <%= team.school %><% end %> - <%= team.city %>, <%= Carmen::Country.coded(team.country_code).name %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>

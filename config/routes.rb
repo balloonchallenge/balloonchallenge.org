@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   get '/teams/admin' => 'teams#admin'
   get '/teams/subregion_options' => 'teams#subregion_options'
   get '/teams/all' => 'teams#all_teams'
+  get '/teams/search' => 'teams#search'
   devise_scope :user do
 
     get '/users/sso' => 'sessions#sso'

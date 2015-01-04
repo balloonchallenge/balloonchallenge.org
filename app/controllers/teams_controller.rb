@@ -115,6 +115,10 @@ class TeamsController < ApplicationController
     @teams = Team.all
     render json: @teams
   end
+
+  def search 
+    @teams = Team.search params[:search]
+  end
   private
 
     def team_params
