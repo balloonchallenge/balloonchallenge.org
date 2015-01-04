@@ -24,7 +24,8 @@ class Team < ActiveRecord::Base
 
   def self.search(search)
     search_condition = "%" + search + "%"
-    where('name LIKE ? OR school LIKE ? OR city LIKE ?', search_condition, search_condition, search_condition)
+    search_condition = search_condition.downcase
+    where('lower(name) LIKE ? OR lower(school) LIKE ? OR lower(city) LIKE ?', search_condition, search_condition, search_condition)
   end
 end
  
