@@ -54,7 +54,7 @@ class TeamsController < ApplicationController
   end
 
   def admin
-    @teams = Team.all
+    @teams = Team.order('created_at ASC')
     @extra_users = User.where(team: nil)
   end
  
@@ -114,6 +114,10 @@ class TeamsController < ApplicationController
   def all_teams
     @teams = Team.all
     render json: @teams
+  end
+
+  def search 
+    @teams = Team.search params[:search]
   end
   private
 

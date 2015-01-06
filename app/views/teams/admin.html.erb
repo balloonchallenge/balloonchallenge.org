@@ -17,6 +17,7 @@
       <td><%=team.city %>, <%= Carmen::Country.coded(team.country_code).name %>, <%= team.state_code %></td>
       <td>
         <ul>
+          Number of Members: <%= team.users.count %>
           <% team.users.each do |member| %>
           <li>
             <%= member.first_name %> <%=member.last_name %>- <a href="mailto: <%=member.email %>"><%=member.email%></a>
@@ -27,17 +28,35 @@
       <td><%= team.school %></td>
       <td><%= team.created_at %></td>
       <td>
-        0-10: <%= team.ages_0_10 %> <br/>
-        11-17: <%= team.ages_11_17 %> <br/>
-        18-26: <%= team.ages_18_26 %> <br>
-        27-50: <%= team.ages_27_50 %> <br>
-        50 +: <%= team.ages_50_up %> 
+      <% if team.ages_0_10 %>
+        0-10  <br/>
+      <% end %>
+      <% if team.ages_11_17 %> 
+        11-17 <br/>
+      <% end %>
+      <% if team.ages_18_26 %>
+        18-26 <br/>
+      <% end %>
+      <% if team.ages_27_50 %> 
+        27-50 <br>
+      <% end %>
+      <% if team.ages_50_up %>
+        50 +
+      <% end %>
       </td>
       <td>
-        Host Payload: <%= team.host_payload %> <br>
-        Have Payload: <%= team.have_payload %> <br>
-        Mentor: <%= team.buddies_mentor %> <br>
-        Mentee: <%= team.buddies_mentee %> 
+      <% if team.host_payload %>
+        Host Payload  <br>
+      <% end %>
+      <% if team.have_payload %>
+        Have Payload <br>
+      <% end %>
+      <% if team.buddies_mentor %> 
+        Mentor <br>
+      <% end %>
+      <% if team.buddies_mentee %>
+        Mentee 
+      <% end %>
       </td>
 
     </tr>
