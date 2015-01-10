@@ -56,6 +56,11 @@ class TeamsController < ApplicationController
   def admin
     @teams = Team.order('created_at ASC')
     @extra_users = User.where(team: nil)
+    @all_users = User.order('created_at ASC')
+    respond_to do |format|
+      format.html
+      format.csv { render text: @all_users.to_csv }
+    end
   end
  
   def add_member
@@ -146,6 +151,6 @@ class TeamsController < ApplicationController
     end
 
     def is_admin
-      redirect_to teams_path if !current_user.admin
+      redirect_to teams_path if !current_user or !current_user.admin
     end
 end
