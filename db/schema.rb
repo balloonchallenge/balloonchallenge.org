@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150103231106) do
+ActiveRecord::Schema.define(version: 20150119183908) do
 
   create_table "requests", force: true do |t|
     t.integer  "user_id",    limit: 255
@@ -21,19 +21,19 @@ ActiveRecord::Schema.define(version: 20150103231106) do
   end
 
   create_table "teams", force: true do |t|
-    t.text     "name",           limit: 255, default: "", null: false
-    t.text     "school",         limit: 255
+    t.text     "name",                  limit: 255, default: "", null: false
+    t.text     "school",                limit: 255
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "latitude"
     t.string   "longitude"
-    t.string   "city",                       default: "", null: false
+    t.string   "city",                              default: "", null: false
     t.string   "state_code"
-    t.string   "country_code",               default: "", null: false
-    t.text     "why_join",       limit: 255
-    t.text     "plan",           limit: 255
-    t.text     "find_out",       limit: 255
+    t.string   "country_code",                      default: "", null: false
+    t.text     "why_join",              limit: 255
+    t.text     "plan",                  limit: 255
+    t.text     "find_out",              limit: 255
     t.boolean  "host_payload"
     t.boolean  "have_payload"
     t.boolean  "buddies_mentor"
@@ -44,6 +44,10 @@ ActiveRecord::Schema.define(version: 20150103231106) do
     t.boolean  "ages_27_50"
     t.boolean  "ages_50_up"
     t.text     "url"
+    t.string   "team_img_file_name"
+    t.string   "team_img_content_type"
+    t.integer  "team_img_file_size"
+    t.datetime "team_img_updated_at"
   end
 
   add_index "teams", ["name"], name: "index_teams_on_name", unique: true
