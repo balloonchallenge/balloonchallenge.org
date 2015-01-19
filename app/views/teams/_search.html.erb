@@ -1,4 +1,4 @@
 <%= form_tag teams_search_path, :method => :get, style: 'margin-left: -10px; text-align: center;' do %>
- <%= text_field_tag :search, params[:search], :id => 'search_field', style: 'max-width: 40%; display: inline-block;' %>
+ <%= text_field_tag :search, params[:search], :id => 'search_field', style: 'max-width: 40%; display: inline-block;', placeholder: 'Search by team name, organization, or city.' %>
  <%= submit_tag 'Search', :name => :nil, class: "btn inline small" %>
 <% end %>
