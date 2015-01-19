@@ -24,6 +24,7 @@ class TeamsController < ApplicationController
       redirect_to @team
     else
       flash[:alert] = "Team not updated"
+      render :edit
     end
   end
 

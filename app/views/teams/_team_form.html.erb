@@ -1,3 +1,4 @@
+<h3 style="color: red;">Error: <%= @team.errors.full_messages.first if @team.errors.any? %></h3>
 <%= form_for @team do |f| %>
   
   <label for="name">Team Name</label>
