@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   match '/contact',   to: 'static_pages#contact',   via: 'get'
   match '/regulations',to: 'static_pages#regulations',via: 'get'
   match '/education', to: 'static_pages#education', via: 'get'
-  match '/prizes',    to: 'static_pages#prizes',    via: 'get'
+  match '/get-involved/prizes',    to: 'static_pages#prizes',    via: 'get'
   match '/flight-predictors',to:'static_pages#flight-predictors',via:'get'
   match '/safety',    to: 'static_pages#safety',    via: 'get'
   match '/what-is-a-hab',to:'static_pages#what',    via: 'get'
