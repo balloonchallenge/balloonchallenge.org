@@ -524,7 +524,11 @@ figure {
 .extraSpace {
     margin-bottom: 55px !important;
     margin-top: 55px !important;
-    background: image-url('light_bg.png') !important;
+    //background: image-url('light_bg.png') !important;
+    color: #c2c2c2;
+    background: rgba(0,0,0,0) !important;
+    box-shadow: none !important;
+    border: none !important;
 }
 
 .inlineContainer {
@@ -550,6 +554,10 @@ figure {
 
 img {
     max-width: 100% !important;
+}
+
+.leftAlign {
+    text-align: left;
 }
 
 @media(max-width: 1000px) {

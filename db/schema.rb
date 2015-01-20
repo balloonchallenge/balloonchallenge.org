@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20150103231106) do
 
   create_table "requests", force: true do |t|
-    t.integer  "user_id",    limit: 255
+    t.string   "user_id"
     t.integer  "team_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -66,8 +66,8 @@ ActiveRecord::Schema.define(version: 20150103231106) do
     t.boolean  "admin"
     t.boolean  "pastlaunch"
     t.boolean  "gsbc_last_year"
-    t.string   "first_name",             default: ""
-    t.string   "last_name",              default: ""
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
