@@ -11,6 +11,9 @@
     <% end %>
   </div>
   <div class="content">
+  <% if @team.team_img.url != "/default.jpg" %>
+    <%= image_tag @team.team_img.url, class: "team-img" %>
+  <% end %>
   <div class="team_data">
     <div class="team-description">
       <h3>Team Description</h3>

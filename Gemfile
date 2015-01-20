@@ -25,6 +25,8 @@ gem 'carmen'
 gem 'carmen-rails', '~> 1.0.0'
 gem 'geocoder'
 gem 'fancybox2-rails', '~> 0.2.8'
+gem "paperclip", "~> 4.2"
+gem 'aws-sdk'
 
 group :development, :test do
   gem 'spring'
