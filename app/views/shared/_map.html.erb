@@ -6,7 +6,8 @@
   function initialize() {
   var mapOptions = {
     center: { lat: 30, lng: 0},
-    zoom: 2
+    zoom: 2,
+    minZoom: 2
   };
   var gm = google.maps;
   var map = new gm.Map(document.getElementById('map-canvas'),
