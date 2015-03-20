@@ -11,11 +11,14 @@
   var gm = google.maps;
   var map = new gm.Map(document.getElementById('map-canvas'),
       mapOptions);
-  var oms = new OverlappingMarkerSpiderfier(map);
+  var oms = new OverlappingMarkerSpiderfier(map, {markersWontMove: true, markersWontHide: true, keepSpiderfied: true});
   var iw = new gm.InfoWindow();
   oms.addListener('click', function(marker, event) {
     iw.setContent(marker.desc);
     iw.open(map, marker);
+  });
+  oms.addListener('spiderfy', function(markers) {
+    iw.close();
   });
    $.ajax(
       {
