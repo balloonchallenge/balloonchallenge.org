@@ -8,8 +8,15 @@
     center: { lat: 30, lng: 0},
     zoom: 2
   };
-  var map = new google.maps.Map(document.getElementById('map-canvas'),
+  var gm = google.maps;
+  var map = new gm.Map(document.getElementById('map-canvas'),
       mapOptions);
+  var oms = new OverlappingMarkerSpiderfier(map);
+  var iw = new gm.InfoWindow();
+  oms.addListener('click', function(marker, event) {
+    iw.setContent(marker.desc);
+    iw.open(map, marker);
+  });
    $.ajax(
       {
         type: "GET",
@@ -18,22 +25,18 @@
         success: function(data){
           for (var i=0; i < data.length; i++) {
             var drop = data[i];
-            var dropLatLng = new google.maps.LatLng(parseFloat(drop.
+            var dropLatLng = new gm.LatLng(parseFloat(drop.
               latitude), parseFloat(drop.longitude));
 
             var infoContent = '<a href="/teams/'+drop.id+'">'+'<h3>'+ drop.name + '</h3></a><h5>' + drop.city + '</h5>';
-            var myinfowindow = new google.maps.InfoWindow({
-                content: infoContent
-            });
-            var marker = new google.maps.Marker({
+
+            var marker = new gm.Marker({
               position: dropLatLng,
               map: map,
-              title: drop.name,
-              infowindow: myinfowindow
+              title: drop.name
             });
-            google.maps.event.addListener(marker, 'click', function() {
-              this.infowindow.open(map,this);
-            });
+            marker.desc = infoContent
+            oms.addMarker(marker);          
           };
         },
         error: function(jqxhr, status, error)
