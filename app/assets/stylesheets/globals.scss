@@ -163,7 +163,7 @@ label {
     width: 100%;
     border-bottom: 1px solid rgba(0,0,0,.1);
     padding: 20px;
-    font-size: 1.2em;
+    //font-size: 1.2em;
     .text {
         max-width: 50%;
         display: inline-block;
@@ -452,10 +452,13 @@ figure {
 }
 
 .fifty {
+    margin-bottom: 50px;
     input[type="text"], input[type="password"], input[type="email"], textarea {
         width:80%;
     }
-
+    p {
+         margin-top: 0px;
+    }
     &.image {
         width: 95%;
         margin: 0 auto;

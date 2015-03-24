@@ -32,6 +32,9 @@ footer {
             display: inline-block;
             margin: 0px 5px;
             vertical-align: top;
+            .btn {
+                margin-top: -10px;
+            }
         }
     }
 }
