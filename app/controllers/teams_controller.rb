@@ -140,7 +140,8 @@ class TeamsController < ApplicationController
         :ages_0_10, :ages_11_17, :ages_18_26, :ages_27_50, 
         :ages_50_up,
         :url,
-        :team_img
+        :team_img,
+        :launch_date
       )
     end
 

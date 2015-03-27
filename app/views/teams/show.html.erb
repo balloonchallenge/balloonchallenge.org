@@ -1,4 +1,8 @@
 <% title @team.name %>
+<% content_for :head_content do %>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+<% end %>
 <div class="primary section">
   <div class="underline">
     <div style="font-weight: bolder"><%=@team.name%></div>
@@ -29,7 +33,11 @@
     </div>
     <% if @team.url and @team.url != ""%>
     <div class="url">
-      <p><strong>Team Website:</strong><a href="<%=@team.url %>" target="_blank"><%=@team.url %></a></p>
+      <p><strong>Team Website:</strong><a href="<%=@team.url %>" target="_blank"><%=@team.url %></a></p
+      >
+      <% if @team.launch_date and @team.launch_date != "" %>
+      <p><strong>Team Launch Date: </strong><%= @team.launch_date %></p>
+      <% end %>
     </div>
     <% end %>
   </div>
@@ -69,6 +77,15 @@
         </span>
       <% end %>
       </ul>
+    <% end %>
+    <% if @team.launch_date and @team.launch_date != "" %>
+      Your Launch Date: <%= @team.launch_date %> <small><%= link_to "Edit launch date", edit_team_path(@team) %></small>
+    <% else %>
+      <%= form_for @team do |f| %>
+          <label for="launch_date">Launch Date</label>
+          <%= f.text_field :launch_date, required: "required", maxlength: 20, style: 'max-width: 100px'%>
+          <%= f.submit "Post" %>
+      <% end %> 
     <% end %>
     <div class="edit_btn">
       <%= link_to "Edit team", edit_team_path(@team), class: "btn noShadow" %>

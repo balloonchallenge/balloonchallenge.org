@@ -1,3 +1,8 @@
+<% content_for :head_content do %>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+<% end %>
+
 <% if @team.errors.any? %>
 <h3 style="color: red;">Error: <%= @team.errors.full_messages.first if @team.errors.any? %></h3>
 <% end %>
@@ -55,6 +60,9 @@
   
   <label for="team_img">Team Photo (Optional) <small>Photo may be a png or jpg and must be under 800Kb</small></label>
   <%= f.file_field :team_img %>
+
+  <label for="launch_date">Launch Date</label>
+  <%= f.text_field :launch_date, maxlength: 20, style: 'max-width: 100px'%>
 
   <br>
   <%= f.submit "Post" %>

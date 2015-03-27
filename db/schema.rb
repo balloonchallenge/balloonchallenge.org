@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150119183908) do
+ActiveRecord::Schema.define(version: 20150327065854) do
 
   create_table "requests", force: true do |t|
-    t.string   "user_id"
+    t.integer  "user_id",    limit: 255
     t.integer  "team_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20150119183908) do
     t.string   "team_img_content_type"
     t.integer  "team_img_file_size"
     t.datetime "team_img_updated_at"
+    t.string   "launch_date"
   end
 
   add_index "teams", ["name"], name: "index_teams_on_name", unique: true
@@ -70,8 +71,8 @@ ActiveRecord::Schema.define(version: 20150119183908) do
     t.boolean  "admin"
     t.boolean  "pastlaunch"
     t.boolean  "gsbc_last_year"
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "first_name",             default: ""
+    t.string   "last_name",              default: ""
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
