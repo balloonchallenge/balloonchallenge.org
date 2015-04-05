@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150327065854) do
+ActiveRecord::Schema.define(version: 20150405181733) do
 
   create_table "requests", force: true do |t|
     t.integer  "user_id",    limit: 255
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20150327065854) do
     t.string   "launch_date"
   end
 
+  add_index "teams", ["launch_date"], name: "index_teams_on_launch_date"
   add_index "teams", ["name"], name: "index_teams_on_name", unique: true
 
   create_table "users", force: true do |t|
