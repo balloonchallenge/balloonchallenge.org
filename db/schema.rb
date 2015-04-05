@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405181733) do
+ActiveRecord::Schema.define(version: 20150405203609) do
+
+  create_table "attached_assets", force: true do |t|
+    t.string   "asset_file_name"
+    t.string   "asset_content_type"
+    t.integer  "asset_file_size"
+    t.datetime "asset_updated_at"
+    t.integer  "team_id"
+  end
 
   create_table "requests", force: true do |t|
-    t.integer  "user_id",    limit: 255
+    t.integer  "user_id"
     t.integer  "team_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -72,8 +80,8 @@ ActiveRecord::Schema.define(version: 20150405181733) do
     t.boolean  "admin"
     t.boolean  "pastlaunch"
     t.boolean  "gsbc_last_year"
-    t.string   "first_name",             default: ""
-    t.string   "last_name",              default: ""
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"

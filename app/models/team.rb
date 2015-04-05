@@ -1,6 +1,8 @@
 class Team < ActiveRecord::Base
   has_many :users
   has_many :requests, dependent: :destroy
+  has_many :attached_assets, dependent: :destroy
+  accepts_nested_attributes_for :attached_assets
   has_attached_file :team_img, :default_url => "/default.jpg", :storage => :s3,
                     :s3_credentials => Proc.new{|a| a.instance.s3_credentials }, :s3_host_name => 's3-us-west-2.amazonaws.com'
   validates_attachment_content_type :team_img, :content_type => ["image/jpeg", "image/png"] 
@@ -15,7 +17,6 @@ class Team < ActiveRecord::Base
   validates :why_join, length: {maximum: 1000}
   validates :find_out, length: {maximum: 500}
   validates :url, length: {maximum: 400}
-
   geocoded_by :location
   after_validation :geocode
 
@@ -26,6 +27,7 @@ class Team < ActiveRecord::Base
       return "#{self.city}, #{self.country_code}"
     end
   end
+
 
   def self.search(search)
     search_condition = "%" + search + "%"

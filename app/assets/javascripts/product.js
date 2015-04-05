@@ -12,7 +12,7 @@ function init(){
     })();
     (function notReady() {
         NodeList.prototype.forEach = Array.prototype.forEach;
-        document.querySelectorAll('a[href="#"]')
+        document.querySelectorAll('a[href="#nope"]')
             .forEach(function(link){
                     link.addEventListener('click', function(e) {
                             e.preventDefault();

@@ -1,0 +1,12 @@
+<%= form_for @team do |f| %>
+  <h3>Upload launch files</h3>
+  <div id="attached_assets"> 
+    <%= f.fields_for :attached_assets, AttachedAsset.new do |asset| %>
+      <%= render 'attached_asset_fields', :f => asset %>
+      <div class="links">
+        <%= link_to_add_association 'Add Another File', f, :attached_assets %>
+      </div>
+    <% end %>
+  </div>
+  <%= f.submit 'Upload Files'%>
+<% end %>

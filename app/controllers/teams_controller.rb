@@ -30,6 +30,8 @@ class TeamsController < ApplicationController
 
   def edit 
     @team = Team.find(params[:id])
+    3.times {@team.attached_assets.build}
+
   end
 
   def index
@@ -95,6 +97,7 @@ class TeamsController < ApplicationController
 
   def new
     @team = Team.new
+    3.times {@team.attached_assets.build}
   end
 
   def remove_member
@@ -145,7 +148,8 @@ class TeamsController < ApplicationController
         :ages_50_up,
         :url,
         :team_img,
-        :launch_date
+        :launch_date,
+        attached_assets_attributes: [:id, :asset, :_destroy]
       )
     end
 

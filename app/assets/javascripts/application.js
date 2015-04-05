@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require cocoon
 //= require_tree . 
 //= stub old_map
 //= stub textarea

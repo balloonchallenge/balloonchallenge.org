@@ -27,6 +27,7 @@ gem 'geocoder'
 gem 'fancybox2-rails', '~> 0.2.8'
 gem "paperclip", "~> 4.2"
 gem 'aws-sdk'
+gem "cocoon"
 
 group :development, :test do
   gem 'spring'
