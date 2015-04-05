@@ -1,0 +1,9 @@
+<% title "Launch Dates" %>
+<div class="primary section">
+  <h1 class="underline"><%=yield(:title)%></h1>
+  <ul class="team_launches">
+    <% @teams.each do |team| %>
+      <li><%= link_to team do%><%= team.name %><% end %> - <%= team.launch_date %></li>
+    <% end %>
+  </ul>
+</div>

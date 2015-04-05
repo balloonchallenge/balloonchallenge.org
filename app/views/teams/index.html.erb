@@ -14,6 +14,7 @@
       <%= render "shared/map" %>
   </div>
   <h2 style="text-align: center;">There are <strong><%=@teams.length%></strong> teams in <strong><%=@country_count%></strong> countries signed up</h2>
+  <h4 style="text-align: center;"><%=link_to 'View Team Launch Dates!', :launches %>
     <div id="search">
       <%= render :partial => 'search' %>
     </div>

@@ -125,6 +125,10 @@ class TeamsController < ApplicationController
   def search 
     @teams = Team.search params[:search]
   end
+
+  def launch
+    @teams = Team.where.not(launch_date: '').order('launch_date ASC')
+  end
   private
 
     def team_params
