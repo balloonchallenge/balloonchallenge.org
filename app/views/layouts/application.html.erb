@@ -58,8 +58,11 @@
                 </ul>
             </nav>
                 <!-- Need more serious flash alerts -->
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+            <% if current_user and !current_user.team.nil? %>
+              <p>Be sure to visit your <%=link_to "team page", current_user.team %> to enter a launch date and challenge submissions!</p>
+            <% end %>
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
         </div>
 
     </header>
