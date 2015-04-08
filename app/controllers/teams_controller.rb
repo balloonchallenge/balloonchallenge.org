@@ -60,6 +60,20 @@ class TeamsController < ApplicationController
     @teams = Team.order('created_at ASC')
     @extra_users = User.where(team: nil)
     @all_users = User.order('created_at ASC')
+    @highest = AttachedAsset.where(category: 'Highest Altitude').order('team_id ASC')
+    @photo = AttachedAsset.where(category: 'Best Photograph').order('team_id ASC')
+    @science = AttachedAsset.where(category: 'Best Science Experiment').order('team_id ASC')
+    @design = AttachedAsset.where(category: 'Best Design').order('team_id ASC')
+    @innovative = AttachedAsset.where(category: 'Most Innovative Component').order('team_id ASC')
+    @spacetech = AttachedAsset.where(category: 'Best Space Technology Demonstration').order('team_id ASC')
+    @ground = AttachedAsset.where(category: 'Longest Ground Track').order('team_id ASC')
+    @return = AttachedAsset.where(category: 'Return To Launch Site').order('team_id ASC')
+    @video = AttachedAsset.where(category: 'Best Video').order('team_id ASC')
+    @payloads = AttachedAsset.where(category: 'Most Payloads Flown Throughout The GSBC').order('team_id ASC')
+    @helpful = AttachedAsset.where(category: 'Most Helpful Team').order('team_id ASC')
+    @charitable = AttachedAsset.where(category: 'Most Charitable Team').order('team_id ASC')
+    @launched = AttachedAsset.where(category: 'Most Balloons Launched From A Single Site On a Single Day').order('team_id ASC')
+    @educational = AttachedAsset.where(category: 'Most Educational Initiative').order('team_id ASC')
     respond_to do |format|
       format.html
       format.csv { render text: @all_users.to_csv }
@@ -149,7 +163,7 @@ class TeamsController < ApplicationController
         :url,
         :team_img,
         :launch_date,
-        attached_assets_attributes: [:id, :asset, :_destroy]
+        attached_assets_attributes: [:id, :asset, :category, :_destroy]
       )
     end
 

@@ -2,27 +2,217 @@
 <div class="primary section">
   <h1>Teams Admin</h1>
   <%= link_to "Download User data as CSV", teams_admin_path(format: "csv") %> 
-  <h2>Team Uploads</h2>
-    <table>
-    <tr>
-      <th>Team Name</th>
-      <th>Team Files</th>
-    </tr>
-    <% @teams.each do |team| %>
-    <% if team.attached_assets.length > 0 %>
-    <tr>
-      <td><%=link_to team.name, team %></td>
-      <td>
-        <ul>
-          <% team.attached_assets.each do |asset| %>
-            <li><%= link_to asset.asset_file_name, asset.asset.url, html_options = {download: ''} %></li>
-          <% end %>
-        </ul>
-      </td>
-    </tr>
-    <% end %>
-    <% end %>
-  </table>
+  <h2>Prize Uploads</h2>
+    <h3>Highest Altitude</h3>
+      <table>
+        <tr>
+          <th>Team Name</th>
+          <th>Team Files</th>
+        </tr>
+        <% @highest.each do |asset| %>
+        <tr>
+          <td><%=link_to asset.team.name, asset.team %></td>
+          <td>
+            <%= link_to asset.asset_file_name, asset.asset.url, html_options = {download: ''} %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+    <h3>Best Photograph</h3>
+      <table>
+        <tr>
+          <th>Team Name</th>
+          <th>Team Files</th>
+        </tr>
+        <% @photo.each do |asset| %>
+        <tr>
+          <td><%=link_to asset.team.name, asset.team %></td>
+          <td>
+            <%= link_to asset.asset_file_name, asset.asset.url, html_options = {download: ''} %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+    <h3>Best Science Experiment</h3>
+      <table>
+        <tr>
+          <th>Team Name</th>
+          <th>Team Files</th>
+        </tr>
+        <% @science.each do |asset| %>
+        <tr>
+          <td><%=link_to asset.team.name, asset.team %></td>
+          <td>
+            <%= link_to asset.asset_file_name, asset.asset.url, html_options = {download: ''} %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+    <h3>Best Design</h3>
+      <table>
+        <tr>
+          <th>Team Name</th>
+          <th>Team Files</th>
+        </tr>
+        <% @design.each do |asset| %>
+        <tr>
+          <td><%=link_to asset.team.name, asset.team %></td>
+          <td>
+            <%= link_to asset.asset_file_name, asset.asset.url, html_options = {download: ''} %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+    <h3>Most Innovative Component</h3>
+      <table>
+        <tr>
+          <th>Team Name</th>
+          <th>Team Files</th>
+        </tr>
+        <% @innovative.each do |asset| %>
+        <tr>
+          <td><%=link_to asset.team.name, asset.team %></td>
+          <td>
+            <%= link_to asset.asset_file_name, asset.asset.url, html_options = {download: ''} %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+    <h3>Best Space Technology Demonstration</h3>
+      <table>
+        <tr>
+          <th>Team Name</th>
+          <th>Team Files</th>
+        </tr>
+        <% @spacetech.each do |asset| %>
+        <tr>
+          <td><%=link_to asset.team.name, asset.team %></td>
+          <td>
+            <%= link_to asset.asset_file_name, asset.asset.url, html_options = {download: ''} %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+    <h3>Longest Ground Track</h3>
+      <table>
+        <tr>
+          <th>Team Name</th>
+          <th>Team Files</th>
+        </tr>
+        <% @ground.each do |asset| %>
+        <tr>
+          <td><%=link_to asset.team.name, asset.team %></td>
+          <td>
+            <%= link_to asset.asset_file_name, asset.asset.url, html_options = {download: ''} %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+    <h3>Return To Launch Site</h3>
+      <table>
+        <tr>
+          <th>Team Name</th>
+          <th>Team Files</th>
+        </tr>
+        <% @return.each do |asset| %>
+        <tr>
+          <td><%=link_to asset.team.name, asset.team %></td>
+          <td>
+            <%= link_to asset.asset_file_name, asset.asset.url, html_options = {download: ''} %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+    <h3>Best Video</h3>
+      <table>
+        <tr>
+          <th>Team Name</th>
+          <th>Team Files</th>
+        </tr>
+        <% @video.each do |asset| %>
+        <tr>
+          <td><%=link_to asset.team.name, asset.team %></td>
+          <td>
+            <%= link_to asset.asset_file_name, asset.asset.url, html_options = {download: ''} %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+    <h3>Most Payloads Flown Throughout The GSBC</h3>
+      <table>
+        <tr>
+          <th>Team Name</th>
+          <th>Team Files</th>
+        </tr>
+        <% @payloads.each do |asset| %>
+        <tr>
+          <td><%=link_to asset.team.name, asset.team %></td>
+          <td>
+            <%= link_to asset.asset_file_name, asset.asset.url, html_options = {download: ''} %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+    <h3>Most Helpful Team</h3>
+      <table>
+        <tr>
+          <th>Team Name</th>
+          <th>Team Files</th>
+        </tr>
+        <% @helpful.each do |asset| %>
+        <tr>
+          <td><%=link_to asset.team.name, asset.team %></td>
+          <td>
+            <%= link_to asset.asset_file_name, asset.asset.url, html_options = {download: ''} %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+    <h3>Most Charitable Team</h3>
+      <table>
+        <tr>
+          <th>Team Name</th>
+          <th>Team Files</th>
+        </tr>
+        <% @charitable.each do |asset| %>
+        <tr>
+          <td><%=link_to asset.team.name, asset.team %></td>
+          <td>
+            <%= link_to asset.asset_file_name, asset.asset.url, html_options = {download: ''} %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+    <h3>Most Balloons Launched From A Single Site On a Single Day</h3>
+      <table>
+        <tr>
+          <th>Team Name</th>
+          <th>Team Files</th>
+        </tr>
+        <% @launched.each do |asset| %>
+        <tr>
+          <td><%=link_to asset.team.name, asset.team %></td>
+          <td>
+            <%= link_to asset.asset_file_name, asset.asset.url, html_options = {download: ''} %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+    <h3>Most Educational Initiative</h3>
+      <table>
+        <tr>
+          <th>Team Name</th>
+          <th>Team Files</th>
+        </tr>
+        <% @educational.each do |asset| %>
+        <tr>
+          <td><%=link_to asset.team.name, asset.team %></td>
+          <td>
+            <%= link_to asset.asset_file_name, asset.asset.url, html_options = {download: ''} %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
 
   <h2>Team Info</h2>
   <table>

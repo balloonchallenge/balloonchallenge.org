@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150408062127) do
+ActiveRecord::Schema.define(version: 20150408070118) do
 
   create_table "attached_assets", force: true do |t|
     t.string   "asset_file_name"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20150408062127) do
     t.integer  "team_id"
     t.string   "category"
   end
+
+  add_index "attached_assets", ["category"], name: "index_attached_assets_on_category"
 
   create_table "requests", force: true do |t|
     t.integer  "user_id"

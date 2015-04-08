@@ -1,6 +1,27 @@
 <div class="nested-fields" style="padding-bottom: 10px;">
   <div class="field">
-    <%= f.file_field :asset %>
+    <%= f.label :category %>
+    <%= f.select :category, [
+      'Highest Altitude', 
+      'Best Photograph', 
+      'Best Science Experiment', 
+      'Best Design', 
+      'Most Innovative Component', 
+      'Best Space Technology Demonstration', 
+      'Longest Ground Track', 
+      'Return To Launch Site', 
+      'Best Video', 
+      'Most Payloads Flown Throughout The GSBC', 
+      'Most Helpful Team', 
+      'Most Charitable Team', 
+      'Most Balloons Launched From A Single Site On a Single Day', 
+      'Most Educational Initiative'
+      ], :required => true %>
+  </div>
+  <div class="field">
+    <br>
+    <%= f.label :asset, "File to submit"%>
+    <%= f.file_field :asset, :required => true %>
   </div>
   <%= link_to_remove_association "Remove file", f %>
 </div>
