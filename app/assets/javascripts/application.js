@@ -15,4 +15,5 @@
 //= require cocoon
 //= require_tree . 
 //= stub old_map
+//= stub datepicker
 //= stub textarea
