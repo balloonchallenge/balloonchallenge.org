@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405203609) do
+ActiveRecord::Schema.define(version: 20150408062127) do
 
   create_table "attached_assets", force: true do |t|
     t.string   "asset_file_name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20150405203609) do
     t.integer  "asset_file_size"
     t.datetime "asset_updated_at"
     t.integer  "team_id"
+    t.string   "category"
   end
 
   create_table "requests", force: true do |t|
