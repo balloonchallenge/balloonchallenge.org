@@ -30,7 +30,6 @@ class TeamsController < ApplicationController
 
   def edit 
     @team = Team.find(params[:id])
-    3.times {@team.attached_assets.build}
 
   end
 
@@ -111,7 +110,6 @@ class TeamsController < ApplicationController
 
   def new
     @team = Team.new
-    3.times {@team.attached_assets.build}
   end
 
   def remove_member
