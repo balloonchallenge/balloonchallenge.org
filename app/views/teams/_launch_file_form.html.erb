@@ -1,5 +1,6 @@
 <%= form_for @team do |f| %>
   <h1>Send us prize submissions</h1>
+  <h4>You have submitted <strong><%= @team.attached_assets.count %></strong> files.</h4>
   <div id="attached_assets"> 
     <%= f.fields_for :attached_assets, AttachedAsset.new do |asset| %>
       <%= render 'attached_asset_fields', :f => asset %>
