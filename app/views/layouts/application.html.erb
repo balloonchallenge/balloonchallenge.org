@@ -44,7 +44,8 @@
                     <li><a href="http://community.balloonchallenge.org">Forum</a></li>
                     <li><%= link_to 'Teams', teams_path %></li>
                     <li><a href="/get-involved">Get Involved</a></li>
-                </ul>
+<!--                     <li><a href="/winners">Winners</a></li>
+ -->                </ul>
             </nav>
             <nav class="right_headers">
                 <ul>
@@ -58,10 +59,8 @@
                 </ul>
             </nav>
                 <!-- Need more serious flash alerts -->
-            <% if current_user and !current_user.team.nil? %>
-              <p>Be sure to visit your <%=link_to "team page", current_user.team %> to enter a launch date and challenge submissions!</p>
-            <% end %>
-            <p class="notice"><%= notice %></p>
+<!--             <p>Official Winner Announcements for GSBC 2015 <a href="/winners">are now live!</a></p>
+ -->            <p class="notice"><%= notice %></p>
             <p class="alert"><%= alert %></p>
         </div>
 
