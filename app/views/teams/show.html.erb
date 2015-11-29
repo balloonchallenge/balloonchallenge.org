@@ -88,9 +88,15 @@
           <%= f.submit "Post" %>
       <% end %> 
     <% end %>
-    <%= render 'launch_file_form' %>
-    <div class="edit_btn">
-      <%= link_to "Edit team", edit_team_path(@team), class: "btn noShadow" %>
+    <!--<%= render 'launch_file_form' %>-->
+    <div class="row">
+      <%= link_to "Edit team", edit_team_path(@team), class: "btn inline" %>
+    <% unless @team.signed_up_2016? %>
+        <%= form_for @team, html: {style: 'display: inline'} do |f| %>
+          <%= f.hidden_field :signed_up_2016, value: true %>
+          <%= f.submit "Sign up for GSBC 2016", class: "btn inline" %>
+        <% end %>
+    <% end %>
     </div>
   <% end %>
   <% if current_user and current_user.team.nil? and !@request_ids.include?(current_user.id) %>
