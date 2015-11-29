@@ -10,6 +10,7 @@ class TeamsController < ApplicationController
     if @team.save
       @user.save
       TeamMailer.new_team(@user, @team).deliver
+      @team.update_attributes(:signed_up_2016 => true)
       flash[:success] = "Team created!"
       redirect_to @team
     else
@@ -161,6 +162,10 @@ class TeamsController < ApplicationController
         :url,
         :team_img,
         :launch_date,
+        :signed_up_2015,
+        :signed_up_2016,
+        :flew_2015,
+        :flew_2014,
         attached_assets_attributes: [:id, :asset, :category, :_destroy]
       )
     end
