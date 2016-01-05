@@ -1,3 +1,42 @@
+# == Schema Information
+#
+# Table name: teams
+#
+#  id                    :integer          not null, primary key
+#  name                  :text(255)        default(""), not null
+#  school                :text(255)
+#  description           :text
+#  created_at            :datetime
+#  updated_at            :datetime
+#  latitude              :string(255)
+#  longitude             :string(255)
+#  city                  :string(255)      default(""), not null
+#  state_code            :string(255)
+#  country_code          :string(255)      default(""), not null
+#  why_join              :text(255)
+#  plan                  :text(255)
+#  find_out              :text(255)
+#  host_payload          :boolean
+#  have_payload          :boolean
+#  buddies_mentor        :boolean
+#  buddies_mentee        :boolean
+#  ages_0_10             :boolean
+#  ages_11_17            :boolean
+#  ages_18_26            :boolean
+#  ages_27_50            :boolean
+#  ages_50_up            :boolean
+#  url                   :text
+#  team_img_file_name    :string(255)
+#  team_img_content_type :string(255)
+#  team_img_file_size    :integer
+#  team_img_updated_at   :datetime
+#  launch_date           :string(255)
+#  signed_up_2015        :boolean
+#  signed_up_2016        :boolean
+#  flew_2015             :boolean
+#  flew_2014             :boolean
+#
+
 class Team < ActiveRecord::Base
   has_many :users
   has_many :requests, dependent: :destroy

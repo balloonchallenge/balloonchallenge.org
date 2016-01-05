@@ -35,8 +35,8 @@ class TeamsController < ApplicationController
   end
 
   def index
-    @teams = Team.order('name ASC')
-    @country_count = Team.distinct.count('country_code')
+    @teams = Team.where(signed_up_2016: true).order('name ASC')
+    @country_count = Team.where(signed_up_2016: true).distinct.count('country_code')
   end
 
   def destroy
@@ -143,7 +143,7 @@ class TeamsController < ApplicationController
   end
 
   def launch
-    @teams = Team.where.not(launch_date: '').order('launch_date ASC')
+    @teams = Team.where(signed_up_2016: true).where.not(launch_date: '').order('launch_date ASC')
   end
   private
 

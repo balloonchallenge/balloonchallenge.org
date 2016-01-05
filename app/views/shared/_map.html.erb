@@ -1,4 +1,5 @@
 <div id="map-canvas" style="width: 100%; height: 560px;">
+
 <% content_for :script do %>
 <script>
   $(document).on('page:load', initialize);
@@ -14,6 +15,7 @@
       mapOptions);
   var oms = new OverlappingMarkerSpiderfier(map, {markersWontMove: true, markersWontHide: true, keepSpiderfied: true});
   var iw = new gm.InfoWindow();
+  
   oms.addListener('click', function(marker, event) {
     iw.setContent(marker.desc);
     iw.open(map, marker);
@@ -49,7 +51,10 @@
         }
       }
     );
+  window.setTimeout(function() {google.maps.event.trigger(map, 'resize'); }, 2000);
+
   }
+
 
   google.maps.event.addDomListener(window, 'load', initialize);
 </script>

@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: attached_assets
+#
+#  id                 :integer          not null, primary key
+#  asset_file_name    :string(255)
+#  asset_content_type :string(255)
+#  asset_file_size    :integer
+#  asset_updated_at   :datetime
+#  team_id            :integer
+#  category           :string(255)
+#
+
 class AttachedAsset < ActiveRecord::Base 
   belongs_to :team
   has_attached_file :asset, :storage => :s3,

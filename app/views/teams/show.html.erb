@@ -20,6 +20,10 @@
     <%= image_tag @team.team_img.url, class: "team-img" %>
   <% end %>
   <div class="team_data">
+    <div class="veteran">
+      <%if @team.flew_2014? %><strong>Flew 2014  </strong><% end %>
+      <% if @team.flew_2015? %><strong>Flew 2015</strong> <% end %>
+    </div>
     <div class="team-description">
       <h3>Team Description</h3>
       <p><%=@team.description%></p>
