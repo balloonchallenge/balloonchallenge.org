@@ -134,7 +134,7 @@ class TeamsController < ApplicationController
   end
 
   def all_teams
-    @teams = Team.all
+    @teams = Team.where(signed_up_2016: true)
     render json: @teams
   end
 
