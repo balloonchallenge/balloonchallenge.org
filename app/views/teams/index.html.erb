@@ -22,7 +22,7 @@
       <% @teams.each do |team| %>
         <li class="team">
           <%=link_to team do %>
-            <%= team.name %><% if team.school != "" %> - <%= team.school %><% end %> - <%= team.city %>, <%= Carmen::Country.coded(team.country_code).name %>
+            <%= team.name %><% if team.school != "" %> - <%= team.school %><% end %> - <%= team.city %>, <%= Carmen::Country.coded(team.country_code).name %><% if team.flew_2015? %> - Veteran: Flew 2015<% elsif team.flew_2014 %> - Veteran: Flew 2014 <% end %>
           <% end %>
         </li>
       <% end %>
