@@ -37,7 +37,7 @@ class TeamsController < ApplicationController
   def index
     # @teams = Team.where(signed_up_2016: true).order('name ASC')
     @teams = Team.order('name ASC')
-    @country_count = Team.where(signed_up_2016: true).distinct.count('country_code')
+    @country_count = Team.all.distinct.count('country_code')
   end
 
   def destroy
