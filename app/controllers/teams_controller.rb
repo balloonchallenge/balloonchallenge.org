@@ -35,7 +35,8 @@ class TeamsController < ApplicationController
   end
 
   def index
-    @teams = Team.where(signed_up_2016: true).order('name ASC')
+    # @teams = Team.where(signed_up_2016: true).order('name ASC')
+    @teams = Team.order('name ASC')
     @country_count = Team.where(signed_up_2016: true).distinct.count('country_code')
   end
 
@@ -134,7 +135,7 @@ class TeamsController < ApplicationController
   end
 
   def all_teams
-    @teams = Team.where(signed_up_2016: true)
+    @teams = Team.all
     render json: @teams
   end
 
