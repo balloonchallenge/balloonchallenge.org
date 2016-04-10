@@ -92,7 +92,7 @@
           <%= f.submit "Post" %>
       <% end %> 
     <% end %>
-    <!--<%= render 'launch_file_form' %>-->
+    <%= render 'launch_file_form' %>
     <div class="row">
       <%= link_to "Edit team", edit_team_path(@team), class: "btn inline" %>
     <% unless @team.signed_up_2016? %>

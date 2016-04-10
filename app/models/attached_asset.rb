@@ -9,6 +9,8 @@
 #  asset_updated_at   :datetime
 #  team_id            :integer
 #  category           :string(255)
+#  created_at         :datetime
+#  updated_at         :datetime
 #
 
 class AttachedAsset < ActiveRecord::Base 
