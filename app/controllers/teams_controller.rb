@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
 
   before_action :correct_team, only: [:destroy, :update, :edit, :add_member, :remove_member]
-  before_action :is_admin, only: [:admin]
+  before_action :is_admin, only: [:admin, :admin_members_csv]
 
   def create
     @user = current_user
@@ -90,6 +90,13 @@ class TeamsController < ApplicationController
 
     respond_to do |format|
       format.html
+      format.csv { render text: @teams.to_csv }
+    end
+  end
+
+  def admin_members_csv
+  @all_users = User.order('created_at ASC')
+   respond_to do |format|
       format.csv { render text: @all_users.to_csv }
     end
   end

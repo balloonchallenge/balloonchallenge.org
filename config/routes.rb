@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   match '/teams/thanks', to: 'teams#thanks', via: 'get'
   get '/teams/launch', to: 'teams#launch', as: 'launches'
   get '/teams/admin' => 'teams#admin'
+  get '/teams/admin/users' => 'teams#admin_members_csv'
   get '/teams/subregion_options' => 'teams#subregion_options'
   get '/teams/all' => 'teams#all_teams'
   get '/teams/search' => 'teams#search'

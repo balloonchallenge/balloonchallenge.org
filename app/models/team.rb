@@ -77,5 +77,15 @@ class Team < ActiveRecord::Base
   def s3_credentials
     {:bucket => "#{ ENV['S3_BUCKET'] }", :access_key_id => "#{ ENV['S3_ACCESS_ID']}", :secret_access_key => "#{ENV['S3_SECRET']}"}
   end
+
+  def self.to_csv 
+    CSV.generate do |csv|
+      csv << column_names
+      all.each do |team|
+        csv << team.attributes.values_at(*column_names)
+      end
+    end
+  end
+
 end
  
