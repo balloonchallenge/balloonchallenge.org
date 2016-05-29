@@ -131,8 +131,8 @@
           <th>Team Name</th>
           <th>Team Files</th>
         </tr>
-        <% if @educational %>
-        <% @educational.each do |asset| %>
+        <% if @education_outreach %>
+        <% @education_outreach.each do |asset| %>
         <tr>
           <td><%=link_to asset.team.name, asset.team %></td>
           <td>
