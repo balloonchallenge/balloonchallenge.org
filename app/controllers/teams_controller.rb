@@ -95,7 +95,7 @@ class TeamsController < ApplicationController
   end
 
   def admin_members_csv
-  @all_users = User.order('created_at ASC')
+  @all_users = User.order('created_at ASC').where(email_ignore: [false, nil])
    respond_to do |format|
       format.csv { render text: @all_users.to_csv }
     end
