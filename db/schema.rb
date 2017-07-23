@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160529161624) do
+ActiveRecord::Schema.define(version: 20170723224352) do
 
   create_table "attached_assets", force: true do |t|
     t.string   "asset_file_name"
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(version: 20160529161624) do
     t.boolean  "signed_up_2016"
     t.boolean  "flew_2015"
     t.boolean  "flew_2014"
+    t.boolean  "signed_up_2017"
+    t.boolean  "flew_2016"
   end
 
   add_index "teams", ["launch_date"], name: "index_teams_on_launch_date"

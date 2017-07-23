@@ -10,7 +10,7 @@ class TeamsController < ApplicationController
     if @team.save
       @user.save
       TeamMailer.new_team(@user, @team).deliver
-      @team.update_attributes(:signed_up_2016 => true)
+      @team.update_attributes(:signed_up_2017 => true)
       flash[:success] = "Team created!"
       redirect_to @team
     else
@@ -29,7 +29,7 @@ class TeamsController < ApplicationController
     end
   end
 
-  def edit 
+  def edit
     @team = Team.find(params[:id])
 
   end
@@ -61,33 +61,22 @@ class TeamsController < ApplicationController
     @teams = Team.order('created_at ASC')
     @extra_users = User.where(team: nil)
     @all_users = User.order('created_at ASC')
-    # @highest = AttachedAsset.where(category: 'Highest Altitude').where(["created_at > ?", Time.new(2016, 1, 1, 0, 0, 0)]).order('team_id ASC')
-    # @photo = AttachedAsset.where(category: 'Best Photograph').order('team_id ASC')
-    # @science = AttachedAsset.where(category: 'Best Science Experiment').order('team_id ASC')
-    # @design = AttachedAsset.where(category: 'Best Design').order('team_id ASC')
-    # @innovative = AttachedAsset.where(category: 'Most Innovative Component').order('team_id ASC')
-    # @spacetech = AttachedAsset.where(category: 'Best Space Technology Demonstration').order('team_id ASC')
-    # @ground = AttachedAsset.where(category: 'Longest Ground Track').order('team_id ASC')
-    # @return = AttachedAsset.where(category: 'Return To Launch Site').order('team_id ASC')
-    # @video = AttachedAsset.where(category: 'Best Video').order('team_id ASC')
-    # @payloads = AttachedAsset.where(category: 'Most Payloads Flown Throughout The GSBC').order('team_id ASC')
-    # @helpful = AttachedAsset.where(category: 'Most Helpful Team').order('team_id ASC')
-    # @charitable = AttachedAsset.where(category: 'Most Charitable Team').order('team_id ASC')
-    # @launched = AttachedAsset.where(category: 'Most Balloons Launched From A Single Site On a Single Day').order('team_id ASC')
-    # @educational = AttachedAsset.where(category: 'Most Educational Initiative').order('team_id ASC')
-
     # 2016 lets go hype squad
 
-    @education_outreach = AttachedAsset.where(category: 'Best Education Outreach Initiative').where(["created_at > ?", Time.new(2016, 1, 1, 0, 0, 0)]).order('team_id ASC')
-    @photo = AttachedAsset.where(category: 'Best Photograph').where(["created_at > ?", Time.new(2016, 1, 1, 0, 0, 0)]).order('team_id ASC')
-    @science = AttachedAsset.where(category: 'Best Science Experiment').where(["created_at > ?", Time.new(2016, 1, 1, 0, 0, 0)]).order('team_id ASC')
-    @design = AttachedAsset.where(category: 'Best Design').where(["created_at > ?", Time.new(2016, 1, 1, 0, 0, 0)]).order('team_id ASC')
-    @video = AttachedAsset.where(category: 'Best Video').where(["created_at > ?", Time.new(2016, 1, 1, 0, 0, 0)]).order('team_id ASC')
-    @charitable = AttachedAsset.where(category: 'Most Charitable Team').where(["created_at > ?", Time.new(2016, 1, 1, 0, 0, 0)]).order('team_id ASC')
-    @helpful = AttachedAsset.where(category: 'Most Helpful Team').where(["created_at > ?", Time.new(2016, 1, 1, 0, 0, 0)]).order('team_id ASC')
-    @ground = AttachedAsset.where(category: 'Longest Ground Track').where(["created_at > ?", Time.new(2016, 1, 1, 0, 0, 0)]).order('team_id ASC')
-    @return = AttachedAsset.where(category: 'Return To Launch Site').where(["created_at > ?", Time.new(2016, 1, 1, 0, 0, 0)]).order('team_id ASC')
+    # @education_outreach = AttachedAsset.where(category: 'Best Education Outreach Initiative').where(["created_at > ?", Time.new(2016, 1, 1, 0, 0, 0)]).order('team_id ASC')
+    # @photo = AttachedAsset.where(category: 'Best Photograph').where(["created_at > ?", Time.new(2016, 1, 1, 0, 0, 0)]).order('team_id ASC')
+    # @science = AttachedAsset.where(category: 'Best Science Experiment').where(["created_at > ?", Time.new(2016, 1, 1, 0, 0, 0)]).order('team_id ASC')
+    # @design = AttachedAsset.where(category: 'Best Design').where(["created_at > ?", Time.new(2016, 1, 1, 0, 0, 0)]).order('team_id ASC')
+    # @video = AttachedAsset.where(category: 'Best Video').where(["created_at > ?", Time.new(2016, 1, 1, 0, 0, 0)]).order('team_id ASC')
+    # @charitable = AttachedAsset.where(category: 'Most Charitable Team').where(["created_at > ?", Time.new(2016, 1, 1, 0, 0, 0)]).order('team_id ASC')
+    # @helpful = AttachedAsset.where(category: 'Most Helpful Team').where(["created_at > ?", Time.new(2016, 1, 1, 0, 0, 0)]).order('team_id ASC')
+    # @ground = AttachedAsset.where(category: 'Longest Ground Track').where(["created_at > ?", Time.new(2016, 1, 1, 0, 0, 0)]).order('team_id ASC')
+    # @return = AttachedAsset.where(category: 'Return To Launch Site').where(["created_at > ?", Time.new(2016, 1, 1, 0, 0, 0)]).order('team_id ASC')
 
+    # 2017 categories
+
+    @education = AttachedAsset.where(category: 'Best Educational Initiative').where(["created_at > ?", Time.new(2017, 1, 1, 0, 0, 0)]).order('team_id ASC')
+    @design    = AttachedAsset.where(category: 'Best Design').where(["created_at > ?", Time.new(2017, 1, 1, 0, 0, 0)]).order('team_id ASC')
     respond_to do |format|
       format.html
       format.csv { render text: @teams.to_csv }
@@ -100,7 +89,7 @@ class TeamsController < ApplicationController
       format.csv { render text: @all_users.to_csv }
     end
   end
- 
+
   def add_member
     @team = Team.find(params[:id])
     @request_ids = []
@@ -159,32 +148,33 @@ class TeamsController < ApplicationController
     render json: @teams
   end
 
-  def search 
+  def search
     @teams = Team.search params[:search]
   end
 
   def launch
-    @teams = Team.where(signed_up_2016: true).where.not(launch_date: '').order('launch_date ASC')
+    @teams = Team.where(signed_up_2017: true).where.not(launch_date: '').order('launch_date ASC')
   end
   private
 
     def team_params
       params.require(:team).permit(
-        :name, 
-        :school, 
-        :description, 
-        :city, :state_code, :country_code, 
-        :why_join, 
-        :plan, 
-        :find_out, 
-        :host_payload, :have_payload, :buddies_mentor, :buddies_mentee, 
-        :ages_0_10, :ages_11_17, :ages_18_26, :ages_27_50, 
+        :name,
+        :school,
+        :description,
+        :city, :state_code, :country_code,
+        :why_join,
+        :plan,
+        :find_out,
+        :host_payload, :have_payload, :buddies_mentor, :buddies_mentee,
+        :ages_0_10, :ages_11_17, :ages_18_26, :ages_27_50,
         :ages_50_up,
         :url,
         :team_img,
         :launch_date,
         :signed_up_2015,
         :signed_up_2016,
+        :signed_up_2017,
         :flew_2015,
         :flew_2014,
         attached_assets_attributes: [:id, :asset, :category, :_destroy]

@@ -90,17 +90,20 @@
           <label for="launch_date">Launch Date</label>
           <%= f.text_field :launch_date, required: "required", maxlength: 20, style: 'max-width: 100px'%>
           <%= f.submit "Post" %>
-      <% end %> 
+      <% end %>
     <% end %>
-    <%= render 'launch_file_form' %>
+    <% unless @team.signed_up_2017? %>
+      <div class="row">
+        <%= form_for @team, html: {style: 'display: inline'} do |f| %>
+          <%= f.hidden_field :signed_up_2017, value: true %>
+          <%= f.submit "Sign up for GSBC 2017", class: "btn inline" %>
+        <% end %>
+      </div>
+    <% else %>
+      <%= render 'launch_file_form' %>
+    <% end %>
     <div class="row">
       <%= link_to "Edit team", edit_team_path(@team), class: "btn inline" %>
-    <% unless @team.signed_up_2016? %>
-        <%= form_for @team, html: {style: 'display: inline'} do |f| %>
-          <%= f.hidden_field :signed_up_2016, value: true %>
-          <%= f.submit "Sign up for GSBC 2016", class: "btn inline" %>
-        <% end %>
-    <% end %>
     </div>
   <% end %>
   <% if current_user and current_user.team.nil? and !@request_ids.include?(current_user.id) %>
