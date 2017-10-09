@@ -99,8 +99,8 @@
           <%= f.submit "Sign up for GSBC 2017", class: "btn inline" %>
         <% end %>
       </div>
-    <!--% else %>
-      <%= render 'launch_file_form' %-->
+    <% else %>
+      <%= render 'launch_file_form' %>
     <% end %>
     <div class="row">
       <%= link_to "Edit team", edit_team_path(@team), class: "btn inline" %>
