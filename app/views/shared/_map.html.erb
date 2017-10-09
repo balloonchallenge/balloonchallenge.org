@@ -34,23 +34,23 @@
               latitude), parseFloat(drop.longitude));
 
             var infoContent = '<a href="/teams/'+drop.id+'">'+'<h3>'+ drop.name + '</h3></a><h5>' + drop.city + '</h5>';
-            if (drop.flew_2014 == true || drop.flew_2015 == true) {
-            var marker = new gm.Marker({
-              position: dropLatLng,
-              map: map,
-              title: drop.name,
-              icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
-            });
+            //if (drop.flew_2014 == true || drop.flew_2015 == true) {
+            //var marker = new gm.Marker({
+            //  position: dropLatLng,
+            //  map: map,
+            //  title: drop.name,
+            //  icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+            //});
             //infoContent = infoContent + '<br>Veteran team'
 
-            } else {
+            //} else {
             var marker = new gm.Marker({
               position: dropLatLng,
               map: map,
               title: drop.name
             });
 
-            }
+            //}
             marker.desc = infoContent
             oms.addMarker(marker);          
           };
