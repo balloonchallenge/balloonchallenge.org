@@ -1,6 +1,6 @@
 <%= form_for @team do |f| %>
   <h1>Send us prize submissions</h1>
-  <h4>You have submitted <strong><%= @team.attached_assets.where(["created_at > ?", Time.new(2017, 1, 1, 0, 0, 0)]).count %></strong> files.</h4>
+  <h4>You have submitted <strong><%= @team.attached_assets.where(["created_at > ?", Time.new(2018, 1, 1, 0, 0, 0)]).count %></strong> files.</h4>
   <div id="attached_assets">
     <%= f.fields_for :attached_assets, AttachedAsset.new do |asset| %>
       <%= render 'attached_asset_fields', :f => asset %>
