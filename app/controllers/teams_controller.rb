@@ -10,7 +10,7 @@ class TeamsController < ApplicationController
     if @team.save
       @user.save
       TeamMailer.new_team(@user, @team).deliver
-      @team.update_attributes(:signed_up_2018 => true)
+      @team.update_attributes(:signed_up_2017 => true)
       flash[:success] = "Team created!"
       redirect_to @team
     else
@@ -73,10 +73,10 @@ class TeamsController < ApplicationController
     # @ground = AttachedAsset.where(category: 'Longest Ground Track').where(["created_at > ?", Time.new(2016, 1, 1, 0, 0, 0)]).order('team_id ASC')
     # @return = AttachedAsset.where(category: 'Return To Launch Site').where(["created_at > ?", Time.new(2016, 1, 1, 0, 0, 0)]).order('team_id ASC')
 
-    # 2018 categories (same as 2017)
+    # 2017 categories
 
-    @education = AttachedAsset.where(category: 'Best Educational Initiative').where(["created_at > ?", Time.new(2018, 1, 1, 0, 0, 0)]).order('team_id ASC')
-    @design    = AttachedAsset.where(category: 'Best Design').where(["created_at > ?", Time.new(2018, 1, 1, 0, 0, 0)]).order('team_id ASC')
+    @education = AttachedAsset.where(category: 'Best Educational Initiative').where(["created_at > ?", Time.new(2017, 1, 1, 0, 0, 0)]).order('team_id ASC')
+    @design    = AttachedAsset.where(category: 'Best Design').where(["created_at > ?", Time.new(2017, 1, 1, 0, 0, 0)]).order('team_id ASC')
     respond_to do |format|
       format.html
       format.csv { render text: @teams.to_csv }
@@ -153,7 +153,7 @@ class TeamsController < ApplicationController
   end
 
   def launch
-    @teams = Team.where(signed_up_2018: true).where.not(launch_date: '').order('launch_date ASC')
+    @teams = Team.where(signed_up_2017: true).where.not(launch_date: '').order('launch_date ASC')
   end
   private
 
@@ -175,7 +175,6 @@ class TeamsController < ApplicationController
         :signed_up_2015,
         :signed_up_2016,
         :signed_up_2017,
-        :signed_up_2018,
         :flew_2015,
         :flew_2014,
         attached_assets_attributes: [:id, :asset, :category, :_destroy]
