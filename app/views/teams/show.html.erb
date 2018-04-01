@@ -92,16 +92,16 @@
           <%= f.submit "Post" %>
       <% end %>
     <% end %>
-    <%# unless @team.signed_up_2017? %>
-      <!--div class="row"-->
-        <%# = form_for @team, html: {style: 'display: inline'} do |f| %>
-          <%# = f.hidden_field :signed_up_2017, value: true %>
-          <%# = f.submit "Sign up for GSBC 2017", class: "btn inline" %>
-        <%# end %>
-      <!--/div-->
-    <%# else %>
-      <%# = render 'launch_file_form' %>
-    <%# end %>
+    <% unless @team.signed_up_2018? %>
+      <div class="row">
+        <%= form_for @team, html: {style: 'display: inline'} do |f| %>
+          <%= f.hidden_field :signed_up_2018, value: true %>
+          <%= f.submit "Sign up for GSBC 2018", class: "btn inline" %>
+        <% end %>
+      </div>
+    <% else %>
+      <%= render 'launch_file_form' %>
+    <% end %>
     <div class="row">
       <%= link_to "Edit team", edit_team_path(@team), class: "btn inline" %>
     </div>
