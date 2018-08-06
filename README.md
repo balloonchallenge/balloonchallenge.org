@@ -1,6 +1,6 @@
 # GSBC
 
-luke@simplyluke.com | [@_simplyluke](https://twitter.com/_simplyluke)
+luke@simplyluke.com | [@lukehwright](https://twitter.com/lukehwright)
 
 krish@openSourceSchool.co | [@krrishd](https://twitter.com/krrishd)
 
