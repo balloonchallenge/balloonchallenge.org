@@ -92,6 +92,7 @@
           <%= f.submit "Post" %>
       <% end %>
     <% end %>
+    <!--
     <% unless @team.signed_up_2018? %>
       <div class="row">
         <%= form_for @team, html: {style: 'display: inline'} do |f| %>
@@ -102,6 +103,7 @@
     <% else %>
       <%= render 'launch_file_form' %>
     <% end %>
+    -->
     <div class="row">
       <%= link_to "Edit team", edit_team_path(@team), class: "btn inline" %>
     </div>
