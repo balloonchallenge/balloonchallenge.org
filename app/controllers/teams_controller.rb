@@ -176,6 +176,8 @@ class TeamsController < ApplicationController
         :signed_up_2016,
         :signed_up_2017,
         :signed_up_2018,
+        :flew_2017,
+        :flew_2016,
         :flew_2015,
         :flew_2014,
         attached_assets_attributes: [:id, :asset, :category, :_destroy]

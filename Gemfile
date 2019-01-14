@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '2.1.0'
+ruby '2.6.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.0'
+gem 'rails', '4.2.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -31,7 +31,7 @@ gem "cocoon"
 
 group :development, :test do
   gem 'spring'
-  gem 'sqlite3' 
+  gem 'sqlite3'
 end
 
 group :development do
@@ -59,4 +59,3 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
