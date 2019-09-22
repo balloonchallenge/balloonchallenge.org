@@ -93,11 +93,11 @@
       <% end %>
     <% end %>
     <!--
-    <% unless @team.signed_up_2019? %>
+    <% unless @team.signed_up_2020? %>
       <div class="row">
         <%= form_for @team, html: {style: 'display: inline'} do |f| %>
-          <%= f.hidden_field :signed_up_2019, value: true %>
-          <%= f.submit "Sign up for GSBC 2019", class: "btn inline" %>
+          <%= f.hidden_field :signed_up_2020, value: true %>
+          <%= f.submit "Sign up for GSBC 2020", class: "btn inline" %>
         <% end %>
       </div>
     <% else %>

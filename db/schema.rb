@@ -72,6 +72,8 @@ ActiveRecord::Schema.define(version: 20170723224352) do
     t.boolean  "flew_2017"
     t.boolean  "signed_up_2019"
     t.boolean  "flew_2018"
+    t.boolean  "signed_up_2020"
+    t.boolean  "flew_2019"
   end
 
   add_index "teams", ["launch_date"], name: "index_teams_on_launch_date"
