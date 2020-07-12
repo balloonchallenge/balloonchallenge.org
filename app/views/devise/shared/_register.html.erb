@@ -2,6 +2,7 @@
 <head>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
+<body>
 <div class="content">
     <%= render "devise/shared/links" %> <br>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -28,8 +29,21 @@
         
         <div><input type="checkbox" required> I have read and agree to the <a href="/terms_and_conditions.pdf" target="_blank">Terms and Conditions</a></div>
 
-        <div class="g-recaptcha" data-sitekey="6LfFprAZAAAAAJ7SNwU9v6A7V-pmcqHvjZj1KgFS"></div>
+        <div class="g-recaptcha" 
+             data-sitekey="6LfFprAZAAAAAJ7SNwU9v6A7V-pmcqHvjZj1KgFS"></div>
+
+       
 
         <div><%= f.submit "Sign up" %></div>
     <% end %>
 </div>
+<script>
+window.onload = function() {
+    var $recaptcha = document.querySelector('#g-recaptcha-response');
+
+    if($recaptcha) {
+        $recaptcha.setAttribute("required", "required");
+    }
+};
+</script>
+</body>
