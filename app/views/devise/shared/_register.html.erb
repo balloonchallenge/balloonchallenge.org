@@ -8,6 +8,9 @@
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
 
+        <div>Confirmation emails have not been sending properly - if you get an error, use the contact us to request an account and we will make one for you. Apologies for the inconvience while we fix the issue.</div>
+        <br/>
+
         <div><%= f.label :email %>
         <%= f.email_field :email, autofocus: true %></div>
 
