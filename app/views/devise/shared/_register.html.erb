@@ -1,4 +1,7 @@
 <h1 class="underline">Sign Up</h1>
+<head>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
 <div class="content">
     <%= render "devise/shared/links" %> <br>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -24,6 +27,8 @@
         <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
         
         <div><input type="checkbox" required> I have read and agree to the <a href="/terms_and_conditions.pdf" target="_blank">Terms and Conditions</a></div>
+
+        <div class="g-recaptcha" data-sitekey="6LdfprAZAAAAAMcjgY4-1v3C3k4PVsHTkpWwHYlt"></div>
 
         <div><%= f.submit "Sign up" %></div>
     <% end %>
