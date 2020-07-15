@@ -2,7 +2,16 @@ class RegistrationsController < Devise::RegistrationsController
   protected
 
   def sign_up_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :pastlaunch, :gsbc_last_year)
+    success = verify_recaptcha(action: 'login', minimum_score: 0.3)
+    checkbox_success = verify_recaptcha unless success
+    if success || checkbox_success
+      params.require(:user).permit(:email, :password, :password_confirmation, :first_name, :last_name, :pastlaunch, :gsbc_last_year)
+    else
+      if !success
+        @show_checkbox_recaptcha = true
+      end
+      render 'new'
+    end
   end
 
   def account_update_params 

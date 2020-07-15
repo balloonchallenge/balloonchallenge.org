@@ -189,6 +189,8 @@ GEM
       ffi (~> 1.0)
     rb-readline (0.5.5)
     rdoc (4.3.0)
+    recaptcha (5.5.0)
+      json
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -250,6 +252,7 @@ DEPENDENCIES
   rails (= 4.2.11)
   rails_12factor
   rb-readline
+  recaptcha
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring
