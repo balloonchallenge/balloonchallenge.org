@@ -31,7 +31,7 @@ gem "cocoon"
 
 group :development, :test do
   gem 'spring'
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.3.11'
 end
 
 group :development do
